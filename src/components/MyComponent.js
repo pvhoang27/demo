@@ -7,11 +7,20 @@ class MyComponent extends React.Component {
     };  
     handleClick= (event ) => {
       console.log('Button clicked!');
-      console.log("My name is", this.state.name);
-    }
+      // console.log("My name is", this.state.name);
+      // console.log("random",);
+      
+      this.setState({
+        name : 'Nguyễn Văn A',
 
+      });
+      this.setState({
+      age :  Math.floor(Math.random() * 100) + 1
+      });
+    }
+    
     handleOnMouseOver (event) {
-      console.log(event.pageX);
+      // console.log(event.pageX);
     }
   //jsx
   render() {
