@@ -12,11 +12,11 @@ class MyComponent extends React.Component {
       
       this.setState({
         name : 'Nguyễn Văn A',
-
+        age : Math.floor(Math.random() * 100)
       });
-      this.setState({
-      age :  Math.floor(Math.random() * 100) + 1
-      });
+      // this.setState({
+        // age : Math.floor(Math.random() * 100)
+      // });
     }
     
     handleOnMouseOver (event) {
