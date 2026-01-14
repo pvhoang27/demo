@@ -5,8 +5,8 @@ class DisplayInfor extends React.Component {
     console.log(">>> check props:", this.props);
     return (
       <div> 
-        <div>My name is Hoang</div>
-        <div>Im 22 years old</div>
+        <div>My name is {this.props.name}</div>
+        <div>Im {this.props.age} years old</div>
       </div>
     );
   }

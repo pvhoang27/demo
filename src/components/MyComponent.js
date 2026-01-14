@@ -8,7 +8,9 @@ class MyComponent extends React.Component {
       <div>
         <Userinfor />
         <br></br>
-        <DisplayInfor name = "TIeennenen" age = "20" />
+        <DisplayInfor name="TIeennenen" age="20" />
+        <hr></hr>
+        <DisplayInfor name="TIeennenen" age="20" />
       </div>
     );
   }
