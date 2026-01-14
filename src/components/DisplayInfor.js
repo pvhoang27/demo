@@ -2,11 +2,12 @@ import React from "react";
 
 class DisplayInfor extends React.Component {
   render() {
+    const { age, name } = this.props;
     console.log(">>> check props:", this.props);
     return (
-      <div> 
-        <div>My name is {this.props.name}</div>
-        <div>Im {this.props.age} years old</div>
+      <div>
+        <div>My name is {name}</div>
+        <div>Im {age} years old</div>
       </div>
     );
   }
