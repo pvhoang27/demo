@@ -27,10 +27,12 @@ class MyComponent extends React.Component {
 
     return (
       <div>
+
         My name is {this.state.name} and im from {this.state.address}, im {this.state.age} years old.
-        <button onMouseOver ={this.handleOnMouseOver}>Hover me</button>
-        <button onClick={ (event) => this.handleClick(event) }>Click me</button>
-      
+        <form>
+          <input type="text" />
+          <button>Submit</button>
+        </form>
       </div>
     );
   }
