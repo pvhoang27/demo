@@ -4,7 +4,7 @@ class DisplayInfor extends React.Component {
   render() {
     return (
       <div> display infor </div>
-    )
+    );
   }
 }
 
