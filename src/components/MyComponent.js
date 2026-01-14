@@ -2,6 +2,13 @@ import React from "react";
 import Userinfor from "./Userinfor";
 import DisplayInfor from "./DisplayInfor";
 class MyComponent extends React.Component {
+  state = {
+    listUsers: [
+      { id: 1, name: "Tien", age: 20 },
+      { id: 2, name: "An", age: 21 },
+      { id: 3, name: "Binh", age: 22 },
+    ],
+  };
   //jsx
   render() {
     const myInfor = ["ab", "c", "d"];
@@ -9,9 +16,8 @@ class MyComponent extends React.Component {
       <div>
         <Userinfor />
         <br></br>
-        <DisplayInfor name="TIeennenen" age="20" />
+        <DisplayInfor />
         <hr></hr>
-        <DisplayInfor name={"TIeennenen"} age={21} myInfor={myInfor} />
       </div>
     );
   }
