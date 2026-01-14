@@ -28,7 +28,7 @@ class DisplayInfor extends React.Component {
           </div>
         )}
       </div>
-    );
+    );  
   }
 }
 
