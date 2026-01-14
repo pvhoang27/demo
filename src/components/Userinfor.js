@@ -20,7 +20,7 @@ class Userinfor extends React.Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log(">>> check submit:", this.state.name);
+    console.log(">>> check submit:", this.state);
   };
   render() {
     return (
