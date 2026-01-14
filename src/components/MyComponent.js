@@ -7,6 +7,7 @@ class MyComponent extends React.Component {
     return (
       <div>
         <Userinfor />
+        <br></br>
         <DisplayInfor />
       </div>
     );
