@@ -1,6 +1,6 @@
 import React from "react";
 
-class Userinfor extends React.Component {
+class AddUserInfor extends React.Component {
   state = {
     name: "Hoàng",
     address: "Hà Nội",
@@ -47,4 +47,4 @@ class Userinfor extends React.Component {
   }
 }
 
-export default Userinfor;
+export default AddUserInfor;

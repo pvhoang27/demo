@@ -1,5 +1,5 @@
 import React from "react";
-import Userinfor from "./Userinfor";
+import AddUserInfor from "./AddUserInfor";
 import DisplayInfor from "./DisplayInfor";
 class MyComponent extends React.Component {
   state = {
@@ -14,7 +14,7 @@ class MyComponent extends React.Component {
     const myInfor = ["ab", "c", "d"];
     return (
       <div>
-        <Userinfor />
+        <AddUserInfor />
         <br></br>
         <DisplayInfor listUsers={this.state.listUsers} />
         <hr></hr>
