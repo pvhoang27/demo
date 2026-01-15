@@ -18,7 +18,7 @@ class MyComponent extends React.Component {
   render() {
     const myInfor = ["ab", "c", "d"];
     return (
-      <div>
+      <>
         <div className="a">
           <AddUserInfor handleAddNewUser={this.handleAddNewUser} />
           <br></br>
@@ -26,7 +26,7 @@ class MyComponent extends React.Component {
         </div>
 
         <div className="b"></div>
-      </div>
+      </>
     );
   }
 }
