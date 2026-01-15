@@ -28,6 +28,9 @@ class DisplayInfor extends React.Component {
               <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
                 <div>My name is {user.name}</div>
                 <div>Im {user.age} years old</div>
+                <div>
+                  <button>Delete</button>
+                </div>
                 <hr />
               </div>
             ))}
