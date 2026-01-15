@@ -20,7 +20,7 @@ class DisplayInfor extends React.Component {
           <div>
             {listUsers.map((user) => (
               <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
-                <div style ={{color : 'yellow', paddingTop: '50px' }}>My name is {user.name}</div>
+                <div >My name is {user.name}</div>
                 <div>Im {user.age} years old</div>
                 <hr />
               </div>
