@@ -24,12 +24,14 @@ class DisplayInfor extends React.Component {
         </div>
         {this.state.isShowListUser && (
           <>
-            {listUsers.map((user) => (
+            {listUsers.map((user, index) => (
               <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
                 <div>My name is {user.name}</div>
                 <div>Im {user.age} years old</div>
                 <div>
-                  <button>Delete</button>
+                  <button onClick={() => this.props.handleDeleteUser(user.id)}>
+                    Delete
+                  </button>
                 </div>
                 <hr />
               </div>
