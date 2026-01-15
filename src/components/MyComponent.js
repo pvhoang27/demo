@@ -9,14 +9,25 @@ class MyComponent extends React.Component {
       { id: 3, name: "Binh", age: 30 },
     ],
   };
-  //jsx
+
+  handleAddNewUser = (userObj) => {
+    
+    this.setState({
+      listUsers: [ ...this.state.listUsers, userObj],
+    });
+  }
   render() {
     const myInfor = ["ab", "c", "d"];
     return (
       <div>
-        <AddUserInfor />
+        <AddUserInfor
+         handleAddNewUser={this.handleAddNewUser} 
+         />
         <br></br>
-        <DisplayInfor listUsers={this.state.listUsers} />
+        <DisplayInfor 
+        listUsers={this.state.listUsers}
+        
+        />
         <hr></hr>
       </div>
     );
