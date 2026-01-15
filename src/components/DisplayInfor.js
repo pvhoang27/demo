@@ -14,7 +14,7 @@ class DisplayInfor extends React.Component {
     const { listUsers } = this.props;
     return (
       <div className="display-infor-container">
-        <img src={logo1} />
+        {/* <img src={logo1} /> */}
         <div>
           <span onClick={() => this.handleShowHide()}>
             {this.state.isShowListUser === true

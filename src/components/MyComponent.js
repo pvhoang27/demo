@@ -12,7 +12,8 @@ class MyComponent extends React.Component {
 
   handleAddNewUser = (userObj) => {
     this.setState({
-      listUsers: [...this.state.listUsers, userObj],
+      // listUsers: [...this.state.listUsers, userObj],
+      listUsers: [userObj, ...this.state.listUsers],
     });
   };
   render() {
