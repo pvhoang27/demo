@@ -2,6 +2,9 @@ import React from "react";
 import "./DisplayInfor.scss";
 import logo1 from "../logo.svg";
 class DisplayInfor extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     isShowListUser: true,
   };
