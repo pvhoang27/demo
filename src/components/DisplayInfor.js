@@ -12,7 +12,7 @@ const DisplayInfor = (props) => {
     // alert("click me");
     setShowHideListUser(!isShowHideListUser);
   }
-
+console.log("call me render ")  ; 
   return (
     <div className="display-infor-container">
       <div>
