@@ -30,10 +30,9 @@ import logo1 from "../logo.svg";
 //   }
 // }
 
-const DisplayInfor = () => {
-    const { listUsers } = this.props;
+const DisplayInfor = (props) => {
+    const { listUsers } = props;
 
-    
     return (
       <div className="display-infor-container">
       
@@ -44,7 +43,7 @@ const DisplayInfor = () => {
                 <div>My name is {user.name}</div>
                 <div>Im {user.age} years old</div>
                 <div>
-                  <button onClick={() => this.props.handleDeleteUser(user.id)}>
+                  <button onClick={() => props.handleDeleteUser(user.id)}>
                     Delete
                   </button>
                 </div>
