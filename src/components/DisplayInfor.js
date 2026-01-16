@@ -13,11 +13,12 @@ const DisplayInfor = (props) => {
   console.log("call me render ");
 
   useEffect(() => {
-    setTimeout(() => {
-      document.title = "Hoang";
-    }, 3000);
+    if (listUsers.length === 0) {
+      alert("You deleted all the users");
+    }
+
     console.log("call me useEffect ");
-  }, []);
+  }, [listUsers]);
 
   return (
     <div className="display-infor-container">
