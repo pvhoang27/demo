@@ -3,7 +3,7 @@ import "./DisplayInfor.scss";
 import logo1 from "../logo.svg";
 class DisplayInfor extends React.Component {
   constructor(props) {
-    console.log(">>> call constructor : 0 ");
+    console.log(">>> call constructor : 1 ");
     super(props);
     this.state = {
       isShowListUser: true,
