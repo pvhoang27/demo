@@ -3,10 +3,14 @@ import "./DisplayInfor.scss";
 import logo1 from "../logo.svg";
 class DisplayInfor extends React.Component {
   constructor(props) {
+    console.log(">>> call constructor : 0 ");
     super(props);
     this.state = {
       isShowListUser: true,
     };
+  }
+  componentDidMount() {
+    console.log(">>> call me componentDidMount ");
   }
 
   handleShowHide = () => {
@@ -15,6 +19,7 @@ class DisplayInfor extends React.Component {
     });
   };
   render() {
+    console.log(">>> call me render ");
     const { listUsers } = this.props;
     return (
       <div className="display-infor-container">
