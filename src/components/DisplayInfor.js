@@ -11,6 +11,9 @@ class DisplayInfor extends React.Component {
   }
   componentDidMount() {
     console.log(">>> call me componentDidMount ");
+    setTimeout(() => {
+      document.title = " Hoang "
+    }, 3000);
   }
 
   handleShowHide = () => {
