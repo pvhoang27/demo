@@ -2,35 +2,11 @@ import React from "react";
 import "./DisplayInfor.scss";
 import logo1 from "../logo.svg";
 class DisplayInfor extends React.Component {
-  constructor(props) {
-    console.log(">>> call constructor : 1 ");
-    super(props);
-    this.state = {
-      isShowListUser: true,
-    };
-  }
-  componentDidMount() {
-    console.log(">>> call me componentDidMount ");
-    setTimeout(() => {
-      document.title = " Hoang "
-    }, 3000);
-  }
+  
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(">>> call me componentDidUpdate ",this.props, prevProps);
-    if (this.props.listUsers !== prevProps.listUsers) {
-      if(this.props.listUsers.length ===5){
-        alert("You have 5 users");
-      }
-    }
+  
 
-  }
-
-  handleShowHide = () => {
-    this.setState({
-      isShowListUser: !this.state.isShowListUser,
-    });
-  };
+ 
   render() {
     console.log(">>> call me render ");
     const { listUsers } = this.props;
