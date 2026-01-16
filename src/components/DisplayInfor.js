@@ -9,12 +9,15 @@ const DisplayInfor = (props) => {
 
   const handleShowHideListUser = () => {
     setShowHideListUser(!isShowHideListUser);
-  };  
+  };
   console.log("call me render ");
 
   useEffect(() => {
+    setTimeout(() => {
+      document.title = "Hoang";
+    }, 3000);
     console.log("call me useEffect ");
-  });
+  }, []);
 
   return (
     <div className="display-infor-container">
