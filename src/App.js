@@ -13,15 +13,9 @@ const App = () => {
   return (
     
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        
           Hello World Hoang
-        </p>
-        <div>Count = {count}</div>
-        <button onClick={() => dispatch(increaseCounter())}>Increase</button>
-        <button onClick={() => dispatch(decreaseCounter())}>Decrease</button>
-      </header>
+      
     </div>
   );
 }
