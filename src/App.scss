@@ -24,7 +24,7 @@ body {
       margin-right: 10px;
       padding: 0px 15px;
       border: 1px solid #535353;
-      height : 40px
+      height: 40px;
     }
     .btn-signup {
       border-radius: 5px;
@@ -44,6 +44,35 @@ body {
       .nav-link {
         &.active {
           color: #00bfff;
+        }
+      }
+    }
+  }
+  .homepage-container {
+    .homepage-content {
+      padding: 100px;
+      width: 50%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .title-1 {
+      font-size: 35px;
+      font-weight: 600;
+    }
+    .title-2 {
+      font-size: 22px;
+    }
+    .title-3 {
+      button {
+        border-radius: 5px;
+        padding: 0 15px;
+        background: #303030;
+        color: white;
+        height: 40px;
+        &:hover {
+          background: black;
         }
       }
     }
