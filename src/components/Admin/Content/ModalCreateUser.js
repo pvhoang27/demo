@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import ModalCreateUser from "./ModalCreateUser";
 
-function Example() {
+const ModalCreateUser = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,7 +14,11 @@ function Example() {
         Launch demo modal
       </Button>
 
-      <Modal show={show} onHide={handleClose} size="xl">
+      <Modal show={show} 
+      onHide={handleClose} 
+      size="xl"
+      backdrop = "static"
+      >
         <Modal.Header closeButton>
           <Modal.Title>Add new user</Modal.Title>
         </Modal.Header>
@@ -60,22 +63,5 @@ function Example() {
       </Modal>
     </>
   );
-}
-
-const ManagerUser = (props) => {
-  return (
-    <div className="manage-user-container">
-      <div className="title">Manager User</div>
-      <div className="users-content">
-        <div>
-          <button>Add new user</button>
-        </div>
-        <div>
-          table user
-          <ModalCreateUser />
-        </div>
-      </div>
-    </div>
-  );
 };
-export default ManagerUser;
+export default ModalCreateUser;
