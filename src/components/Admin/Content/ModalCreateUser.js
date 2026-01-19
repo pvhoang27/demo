@@ -14,11 +14,7 @@ const ModalCreateUser = () => {
         Launch demo modal
       </Button>
 
-      <Modal show={show} 
-      onHide={handleClose} 
-      size="xl"
-      backdrop = "static"
-      >
+      <Modal show={show} onHide={handleClose} size="xl" backdrop="static">
         <Modal.Header closeButton>
           <Modal.Title>Add new user</Modal.Title>
         </Modal.Header>
@@ -47,8 +43,13 @@ const ModalCreateUser = () => {
               </select>
             </div>
             <div className="col-md-12">
-              <label className="form-label">Image</label>
-              <input type="file" />
+              <label className="form-label">Upload File Image</label>
+              <input type="file" hidden />
+            </div>
+
+            <div className="col-md-12 img-preview">
+              <span>Preview Image</span>
+              {/* <img src="https://bit.ly/eric-bot-2" /> */}
             </div>
           </form>
         </Modal.Body>
