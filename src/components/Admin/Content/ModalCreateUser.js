@@ -3,11 +3,10 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 
-const ModalCreateUser = () => {
-  const [show, setShow] = useState(false);
+const ModalCreateUser = (props) => {
+  const { show, setShow } = props;
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,15 +20,15 @@ const ModalCreateUser = () => {
       setPreviewImage(URL.createObjectURL(event.target.files[0]));
       setImage(event.target.files[0]);
     } else {
-    //   setPreviewImage("");
+      //   setPreviewImage("");
     }
   };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      {/* <Button variant="primary" onClick={handleShow}>
         Launch demo modal
-      </Button>
+      </Button> */}
 
       <Modal
         show={show}
