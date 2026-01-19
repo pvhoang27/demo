@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
+import { FcPlus } from "react-icons/fc";
 const ModalCreateUser = () => {
   const [show, setShow] = useState(false);
 
@@ -49,7 +49,9 @@ const ModalCreateUser = () => {
               </select>
             </div>
             <div className="col-md-12">
-              <label className="form-label">Upload File Image</label>
+              <label className="form-label label-upload">
+                <FcPlus /> Upload File Image
+              </label>
               <input type="file" hidden />
             </div>
 
