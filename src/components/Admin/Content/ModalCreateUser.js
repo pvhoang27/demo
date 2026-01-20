@@ -59,18 +59,9 @@ const ModalCreateUser = (props) => {
       return;
     }
 
-    //submit data
-    const data = new FormData();
-    data.append("email", email);
-    data.append("password", password);
-    data.append("username", username);
-    data.append("role", role);
-    data.append("userImage", image);
+   
 
-    let res = await axios.post(
-      "http://localhost:8081/api/v1/participant",
-      data,
-    );
+    let res = await 
     console.log("check res create user : ", res.data);
     if (res.data && res.data.EC === 0) {
       toast.success(res.data.EM);
