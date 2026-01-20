@@ -1,3 +1,4 @@
+import axios from "axios";
 const postCreateNewUser = (email, password, username, role, image) => {
   //submit data
   const data = new FormData();
@@ -8,3 +9,5 @@ const postCreateNewUser = (email, password, username, role, image) => {
   data.append("userImage", image);
   return axios.post("http://localhost:8081/api/v1/participant", data);
 };
+
+export { postCreateNewUser };
