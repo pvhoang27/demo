@@ -32,18 +32,27 @@ const ModalCreateUser = (props) => {
       //   setPreviewImage("");
     }
   };
+  // Source - https://stackoverflow.com/a/46181
+  // Posted by John Rutherford, modified by community. See post 'Timeline' for change history
+  // Retrieved 2026-01-20, License - CC BY-SA 4.0
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      );
+  };
+
   const handleSubmitCreateUser = async () => {
     //validate
+    const isValidEmail = validateEmail(email);
+    if (!isValidEmail) {
+      alert("Invalid email ");
+      return;
+    }
 
-    // call api
-    // let data = {
-    //   email: email,
-    //   password: password,
-    //   username: username,
-    //   role: role,
-    //   userImage: image,
-    // };
-    // console.log("check data submit create user : ", data);
+    //submit data
     const data = new FormData();
     data.append("email", email);
     data.append("password", password);
