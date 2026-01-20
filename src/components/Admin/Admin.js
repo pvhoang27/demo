@@ -21,6 +21,17 @@ const Admin = (props) => {
           <Outlet />
         </div>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
 
       {/* <div className="admin-content">
         <FaBars onClick={() => setCollapsed(!collapsed)} />

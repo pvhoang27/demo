@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import axios from "axios";
+import {  toast } from "react-toastify";
+
 
 const ModalCreateUser = (props) => {
   const { show, setShow } = props;
@@ -48,7 +50,7 @@ const ModalCreateUser = (props) => {
     //validate
     const isValidEmail = validateEmail(email);
     if (!isValidEmail) {
-      alert("Invalid email ");
+      toast.error("Invalid email ");
       return;
     }
 
