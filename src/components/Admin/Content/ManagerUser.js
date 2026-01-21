@@ -34,6 +34,7 @@ const ManagerUser = (props) => {
   };
 
   const handleClickBtnUpdate = (user) => {
+    console.log("check user update: ", user);
     setShowModalUpdateUser(true);
     setDataUpdate(user);
   };
