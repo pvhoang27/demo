@@ -2,18 +2,13 @@ import { useEffect, useState } from "react";
 import { getAllUsers } from "../../../service/apiService";
 import ReactPaginate from "react-paginate";
 
-
-
 const TableUserPaginate = (props) => {
-
   const { listUsers, pageCount } = props;
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     props.fetchListUsersWithPaginate(+event.selected + 1);
-    console.log(
-      `User requested page number ${event.selected}`  ,
-    );
+    console.log(`User requested page number ${event.selected}`);
   };
 
   return (
@@ -63,26 +58,28 @@ const TableUserPaginate = (props) => {
           )}
         </tbody>
       </table>
-      <ReactPaginate
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={2}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
-        nextLinkClassName="page-link"
-        breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
-        containerClassName="pagination"
-        activeClassName="active"
-        renderOnZeroPageCount={null}
-      />
+      <div className="user-pagination">
+        <ReactPaginate
+          nextLabel="Next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+          pageCount={pageCount}
+          previousLabel="< Prev"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+          renderOnZeroPageCount={null}
+        />
+      </div>
     </>
   );
 };
