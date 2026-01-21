@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { postCreateNewUser } from "../../../service/apiService";
 import { use } from "react";    
 import { useEffect } from "react";
+import _ from "lodash";
 
 const ModalUpdateUser = (props) => {
   const { show, setShow ,dataUpdate} = props;
@@ -28,19 +29,9 @@ const ModalUpdateUser = (props) => {
   const [previewImage, setPreviewImage] = useState("");
 
   useEffect(() => {
-    if (show) {
-      //update state    
+    if (!_.isEmpty(dataUpdate)) {
       setEmail(dataUpdate.email);
-      setPassword("hardcode");
       setUsername(dataUpdate.username);
-      setRole(dataUpdate.role);
-      setImage("");
-      setPreviewImage(
-        dataUpdate.image
-          ? `http://localhost:8080/images/users/${dataUpdate.image}`
-          : ""
-      );
-    }
   }, [dataUpdate, show]);
 
   const handleUploadImage = (event) => {
