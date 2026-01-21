@@ -81,6 +81,13 @@ const ManagerUser = (props) => {
     }
   };
 
+  const testFunction = async () => {
+    let res = await getAllUsers();
+    if (res && res.EC === 0) {
+      setListUsers(res.DT);
+    }
+  }
+
 
 
   return (
