@@ -4,9 +4,10 @@ import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { postCreateNewUser } from "../../../service/apiService";
+import { use } from "react";
 
 const ModalUpdateUser = (props) => {
-  const { show, setShow } = props;
+  const { show, setShow ,dataUpdate} = props;
 
   const handleClose = () => {
     setShow(false);
@@ -24,6 +25,22 @@ const ModalUpdateUser = (props) => {
   const [role, setRole] = useState("USER");
   const [image, setImage] = useState("");
   const [previewImage, setPreviewImage] = useState("");
+
+  useEffect(() => {
+    if (show) {
+      //update state    
+      setEmail(dataUpdate.email);
+      setPassword("hardcode");
+      setUsername(dataUpdate.username);
+      setRole(dataUpdate.role);
+      setImage("");
+      setPreviewImage(
+        dataUpdate.image
+          ? `http://localhost:8080/images/users/${dataUpdate.image}`
+          : ""
+      );
+    }
+  }, [dataUpdate, show]);
 
   const handleUploadImage = (event) => {
     if (event.target && event.target.files && event.target.files[0]) {
@@ -69,6 +86,7 @@ const ModalUpdateUser = (props) => {
       toast.error(data.EM);
     }
   };
+
 
   return (
     <>

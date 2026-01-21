@@ -12,6 +12,8 @@ import ModalUpdateUser from "./ModalUpdateUser";
 const ManagerUser = (props) => {
   const [showModalCreateUser, setShowModalCreateUser] = useState(false);
   const [showModalUpdateUser, setShowModalUpdateUser] = useState(false);
+  const[dataUpdate, setDataUpdate] = useState({});
+
   const [listUsers, setListUsers] = useState([]);
   useEffect(async () => {
     fetchListUsers();
@@ -31,8 +33,9 @@ const ManagerUser = (props) => {
     }
   };
 
-  const handleClickBtnUpdate = () => {
+  const handleClickBtnUpdate = (user) => {
     setShowModalUpdateUser(true);
+    setDataUpdate(user);
   };
 
   return (
@@ -62,6 +65,7 @@ const ManagerUser = (props) => {
         <ModalUpdateUser 
         show={showModalUpdateUser}
         setShow={setShowModalUpdateUser}
+        dataUpdate={dataUpdate}
          />
       </div>
     </div>
