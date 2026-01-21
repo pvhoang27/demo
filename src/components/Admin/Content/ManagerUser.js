@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { getAllUsers } from "../../../service/apiService";
 import ModalUpdateUser from "./ModalUpdateUser";
 
-
 const ManagerUser = (props) => {
   const [showModalCreateUser, setShowModalCreateUser] = useState(false);
   const [showModalUpdateUser, setShowModalUpdateUser] = useState(false);
@@ -30,9 +29,11 @@ const ManagerUser = (props) => {
     if (res && res.EC === 0) {
       setListUsers(res.DT);
     }
-  }
+  };
 
-
+  const handleClickBtnUpdate = () => {
+    setShowModalUpdateUser(true);
+  };
 
   return (
     <div className="manage-user-container">
@@ -48,7 +49,10 @@ const ManagerUser = (props) => {
           </button>
         </div>
         <div className="table-users-container">
-          <TableUser listUsers={listUsers} />
+          <TableUser
+            listUsers={listUsers}
+            handleClickBtnUpdate={handleClickBtnUpdate}
+          />
         </div>
         <ModalCreateUser
           show={showModalCreateUser}
@@ -57,7 +61,8 @@ const ManagerUser = (props) => {
         />
         <ModalUpdateUser 
         show={showModalUpdateUser}
-        />
+        setShow={setShowModalUpdateUser}
+         />
       </div>
     </div>
   );
