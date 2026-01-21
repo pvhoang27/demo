@@ -19,12 +19,9 @@ const TableUser = (props) => {
           {listUsers &&
             listUsers.length > 0 &&
             listUsers.map((item, index) => {
-              console.log(">>> check item: ", item);
               return (
                 <tr key={`table-user-${index}`}>
-                  <td>
-                    <td>{listUsers.length - index}</td>
-                  </td>
+                  <td>{item.id}</td>
                   <td>{item.username}</td>
                   <td>{item.email}</td>
                   <td>{item.role}</td>
