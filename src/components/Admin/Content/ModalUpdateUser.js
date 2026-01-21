@@ -4,12 +4,12 @@ import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { postCreateNewUser } from "../../../service/apiService";
-import { use } from "react";    
+import { use } from "react";
 import { useEffect } from "react";
 import _, { set } from "lodash";
 
 const ModalUpdateUser = (props) => {
-  const { show, setShow ,dataUpdate} = props;
+  const { show, setShow, dataUpdate } = props;
 
   const handleClose = () => {
     setShow(false);
@@ -30,13 +30,14 @@ const ModalUpdateUser = (props) => {
 
   useEffect(() => {
     if (!_.isEmpty(dataUpdate)) {
-        //update state
+      //update state
       setEmail(dataUpdate.email);
       setUsername(dataUpdate.username);
       setRole(dataUpdate.role);
       setImage("");
-      setPreviewImage(`data:image/jpeg;base64,${dataUpdate.image}`);
-
+      if (dataUpdate.image) {
+        setPreviewImage(`data:image/jpeg;base64,${dataUpdate.image}`);
+      }
     }
   }, [dataUpdate, show]);
 
@@ -85,7 +86,6 @@ const ModalUpdateUser = (props) => {
     }
   };
 
-
   return (
     <>
       {/* <Button variant="primary" onClick={handleShow}>
@@ -110,6 +110,7 @@ const ModalUpdateUser = (props) => {
                 type="email"
                 className="form-control"
                 value={email}
+                disabled
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
@@ -119,6 +120,7 @@ const ModalUpdateUser = (props) => {
                 type="password"
                 className="form-control"
                 value={password}
+                disabled
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>
