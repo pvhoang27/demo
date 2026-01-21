@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 
 const items = [...Array(33).keys()];
 
-function Items({ currentItems }) {
+const Items = ({ currentItems }) => {
   return (
     <div className="items">
       {currentItems &&
@@ -17,7 +17,7 @@ function Items({ currentItems }) {
   );
 }
 
-function PaginatedItems({ itemsPerPage }) {
+const PaginatedItems = ({ itemsPerPage }) => {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
