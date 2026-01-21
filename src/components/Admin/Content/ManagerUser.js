@@ -6,7 +6,7 @@ import "./ManageUser.scss";
 import { FcPlus } from "react-icons/fc";
 import TableUser from "./TableUser";
 import { useEffect } from "react";
-import { getAllUsers } from "../../../service/apiService";
+import { getAllUsers,getUserWithPaginate } from "../../../service/apiService";
 import ModalUpdateUser from "./ModalUpdateUser";
 import ModalDeleteUser from "./ModalDeleteUser";
 import TableUserPaginate from "./TableUserPaginate";
@@ -23,20 +23,21 @@ const ManagerUser = (props) => {
 
   const [listUsers, setListUsers] = useState([]);
   useEffect( () => {
-    fetchListUsers();
+    fetchListUsersWithPaginate(1);
   }, []);
 
   const fetchListUsers = async () => {
     let res = await getAllUsers();
-    if (res && res.EC === 0) {
+    if (res.EC === 0) {
       setListUsers(res.DT);
     }
   };
 
   const fetchListUsersWithPaginate = async (page) => {
-    let res = await getAllUsers();
-    if (res && res.EC === 0) {
-      setListUsers(res.DT);
+    let res = await getUserWithPaginate(page,LIMIT_USER);
+    if (res.EC === 0) {
+      console.log(">>> check res paginate: ", res.DT);
+      setListUsers(res.DT.users);
     }
   };
 
