@@ -81,6 +81,8 @@ const ManagerUser = (props) => {
     }
   };
 
+
+
   return (
     <div className="manage-user-container">
       <div className="title">Manager User</div>
@@ -100,6 +102,7 @@ const ManagerUser = (props) => {
         <ModalCreateUser
           show={showModalCreateUser}
           setShow={setShowModalCreateUser}
+          fetchListUsers={fetchListUsers}
         />
       </div>
     </div>
