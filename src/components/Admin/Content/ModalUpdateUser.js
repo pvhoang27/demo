@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
-import { postCreateNewUser } from "../../../service/apiService";
+import { PutUpdateUser } from "../../../service/apiService";
 import { use } from "react";
 import { useEffect } from "react";
 import _, { set } from "lodash";
@@ -49,17 +49,6 @@ const ModalUpdateUser = (props) => {
       //   setPreviewImage("");
     }
   };
-  // Source - https://stackoverflow.com/a/46181
-  // Posted by John Rutherford, modified by community. See post 'Timeline' for change history
-  // Retrieved 2026-01-20, License - CC BY-SA 4.0
-
-  const validateEmail = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      );
-  };
 
   const handleSubmitCreateUser = async () => {
     //validate
@@ -69,17 +58,11 @@ const ModalUpdateUser = (props) => {
       return;
     }
 
-    if (!password) {
-      toast.error(" Invalid password ");
-      return;
-    }
-
-    let data = await postCreateNewUser(email, password, username, role, image);
+    let data = await PutUpdateUser(username, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       handleClose();
       await props.fetchListUsers();
-      // props.fetchListUsers();
     }
     if (data && data.EC !== 0) {
       toast.error(data.EM);
@@ -88,10 +71,6 @@ const ModalUpdateUser = (props) => {
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-
       <Modal
         show={show}
         onHide={handleClose}
