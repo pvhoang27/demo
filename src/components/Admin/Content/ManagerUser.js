@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { getAllUsers } from "../../../service/apiService";
 import ModalUpdateUser from "./ModalUpdateUser";
 import ModalDeleteUser from "./ModalDeleteUser";
+import TableUserPaginate from "./TableUserPaginate";
 
 const ManagerUser = (props) => {
   const [showModalCreateUser, setShowModalCreateUser] = useState(false);
@@ -70,6 +71,7 @@ const ManagerUser = (props) => {
             handleClickBtnUpdate={handleClickBtnUpdate}
             handleClickBtnDelete={handleClickBtnDelete}
           />
+          <TableUserPaginate />
         </div>
         <ModalCreateUser
           show={showModalCreateUser}
