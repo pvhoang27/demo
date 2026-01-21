@@ -1,18 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllUsers } from "../../../service/apiService";
 const TableUser = (props) => {
-  const [listUsers, setListUsers] = useState([]);
-
-  useEffect(async () => {
-    fetchListUsers();
-  }, []);
-
-  const fetchListUsers = async () => {
-    let res = await getAllUsers();
-    if (res && res.EC === 0) {
-      setListUsers(res.DT);
-    }
-  };
+  const { listUsers } = props;
 
   return (
     <>
@@ -33,7 +22,9 @@ const TableUser = (props) => {
               console.log(">>> check item: ", item);
               return (
                 <tr key={`table-user-${index}`}>
-                  <td>{index + 1}</td>
+                  <td>
+                    <td>{listUsers.length - index}</td>
+                  </td>
                   <td>{item.username}</td>
                   <td>{item.email}</td>
                   <td>{item.role}</td>
