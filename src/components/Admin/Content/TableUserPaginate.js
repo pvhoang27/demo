@@ -68,6 +68,7 @@ function PaginatedItems({ itemsPerPage }) {
     </>
   );
 }
+
 const TableUserPaginate = (props) => {
   const { listUsers } = props;
 
@@ -118,6 +119,7 @@ const TableUserPaginate = (props) => {
           )}
         </tbody>
       </table>
+      <PaginatedItems itemsPerPage={4} />
     </>
   );
 };
