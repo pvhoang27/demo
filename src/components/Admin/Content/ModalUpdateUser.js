@@ -66,7 +66,7 @@ const ModalUpdateUser = (props) => {
       return;
     }
 
-    let data = await PutUpdateUser(username, role, image);
+    let data = await PutUpdateUser(dataUpdate.id, email, password, username, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       handleClose();
