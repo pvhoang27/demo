@@ -2,29 +2,34 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const ModalDeleteUser = () => {
-  const [show, setShow] = useState(false);
+const ModalDeleteUser = (props) => {
+  const {show, setShow} = props;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
+     
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal 
+      show={show} 
+      onHide={handleClose}
+      backdrop="static"
+      >
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Confirm Delete the User ? </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+            Are you sure you  to delete this user.email
+            <b>abc@gmailc.om</b>
+            </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Cancel
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Confirm
           </Button>
         </Modal.Footer>
       </Modal>
