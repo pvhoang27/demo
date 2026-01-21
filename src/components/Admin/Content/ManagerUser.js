@@ -12,10 +12,12 @@ import ModalDeleteUser from "./ModalDeleteUser";
 
 const ManagerUser = (props) => {
   const [showModalCreateUser, setShowModalCreateUser] = useState(false);
+  //update
   const [showModalUpdateUser, setShowModalUpdateUser] = useState(false);
   const [dataUpdate, setDataUpdate] = useState({});
-
+  //delete
   const [showModalDeleteUser, setShowModalDeleteUser] = useState(false);
+  const [dataDelete, setDataDelete] = useState({});
 
   const [listUsers, setListUsers] = useState([]);
   useEffect(async () => {
@@ -46,8 +48,8 @@ const ManagerUser = (props) => {
   };
 
   const handleClickBtnDelete = (user) => {
-    console.log("check user delete", user);
     setShowModalDeleteUser(true);
+    setDataDelete(user);
   };
   return (
     <div className="manage-user-container">
@@ -84,6 +86,7 @@ const ManagerUser = (props) => {
         <ModalDeleteUser
           show={showModalDeleteUser}
           setShow={setShowModalDeleteUser}
+          dataDelete={dataDelete}
         />
       </div>
     </div>
