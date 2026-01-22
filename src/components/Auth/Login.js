@@ -9,7 +9,9 @@ const Login = (props) => {
   };
   return (
     <div className="login-container">
-      <div className="header">Don't have an account yet ?</div>
+      <div className="header">
+        <span>Don't have an account yet ?</span>
+        </div>
       <div className="title col-4 mx-auto">HoiDanIT</div>
       <div className="welcome col-4 mx-auto">Hello , who's this ?</div>
       <div className="content-form col-4 mx-auto">
