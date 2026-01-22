@@ -6,6 +6,8 @@ import ManagerUser from "./Admin/Content/ManagerUser";
 import Dashboard from "./Admin/Content/DashBoard";
 import Login from "./Auth/Login";
 import App from "../App";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Layout = (props) => {
   return (
     <>
@@ -20,6 +22,18 @@ const Layout = (props) => {
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };
