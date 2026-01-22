@@ -13,15 +13,14 @@ const Login = (props) => {
 
     //submit api
     let data = await postLogin(email, password);
-    console.log(">>> check data login: ", data,data.EC !== 0,data.EC);
+    console.log(">>> check data login: ", data, data.EC !== 0, data.EC);
     if (data && data.EC === 0) {
-          toast.success(data.EM);
-          
-        }
-        if (data && +data.EC !== 0) {
-          // alert('me')
-          toast.error(data.EM);
-        }
+      toast.success(data.EM);
+      navigate("/");
+    }
+    if (data && +data.EC !== 0) {
+      toast.error(data.EM);
+    }
   };
   return (
     <div className="login-container">
