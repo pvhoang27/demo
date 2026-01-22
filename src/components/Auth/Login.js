@@ -19,7 +19,7 @@ const Login = (props) => {
           
         }
         if (data && +data.EC !== 0) {
-          alert('me')
+          // alert('me')
           toast.error(data.EM);
         }
   };
