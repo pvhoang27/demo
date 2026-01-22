@@ -2,8 +2,15 @@
   .header {
     height: 45px;
     text-align: right;
+    padding: 5px 100px 0 100px;
 
-    border: 1px solid red;
+    button {
+      padding: 3px 15px;
+      margin-left: 15px;
+      border-radius: 5px;
+      background: white;
+      border: 1px solid;
+    }
   }
 
   .title {
@@ -19,7 +26,6 @@
   }
 
   .content-form {
-
     input {
       margin-bottom: 15px;
       margin-top: 3px;
