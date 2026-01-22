@@ -36,10 +36,16 @@ const Login = (props) => {
         </div>
         <span className="forgot-password">Forgot password ? </span>
         <div>
-          <button className="btn-submit" onClick={() => handleLogin()}>
+          <button 
+          className="btn-submit" 
+          onClick={() => handleLogin()}>
             Login to HoiDanIT
           </button>
         </div>
+        <div className="back">
+          <span> Go To Homepage</span>
+        </div>
+
       </div>
     </div>
   );
