@@ -3,10 +3,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postLogin } from "../../service/apiService";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  cónst dispatch = useDispatch();
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
