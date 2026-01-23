@@ -9,7 +9,7 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  cónst dispatch = useDispatch();
+  const dispatch = useDispatch();
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -34,6 +34,10 @@ const Login = (props) => {
     let data = await postLogin(email, password);
     console.log(">>> check data login: ", data, data.EC !== 0, data.EC);
     if (data && data.EC === 0) {
+      dispatch({ 
+        type: "FETCH_USER_LOGIN_SUCCESS", 
+        payload: data 
+      });
       toast.success(data.EM);
       navigate("/");
     }
