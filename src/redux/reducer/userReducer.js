@@ -22,6 +22,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
           image: action?.playload?.DT?.image,
           roles: action?.playload?.DT?.roles,
         },
+        isAuthenticated: true
       };
 
     case DECREMENT:
