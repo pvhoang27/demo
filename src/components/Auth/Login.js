@@ -74,10 +74,7 @@ const Login = (props) => {
         </div>
         <span className="forgot-password">Forgot password ? </span>
         <div>
-          <button className="btn-submit"
-           onClick={() => handleLogin()}
-           disabled
-           >
+          <button className="btn-submit" onClick={() => handleLogin()} disabled>
             <ImSpinner10 className="loader-icon" />
             <span>Login to HoiDanIT</span>
           </button>

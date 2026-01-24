@@ -58,6 +58,11 @@
       margin: 20px 0;
       color: white;
       background-color: black;
+      &:disabled {
+        background: #dddddd !important;
+        color: #afafaf !important;
+        cursor: no-drop;
+      }
     }
 
     .back {
