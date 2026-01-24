@@ -85,7 +85,9 @@ const Login = (props) => {
             onClick={() => handleLogin()}
             disabled={isLoading}
           >
-            <ImSpinner10 className="loader-icon" />
+            {isLoading === true && 
+            <ImSpinner10 className="loader-icon" />}
+
             <span>Login to HoiDanIT</span>
           </button>
         </div>
