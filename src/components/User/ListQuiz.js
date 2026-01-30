@@ -25,7 +25,7 @@ const ListQuiz = (props) => {
               className="card"
               style={{ width: "18rem" }}
             >
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={`data:image/jpeg;base64,${quiz.image}`} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">Quizz {index + 1}</h5>
                 <p className="card-text">{quiz.description}</p>
