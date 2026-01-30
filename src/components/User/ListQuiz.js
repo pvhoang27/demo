@@ -1,4 +1,4 @@
-import { get } from "lodash";
+// import { get } from "lodash";
 import { useEffect, useState } from "react";
 import { getQuizByUser } from "../../service/apiService";
 import "./ListQuiz.scss";   

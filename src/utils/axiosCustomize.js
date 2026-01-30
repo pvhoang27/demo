@@ -8,28 +8,28 @@ NProgress.configure({
 });
 
 const instance = axios.create({
-  baseURL: "http://localhost:8081",
+  baseURL: "http://localhost:8081/",
 });
 
 // Adding a request interceptor to your specific instance
-instance.interceptors.request.use(
-  function (config) {
-    const token = localStorage.getItem("userToken");
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  function (error) {
-    return Promise.reject(error);
-  },
-);
+// instance.interceptors.request.use(
+//   function (config) {
+//     const token = localStorage.getItem("userToken");
+//     if (token) {
+//       config.headers.Authorization = `Bearer ${token}`;
+//     }
+//     return config;
+//   },
+//   function (error) {
+//     return Promise.reject(error);
+//   },
+// );
 
 // Add a request interceptor
 instance.interceptors.request.use(
   function (config) {
     const access_token = store?.getState()?.user?.account?.access_token;
-    config.headers["Authorization"] = "Bearer " + access_token;
+    config.headers["Authorization"] = `Bearer ${access_token}`;
     NProgress.start();
     // Do something before request is sent
     return config;
