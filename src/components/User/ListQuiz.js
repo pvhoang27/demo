@@ -1,6 +1,7 @@
 import { get } from "lodash";
 import { useEffect, useState } from "react";
 import { getQuizByUser } from "../../service/apiService";
+import "./ListQuiz.scss";   
 
 const ListQuiz = (props) => {
   const [arrQuiz, setArrQuiz] = useState([]);
@@ -15,7 +16,7 @@ const ListQuiz = (props) => {
     }
   };
   return (
-    <div className="list-quiz-container">
+    <div className="list-quiz-container container">
       {arrQuiz &&
         arrQuiz.length > 0 &&
         arrQuiz.map((quiz, index) => {
