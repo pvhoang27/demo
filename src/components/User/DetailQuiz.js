@@ -7,6 +7,10 @@ const DetailQuiz = (props) => {
     useEffect(() => {
         //call api get detail quiz
     }, [quizId]);
+
+    const fetchQuestions = () =>{
+        //call api get question by quizId
+    }
     console.log('>>> check params detail quiz: ', params);
   return <div className="detail-quiz-container">
     DetailQuiz
