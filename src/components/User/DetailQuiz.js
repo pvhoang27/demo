@@ -21,7 +21,8 @@ const DetailQuiz = (props) => {
         // `key` is group's name (color), `value` is the array of objects
         .map((value, key) => {
             console.log(">>> check value: ", value, " - key: ", key);
-          return  { questionId: key, data: value }
+            let answers = [];
+          return  { questionId: key, answers }
         }
     )
     
