@@ -21,13 +21,18 @@ const DetailQuiz = (props) => {
         // `key` is group's name (color), `value` is the array of objects
         .map((value, key) => {
             let answers = [];
-           value.forEach((item) => {
+            let questionDescription , image = null;
+           value.forEach((item, idex) => {
+            if(idex ===0){
+                questionDescription = item.desciption;
+                image = item.image;
+            }
             answers.push(item.answer);
              console.log(">>> check item: ", item.answers);
            });
             console.log(">>> check value: ", value, " - key: ", key);
             
-          return  { questionId: key, answers }
+          return  { questionId: key, answers ,questionDescription , image}
         }
     )
     
