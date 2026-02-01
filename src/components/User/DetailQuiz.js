@@ -20,11 +20,13 @@ const DetailQuiz = (props) => {
         .groupBy("id")
         // `key` is group's name (color), `value` is the array of objects
         .map((value, key) => {
+            let answers = [];
            value.forEach((item) => {
+            answers.push(item.answer);
              console.log(">>> check item: ", item.answers);
            });
             console.log(">>> check value: ", value, " - key: ", key);
-            let answers = [];
+            
           return  { questionId: key, answers }
         }
     )
