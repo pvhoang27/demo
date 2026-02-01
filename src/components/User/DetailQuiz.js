@@ -17,9 +17,9 @@ const DetailQuiz = (props) => {
       let raw = res.DT;
       let data = _.chain(raw)
         // Group the elements of Array based on `color` property
-        .groupBy("color")
+        .groupBy("id")
         // `key` is group's name (color), `value` is the array of objects
-        .map((value, key) => ({ color: key, users: value }))
+        .map((value, key) => ({ questionId: key, data: value }))
         .value();
       console.log(">>> check data group: ", data);
     }
