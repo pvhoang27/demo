@@ -12,8 +12,8 @@ const DetailQuiz = (props) => {
 
     const fetchQuestions = async () =>{
         let res = await getDataQuiz(quizId);
+        console.log('>>> check res data quiz: ', res);
     }
-    console.log('>>> check params detail quiz: ', params);
   return <div className="detail-quiz-container">
     DetailQuiz
   </div>;
