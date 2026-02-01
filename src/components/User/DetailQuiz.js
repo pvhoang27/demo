@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getDataQuiz } from "../../service/apiService";
 const DetailQuiz = (props) => {
     const params = useParams();
     const quizId = params.id;
 
     useEffect(() => {
-        //call api get detail quiz
+      
+        fetchQuestions();
     }, [quizId]);
 
-    const fetchQuestions = () =>{
-        //call api get question by quizId
+    const fetchQuestions = async () =>{
+        let res = await getDataQuiz(quizId);
     }
     console.log('>>> check params detail quiz: ', params);
   return <div className="detail-quiz-container">
