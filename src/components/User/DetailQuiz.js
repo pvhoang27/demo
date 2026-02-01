@@ -35,7 +35,9 @@ const DetailQuiz = (props) => {
           return  { questionId: key, answers ,questionDescription , image}
         }
     )
-       .value();
+    
+        .value();
+      console.log(">>> check data group: ", data);
     }
   };
   return <div className="detail-quiz-container">DetailQuiz</div>;
