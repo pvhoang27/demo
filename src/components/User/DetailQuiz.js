@@ -33,7 +33,7 @@ const DetailQuiz = (props) => {
             image = null;
           value.forEach((item, idex) => {
             if (idex === 0) {
-              questionDescription = item.description; 
+              questionDescription = item.description;
               image = item.image;
             }
             answers.push(item.answers);
@@ -52,9 +52,13 @@ const DetailQuiz = (props) => {
   console.log(">>> check data quiz: ", dataQuiz);
 
   const handlePrev = () => {
-  }
+    if (index - 1 < 0) return;
+    setIndex(index - 1);
+  };
+
   const handleNext = () => {
-  }
+    if (dataQuiz && dataQuiz.length > index + 1) setIndex(index + 1);
+  };
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
@@ -72,11 +76,12 @@ const DetailQuiz = (props) => {
           />
         </div>
         <div className="footer">
-          <button className="btn btn-secondary"
-          onClick={() => handlePrev()}>Prev</button>
-          <button 
-          className="btn btn-primary "
-          onClick={() => handleNext()}>Next</button>
+          <button className="btn btn-secondary" onClick={() => handlePrev()}>
+            Prev
+          </button>
+          <button className="btn btn-primary " onClick={() => handleNext()}>
+            Next
+          </button>
         </div>
       </div>
       <div className="right-content">count down</div>
