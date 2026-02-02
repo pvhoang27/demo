@@ -43,7 +43,6 @@ const DetailQuiz = (props) => {
         })
 
         .value();
-      console.log(">>> check data group: ", data);
       setDataQuiz(data);
     }
   };
@@ -81,8 +80,42 @@ const DetailQuiz = (props) => {
   };
 
   const handleFinishQuiz = () => {
+//     {
+//     "quizId": 1,
+//     "answers": [
+//         { 
+//             "questionId": 1,
+//             "userAnswerId": [3]
+//         },
+//         { 
+//             "questionId": 2,
+//             "userAnswerId": [6]
+//         }
+//     ]
+// }
     console.log(">>> check data quiz: ", dataQuiz);
-    // let answers = [];
+    let payload = {
+      quizId: quizId,
+      answers: [],
+    };
+    let answers = [];
+    if(dataQuiz && dataQuiz.length >0){
+      dataQuiz.forEach(item =>{
+        
+        let questionId = item.questionId;
+        let userAnswerId = [];
+
+        //todo : userAnswerId 
+
+
+        answers.push({
+          questionId : questionId,
+          userAnswerId : userAnswerId
+        })
+      })
+      payload.answers = answers;
+      console.log(">>> check payload: ", payload);
+    }
   }
   return (
     <div className="detail-quiz-container">
@@ -109,8 +142,9 @@ const DetailQuiz = (props) => {
             Next
           </button>
           <button 
-          onClick={() => handleFinishQuiz()}>
-          className="btn btn-warning "
+          onClick={() => handleFinishQuiz()}
+          className="btn btn-warning ">
+          
            
             Finish
           </button>
