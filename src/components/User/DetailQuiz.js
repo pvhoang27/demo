@@ -95,21 +95,25 @@ const DetailQuiz = (props) => {
 // }
     console.log(">>> check data quiz: ", dataQuiz);
     let payload = {
-      quizId: quizId,
+      quizId: +quizId,
       answers: [],
     };
     let answers = [];
     if(dataQuiz && dataQuiz.length >0){
-      dataQuiz.forEach(item =>{
+      dataQuiz.forEach(question =>{
         
-        let questionId = item.questionId;
+        let questionId = question.questionId;
         let userAnswerId = [];
 
         //todo : userAnswerId 
 
-
+        question.answers.forEach(a => {
+          if(a.isSelected === true){
+            userAnswerId.push(+a.id);
+          }
+        })
         answers.push({
-          questionId : questionId,
+          questionId : +questionId,
           userAnswerId : userAnswerId
         })
       })
