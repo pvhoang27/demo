@@ -4,10 +4,13 @@ import { getDataQuiz } from "../../service/apiService";
 import _ from "lodash";
 import "./DetailQuiz.scss";
 import Question from "./Question";
+import { set } from "nprogress";
 const DetailQuiz = (props) => {
   const params = useParams();
   const location = useLocation();
   const quizId = params.id;
+
+  const[dataQuiz, setDataQuiz] = useState([])
 
   useEffect(() => {
     fetchQuestions();
@@ -41,6 +44,7 @@ const DetailQuiz = (props) => {
 
         .value();
       console.log(">>> check data group: ", data);
+      setDataQuiz(data);
     }
   };
   return (
