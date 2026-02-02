@@ -50,6 +50,11 @@ const DetailQuiz = (props) => {
     }
   };
   console.log(">>> check data quiz: ", dataQuiz);
+
+  const handlePrev = () => {
+  }
+  const handleNext = () => {
+  }
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
@@ -67,8 +72,11 @@ const DetailQuiz = (props) => {
           />
         </div>
         <div className="footer">
-          <button className="btn btn-secondary">Prev</button>
-          <button className="btn btn-primary ">Next</button>
+          <button className="btn btn-secondary"
+          onClick={() => handlePrev()}>Prev</button>
+          <button 
+          className="btn btn-primary "
+          onClick={() => handleNext()}>Next</button>
         </div>
       </div>
       <div className="right-content">count down</div>
