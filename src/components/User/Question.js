@@ -4,8 +4,10 @@ const Question = (props) => {
   if (_.isEmpty(data)) {
     return <></>;
   }
-  const handleHandleCheckbox = (event) => {
-    console.log(">>> check event: ", event.target.checked)
+  const handleHandleCheckbox = (event,id) => {
+    // console.log(">>> check event: ", event.target.checked)
+    console.log(">>> check data before: ", data,id )
+
   };
   return (
     <>
@@ -29,7 +31,8 @@ const Question = (props) => {
                   <input
                     className="form-check-input"
                     type="checkbox"
-                    onChange={(event) => handleHandleCheckbox(event)}
+                    onChange={(event) => handleHandleCheckbox
+                        (event,`${a.id}-q${data.questionId}`)}
                   />
                   <label className="form-check-label">{a.description}</label>
                 </div>
