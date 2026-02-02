@@ -71,7 +71,16 @@ const DetailQuiz = (props) => {
         }
         return item;
       })
+question =  b;
     }
+    let index = dataQuizClone.findIndex(item => +item.questionId === +questionId);
+    if(index > -1){
+       dataQuizClone[index] = question;
+       setDataQuiz(dataQuizClone);
+    }
+   
+    
+
   };
   return (
     <div className="detail-quiz-container">
