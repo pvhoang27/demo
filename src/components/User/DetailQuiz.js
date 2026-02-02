@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams ,useLocation} from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { getDataQuiz } from "../../service/apiService";
 import _ from "lodash";
 import "./DetailQuiz.scss";
@@ -22,44 +22,42 @@ const DetailQuiz = (props) => {
         .groupBy("id")
         // `key` is group's name (color), `value` is the array of objects
         .map((value, key) => {
-            let answers = [];
-            let questionDescription , image = null;
-           value.forEach((item, idex) => {
-            if(idex ===0){
-                questionDescription = item.desciption;
-                image = item.image;
+          let answers = [];
+          let questionDescription,
+            image = null;
+          value.forEach((item, idex) => {
+            if (idex === 0) {
+              questionDescription = item.desciption;
+              image = item.image;
             }
             answers.push(item.answer);
-             console.log(">>> check item: ", item.answers);
-           });
-            console.log(">>> check value: ", value, " - key: ", key);
-            
-          return  { questionId: key, answers ,questionDescription , image}
-        }
-    )
-    
+            console.log(">>> check item: ", item.answers);
+          });
+          console.log(">>> check value: ", value, " - key: ", key);
+
+          return { questionId: key, answers, questionDescription, image };
+        })
+
         .value();
       console.log(">>> check data group: ", data);
     }
   };
-  return(
+  return (
     <div className="detail-quiz-container">
       <div className="left-content">
-        <div className="title">
-          {location?.state?.quizTitle}
-        </div>
+        <div className="title">{location?.state?.quizTitle}</div>
         <div className="q-body">
-          <img/>
+          <img />
         </div>
-        <div className="q-content">
-          question content
+        <div className="q-content">question content</div>
+        <div className="footer">
+          <button>Next</button>
+          <button>Prev</button>
         </div>
       </div>
-      <div className="right-content">
-        count down
-      </div>
-  </div>
-  ) ;
+      <div className="right-content">count down</div>
+    </div>
+  );
 };
 
 export default DetailQuiz;
