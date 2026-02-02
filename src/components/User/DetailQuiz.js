@@ -65,22 +65,21 @@ const DetailQuiz = (props) => {
       (item) => +item.questionId === +questionId,
     );
     if (question && question.answers) {
-     let b =  question.answers.map(item =>{
-        if(+item.id === +answerId){
-          item.isSelected = true ; 
+      let b = question.answers.map((item) => {
+        if (+item.id === +answerId) {
+          item.isSelected = item.isSelected ;
         }
         return item;
-      })
-question =  b;
+      });
+      question.answers = b;
     }
-    let index = dataQuizClone.findIndex(item => +item.questionId === +questionId);
-    if(index > -1){
-       dataQuizClone[index] = question;
-       setDataQuiz(dataQuizClone);
+    let index = dataQuizClone.findIndex(
+      (item) => +item.questionId === +questionId,
+    );
+    if (index > -1) {
+      dataQuizClone[index] = question;
+      setDataQuiz(dataQuizClone);
     }
-   
-    
-
   };
   return (
     <div className="detail-quiz-container">
