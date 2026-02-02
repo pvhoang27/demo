@@ -80,19 +80,7 @@ const DetailQuiz = (props) => {
   };
 
   const handleFinishQuiz = () => {
-//     {
-//     "quizId": 1,
-//     "answers": [
-//         { 
-//             "questionId": 1,
-//             "userAnswerId": [3]
-//         },
-//         { 
-//             "questionId": 2,
-//             "userAnswerId": [6]
-//         }
-//     ]
-// }
+
     console.log(">>> check data quiz: ", dataQuiz);
     let payload = {
       quizId: +quizId,
@@ -109,7 +97,7 @@ const DetailQuiz = (props) => {
 
         question.answers.forEach(a => {
           if(a.isSelected === true){
-            userAnswerId.push(+a.id);
+            userAnswerId.push(a.id);
           }
         })
         answers.push({
