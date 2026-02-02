@@ -33,7 +33,8 @@ const DetailQuiz = (props) => {
             image = null;
           value.forEach((item, idex) => {
             if (idex === 0) {
-              questionDescription = item.description; // ✅ ĐÚNG              image = item.image;
+              questionDescription = item.description; // ✅ ĐÚNG
+              image = item.image;
             }
             answers.push(item.answer);
             console.log(">>> check item: ", item.answers);
