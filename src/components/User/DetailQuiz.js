@@ -12,6 +12,7 @@ const DetailQuiz = (props) => {
   const quizId = params.id;
 
   const[dataQuiz, setDataQuiz] = useState([])
+  const[index , setIndex] = useState(0)
 
   useEffect(() => {
     fetchQuestions();
@@ -60,7 +61,9 @@ const DetailQuiz = (props) => {
           <img />
         </div>
         <div className="q-content">
-         <Question />
+         <Question data={dataQuiz && dataQuiz.length > 0 
+          ? [index] 
+          : []}/>
         </div>
         <div className="footer">
           <button className="btn btn-secondary">Prev</button>
