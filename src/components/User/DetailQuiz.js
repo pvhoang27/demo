@@ -3,6 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { getDataQuiz } from "../../service/apiService";
 import _ from "lodash";
 import "./DetailQuiz.scss";
+import Question from "./Question";
 const DetailQuiz = (props) => {
   const params = useParams();
   const location = useLocation();
@@ -53,12 +54,7 @@ const DetailQuiz = (props) => {
           <img />
         </div>
         <div className="q-content">
-          <div className="question">question 1 : how are u doing</div>
-          <div className="answer">
-            <div className="a-child">A.sfsfd</div>
-            <div className="a-child">B.sfsfd</div>
-            <div className="a-child">C.sfsfd</div>
-          </div>
+         <Question />
         </div>
         <div className="footer">
           <button className="btn btn-secondary">Prev</button>
