@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getDataQuiz } from "../../service/apiService";
 import _ from "lodash";
+import "./DetailQuiz.scss";
 const DetailQuiz = (props) => {
   const params = useParams();
   const quizId = params.id;
