@@ -20,7 +20,6 @@ const DetailQuiz = (props) => {
 
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
-    // console.log(">>> check res data quiz: ", res);
     if (res && res.EC === 0) {
       let raw = res.DT;
       let data = _.chain(raw)
@@ -48,7 +47,6 @@ const DetailQuiz = (props) => {
       setDataQuiz(data);
     }
   };
-  // console.log(">>> check data quiz: ", dataQuiz);
 
   const handlePrev = () => {
     if (index - 1 < 0) return;
