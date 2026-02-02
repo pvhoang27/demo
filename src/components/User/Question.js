@@ -1,4 +1,10 @@
+import _ from "lodash";
 const Question = (props) => {
+    const {data} = props;
+    if(_.isEmpty(data)){
+        return <></>;
+    }
+    
   return(
   <>
      <div className="question">question 1 : how are u doing</div>

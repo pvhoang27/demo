@@ -61,7 +61,9 @@ const DetailQuiz = (props) => {
           <img />
         </div>
         <div className="q-content">
-         <Question data={dataQuiz && dataQuiz.length > 0 
+         <Question
+         index={index}
+          data={dataQuiz && dataQuiz.length > 0 
           ? [index] 
           : []}/>
         </div>
