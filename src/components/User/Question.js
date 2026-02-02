@@ -7,11 +7,14 @@ const Question = (props) => {
 
   return (
     <>
-      {data.image && (
+      {data.image ?  (
         <div className="q-image">
           <img src={`data:image/jpeg;base64,${data.image}`} />
         </div>
-      )}
+      )
+      : <div className="q-image">
+        </div>
+        }
       <div className="question">
         question {index + 1} :{data.questionDescription} ?
       </div>
