@@ -40,7 +40,16 @@ const DetailQuiz = (props) => {
       console.log(">>> check data group: ", data);
     }
   };
-  return <div className="detail-quiz-container">DetailQuiz</div>;
+  return(
+    <div className="detail-quiz-container">
+      <div className="left-content">
+
+      </div>
+      <div className="right-content">
+
+      </div>
+  </div>
+  ) ;
 };
 
 export default DetailQuiz;
