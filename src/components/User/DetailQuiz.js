@@ -81,6 +81,11 @@ const DetailQuiz = (props) => {
       setDataQuiz(dataQuizClone);
     }
   };
+
+  const handleFinishQuiz = () => {
+    console.log(">>> check data quiz: ", dataQuiz);
+    // let answers = [];
+  }
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
@@ -105,7 +110,10 @@ const DetailQuiz = (props) => {
           <button className="btn btn-primary " onClick={() => handleNext()}>
             Next
           </button>
-          <button className="btn btn-warning " onClick={() => handleNext()}>
+          <button 
+          onClick={() => handleFinishQuiz()}>
+          className="btn btn-warning "
+           
             Finish
           </button>
         </div>
