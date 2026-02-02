@@ -5,6 +5,7 @@ import _ from "lodash";
 import "./DetailQuiz.scss";
 import Question from "./Question";
 import { set } from "nprogress";
+import { useState } from "react";
 const DetailQuiz = (props) => {
   const params = useParams();
   const location = useLocation();
@@ -47,6 +48,7 @@ const DetailQuiz = (props) => {
       setDataQuiz(data);
     }
   };
+  console.log(">>> check data quiz: ", dataQuiz);
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
