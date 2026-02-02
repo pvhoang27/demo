@@ -24,9 +24,9 @@ const Question = (props) => {
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckDefault"
+                    
                   />
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <label class="form-check-label" >
                     {a.description}
                   </label>
                 </div>
