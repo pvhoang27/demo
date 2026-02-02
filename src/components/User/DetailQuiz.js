@@ -43,10 +43,18 @@ const DetailQuiz = (props) => {
   return(
     <div className="detail-quiz-container">
       <div className="left-content">
-
+        <div className="title">
+          sdfdsf
+        </div>
+        <div className="q-body">
+          <img/>
+        </div>
+        <div className="q-content">
+          question content
+        </div>
       </div>
       <div className="right-content">
-
+        count down
       </div>
   </div>
   ) ;
