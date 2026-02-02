@@ -20,7 +20,7 @@ const DetailQuiz = (props) => {
 
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
-    console.log(">>> check res data quiz: ", res);
+    // console.log(">>> check res data quiz: ", res);
     if (res && res.EC === 0) {
       let raw = res.DT;
       let data = _.chain(raw)
@@ -37,19 +37,19 @@ const DetailQuiz = (props) => {
               image = item.image;
             }
             answers.push(item.answers);
-            console.log(">>> check item: ", item.answers);
+            // console.log(">>> check item: ", item.answers);
           });
-          console.log(">>> check value: ", value, " - key: ", key);
+          // console.log(">>> check value: ", value, " - key: ", key);
 
           return { questionId: key, answers, questionDescription, image };
         })
 
         .value();
-      console.log(">>> check data group: ", data);
+      // console.log(">>> check data group: ", data);
       setDataQuiz(data);
     }
   };
-  console.log(">>> check data quiz: ", dataQuiz);
+  // console.log(">>> check data quiz: ", dataQuiz);
 
   const handlePrev = () => {
     if (index - 1 < 0) return;
