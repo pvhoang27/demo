@@ -3,8 +3,10 @@
   gap: 20px;
   padding: 50px;
   .left-content {
-    border: 1px solid red;
+    border : 2px solid #ccc;
     width: 70%;
+    border-radius: 5px;
+    padding: 20px;
 
     .title{
         font-size: 30px;
