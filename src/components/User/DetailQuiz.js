@@ -58,6 +58,10 @@ const DetailQuiz = (props) => {
   const handleNext = () => {
     if (dataQuiz && dataQuiz.length > index + 1) setIndex(index + 1);
   };
+
+  const handleHandleCheckbox = (answerId, questionId) => {
+    let dataQuizClone = _.cloneDeep(dataQuiz);
+  }
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
