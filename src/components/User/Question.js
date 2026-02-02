@@ -13,18 +13,27 @@ const Question = (props) => {
       <div className="question">
         question {index + 1} :{data.questionDescription} ?{" "}
       </div>
-    <div className="answer">
-  {data.answers && data.answers.length > 0 &&
-    data.answers.map((a, index) => {
-      return (
-        <div key={`answer-${index}`} 
-        className="a-child">
-          {a.description}
-        </div>
-      );
-    })
-  }
-</div>
+      <div className="answer">
+        {data.answers &&
+          data.answers.length > 0 &&
+          data.answers.map((a, index) => {
+            return (
+              <div key={`answer-${index}`} className="a-child">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    {a.description}
+                  </label>
+                </div>
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 };
