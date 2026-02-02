@@ -31,6 +31,7 @@ const Question = (props) => {
                   <input
                     className="form-check-input"
                     type="checkbox"
+                    checked={a.isSelected}
                     onChange={(event) =>
                       handleHandleCheckbox(event, a.id, data.questionId)
                     }
