@@ -61,8 +61,8 @@ const DetailQuiz = (props) => {
           </div>
         </div>
         <div className="footer">
-          <button>Next</button>
-          <button>Prev</button>
+          <button className="btn btn-secondary">Prev</button>
+          <button className="btn btn-primary ">Next</button>
         </div>
       </div>
       <div className="right-content">count down</div>
