@@ -65,13 +65,13 @@ const DetailQuiz = (props) => {
       (item) => +item.questionId === +questionId,
     );
     if (question && question.answers) {
-      let b = question.answers.map((item) => {
+       question.answers.map((item) => {
         if (+item.id === +answerId) {
           item.isSelected = !item.isSelected;
         }
         return item;
       });
-      question.answers = b;
+ 
     }
     let index = dataQuizClone.findIndex(
       (item) => +item.questionId === +questionId,
