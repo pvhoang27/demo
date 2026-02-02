@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,useLocation} from "react-router-dom";
 import { getDataQuiz } from "../../service/apiService";
 import _ from "lodash";
 import "./DetailQuiz.scss";
 const DetailQuiz = (props) => {
   const params = useParams();
+  const location = useLocation();
   const quizId = params.id;
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const DetailQuiz = (props) => {
     <div className="detail-quiz-container">
       <div className="left-content">
         <div className="title">
-          sdfdsf
+          {location?.state?.quizTitle}
         </div>
         <div className="q-body">
           <img/>
