@@ -11,8 +11,8 @@ const DetailQuiz = (props) => {
   const location = useLocation();
   const quizId = params.id;
 
-  const[dataQuiz, setDataQuiz] = useState([])
-  const[index , setIndex] = useState(0)
+  const [dataQuiz, setDataQuiz] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     fetchQuestions();
@@ -33,8 +33,7 @@ const DetailQuiz = (props) => {
             image = null;
           value.forEach((item, idex) => {
             if (idex === 0) {
-              questionDescription = item.desciption;
-              image = item.image;
+              questionDescription = item.description; // ✅ ĐÚNG              image = item.image;
             }
             answers.push(item.answer);
             console.log(">>> check item: ", item.answers);
@@ -61,11 +60,10 @@ const DetailQuiz = (props) => {
           <img />
         </div>
         <div className="q-content">
-         <Question
-         index={index}
-          data={dataQuiz && dataQuiz.length > 0 
-          ? [index] 
-          : []}/>
+          <Question
+            index={index}
+            data={dataQuiz && dataQuiz.length > 0 ? dataQuiz[index] : []}
+          />
         </div>
         <div className="footer">
           <button className="btn btn-secondary">Prev</button>

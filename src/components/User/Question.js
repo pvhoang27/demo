@@ -1,13 +1,14 @@
 import _ from "lodash";
 const Question = (props) => {
-    const {data} = props;
+    const {data, index} = props;
     if(_.isEmpty(data)){
         return <></>;
     }
-    
+
   return(
   <>
-     <div className="question">question 1 : how are u doing</div>
+     <div className="question">question {index + 1} : 
+        {data.questionDescription} ? </div>
           <div className="answer">
             <div className="a-child">A.sfsfd</div>
             <div className="a-child">B.sfsfd</div>
