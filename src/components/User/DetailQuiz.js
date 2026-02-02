@@ -45,20 +45,21 @@ const DetailQuiz = (props) => {
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
-        <div className="title">{location?.state?.quizTitle}</div>
+        <div className="title">
+          Quiz {quizId} : {location?.state?.quizTitle}
+        </div>
+        <hr></hr>
         <div className="q-body">
           <img />
         </div>
         <div className="q-content">
-          <div className="question">
-
-          </div>
+          <div className="question">question 1 : how are u doing</div>
           <div className="answer">
-          <div className="a-child">A.sfsfd</div>
-          <div className="a-child">B.sfsfd</div>
-          <div className="a-child">C.sfsfd</div>
+            <div className="a-child">A.sfsfd</div>
+            <div className="a-child">B.sfsfd</div>
+            <div className="a-child">C.sfsfd</div>
           </div>
-          </div>
+        </div>
         <div className="footer">
           <button>Next</button>
           <button>Prev</button>
