@@ -67,7 +67,7 @@ const DetailQuiz = (props) => {
     if (question && question.answers) {
       let b = question.answers.map((item) => {
         if (+item.id === +answerId) {
-          item.isSelected = item.isSelected ;
+          item.isSelected = !item.isSelected;
         }
         return item;
       });
