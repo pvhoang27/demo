@@ -31,21 +31,20 @@ const DetailQuiz = (props) => {
           let answers = [];
           let questionDescription,
             image = null;
-          value.forEach((item, idex) => {
-            if (idex === 0) {
+          value.forEach((item, index) => {
+            if (index === 0) {
               questionDescription = item.description;
               image = item.image;
             }
+            item.answers.isSelected = false;
             answers.push(item.answers);
-            // console.log(">>> check item: ", item.answers);
           });
-          // console.log(">>> check value: ", value, " - key: ", key);
 
           return { questionId: key, answers, questionDescription, image };
         })
 
         .value();
-      // console.log(">>> check data group: ", data);
+      console.log(">>> check data group: ", data);
       setDataQuiz(data);
     }
   };
