@@ -13,16 +13,16 @@ const Question = (props) => {
       <div className="question">
         question {index + 1} :{data.questionDescription} ?{" "}
       </div>
-     <div className="answer">
-  {data.answers && data.answers.length > 0 && ( 
-    data.answers.map((a, index) => { 
+    <div className="answer">
+  {data.answers && data.answers.length > 0 &&
+    data.answers.map((a, index) => {
       return (
-        <div key = {`answer-${index}`} className="a-child" >
-         A.sdfsdfsdfsd
+        <div key={`answer-${index}`} className="a-child">
+          A. asfdasfd
         </div>
       );
     })
-  )}
+  }
 </div>
     </>
   );
