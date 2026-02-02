@@ -36,7 +36,7 @@ const DetailQuiz = (props) => {
               questionDescription = item.description; 
               image = item.image;
             }
-            answers.push(item.answer);
+            answers.push(item.answers);
             console.log(">>> check item: ", item.answers);
           });
           console.log(">>> check value: ", value, " - key: ", key);

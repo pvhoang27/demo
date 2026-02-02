@@ -17,8 +17,9 @@ const Question = (props) => {
   {data.answers && data.answers.length > 0 &&
     data.answers.map((a, index) => {
       return (
-        <div key={`answer-${index}`} className="a-child">
-          A. asfdasfd
+        <div key={`answer-${index}`} 
+        className="a-child">
+          {a.description}
         </div>
       );
     })
