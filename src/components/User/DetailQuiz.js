@@ -49,7 +49,16 @@ const DetailQuiz = (props) => {
         <div className="q-body">
           <img />
         </div>
-        <div className="q-content">question content</div>
+        <div className="q-content">
+          <div className="question">
+
+          </div>
+          <div className="answer">
+          <div className="a-child">A.sfsfd</div>
+          <div className="a-child">B.sfsfd</div>
+          <div className="a-child">C.sfsfd</div>
+          </div>
+          </div>
         <div className="footer">
           <button>Next</button>
           <button>Prev</button>
