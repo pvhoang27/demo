@@ -59,9 +59,20 @@ const DetailQuiz = (props) => {
     if (dataQuiz && dataQuiz.length > index + 1) setIndex(index + 1);
   };
 
-  const handleHandleCheckbox = (answerId, questionId) => {
+  const handleCheckbox = (answerId, questionId) => {
     let dataQuizClone = _.cloneDeep(dataQuiz);
-  }
+    let question = dataQuizClone.find(
+      (item) => +item.questionId === +questionId,
+    );
+    if (question && question.answers) {
+     let b =  question.answers.map(item =>{
+        if(+item.id === +answerId){
+          item.isSelected = true ; 
+        }
+        return item;
+      })
+    }
+  };
   return (
     <div className="detail-quiz-container">
       <div className="left-content">
@@ -75,6 +86,7 @@ const DetailQuiz = (props) => {
         <div className="q-content">
           <Question
             index={index}
+            handleCheckbox={handleCheckbox}
             data={dataQuiz && dataQuiz.length > 0 ? dataQuiz[index] : []}
           />
         </div>
