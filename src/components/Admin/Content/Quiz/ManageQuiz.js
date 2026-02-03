@@ -1,7 +1,7 @@
 import "./ManageQuiz.scss";
 import { useState } from "react";
 import Select from "react-select";
-
+import {postCreateNewQuiz} from "../../../../service/apiService";
 const options = [
   { value: "EASY", label: "EASY" },
   { value: "MEDIUM", label: "MEDIUM" },
@@ -19,8 +19,8 @@ const ManageQuiz = () => {
     }
   };
 
-  const handleSubmitQuiz = () => {
-    alert("me");
+  const handleSubmitQuiz = async () => {
+    let res = await postCreateNewQuiz(description , name , )
   };
 
   return (
@@ -42,7 +42,7 @@ const ManageQuiz = () => {
           </div>
           <div className="form-floating">
             <input
-              type="password"
+              type="text"
               className="form-control"
               placeholder="description..."
               value={description}
