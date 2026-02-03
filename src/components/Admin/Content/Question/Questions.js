@@ -13,10 +13,16 @@ const Questions = (props) => {
     <div className="questions-container">
       <div className="title">Manage Questions</div>
       <div className="add-new-questions">
+        <div className="col-6 from-group">
+        <label>Select Quiz: </label>
+
+        </div>
         <Select
           defaultValue={selectedQuiz}
           onChange={setSelectedQuiz}
           options={options}
+          className="form-control"
+        
         />
       </div>
     </div>
