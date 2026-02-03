@@ -4,6 +4,7 @@ import Select from "react-select";
 import { postCreateNewQuiz } from "../../../../service/apiService";
 import { toast } from "react-toastify";
 import { set } from "nprogress";
+import TableQuiz from "./TableQuiz";
 const options = [
   { value: "EASY", label: "EASY" },
   { value: "MEDIUM", label: "MEDIUM" },
@@ -23,7 +24,7 @@ const ManageQuiz = () => {
 
   const handleSubmitQuiz = async () => {
     //validate
-    if(!name  || !description){
+    if (!name || !description) {
       toast.error("Name/Description is required");
       return;
     }
@@ -91,7 +92,9 @@ const ManageQuiz = () => {
           </div>
         </fieldset>
       </div>
-      <div className="list-detail">table</div>
+      <div className="list-detail">
+        <TableQuiz />
+      </div>
     </div>
   );
 };
