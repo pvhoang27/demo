@@ -24,7 +24,8 @@ const ManageQuiz = () => {
             <label >Description</label>
           </div>
           <div className="more-actions">
-            
+            <label > Upload image </label>
+            <input type="file" />
           </div>
         </fieldset>
       </div>
