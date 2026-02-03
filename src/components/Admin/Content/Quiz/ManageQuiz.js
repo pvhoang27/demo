@@ -2,9 +2,9 @@ import "./ManageQuiz.scss";
 import Select from "react-select";
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+  { value: "EASY", label: "EASY" },
+  { value: "MEDIUM", label: "MEDIUM" },
+  { value: "HARD", label: "HARD" },
 ];
 const ManageQuiz = () => {
   return (
@@ -30,7 +30,7 @@ const ManageQuiz = () => {
             />
             <label>Description</label>
           </div>
-          <div>
+          <div className="my-3">
             <Select
               //   value={selectedOption}
               //     onChange={this.handleChange}
