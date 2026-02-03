@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
-import { PutUpdateUser } from "../../../service/apiService";
+import { putUpdateUser } from "../../../service/apiService";
 import { use } from "react";
 import { useEffect } from "react";
 import _, { set } from "lodash";
@@ -67,14 +67,7 @@ const ModalUpdateUser = (props) => {
       return;
     }
 
-    let data = await PutUpdateUser(
-      dataUpdate.id,
-      email,
-      password,
-      username,
-      role,
-      image,
-    );
+    let data = await putUpdateUser(dataUpdate.id, username, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       handleClose();
