@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getAllQuizForAdmin } from "../../../../service/apiService";
+import { use } from "react";
 
 const TableQuiz = (props) => {
+  const [listQuiz, setListQuiz] = useState([]);
 
-    const [listQuiz, setListQuiz] = useState([]);
+  useEffect(() => {
+    //call api fetch all quiz
+    fetchQuiz();
+  }, []);
 
-    useState(() => {
-        //call api fetch all quiz
-    }, []);
+  const fetchQuiz = async () => {
+    let res = await getAllQuizForAdmin();
+    console.log(">>> check res quiz:", res);
+  };
   return (
     <div>
       <table className="table table-hover table-bordered">
