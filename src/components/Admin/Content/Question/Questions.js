@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Select from "react-select";
+import "./Questions.scss";
 
 const Questions = (props) => {
   const options = [
