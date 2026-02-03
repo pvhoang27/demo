@@ -109,6 +109,11 @@ const DetailQuiz = (props) => {
       //submiit api
       let res = await postSubmitQuiz(payload);
       console.log(">>> check res submit quiz: ", res);
+      if(res && res.EC ===0){
+        // alert(res.EM);
+      }else{
+        alert("Something wrongs....");
+      }
     }
   }
   return (
