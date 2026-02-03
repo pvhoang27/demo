@@ -36,8 +36,11 @@ const TableQuiz = (props) => {
                   <td>{item.id}</td>
                   <td>{item.name}</td>
                   <td>{item.description}</td>
-                  {/* <td>{item.type}</td> */}
-                  <td>Actions</td>
+                  <td>{item.difficulty}</td>
+                  <td>
+                    <button className="btn btn-warning"> Edit</button>
+                    <button className="btn btn-danger"> Delete</button>
+                    </td>
                 </tr>
               );
             })}
