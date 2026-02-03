@@ -17,7 +17,6 @@ const TableQuiz = (props) => {
     }
   };
   return (
-  
     <>
     <div>
         List Quizzes : 
