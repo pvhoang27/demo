@@ -50,7 +50,8 @@ const ManageQuiz = () => {
           <div className="my-3">
             <Select
               value={type}
-              //     onChange={this.handleChange}
+              defaultValue={type}
+              onChange={setType}
               options={options}
               placeholder={"Quiz type..."}
             />
