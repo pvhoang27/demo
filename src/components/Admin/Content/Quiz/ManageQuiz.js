@@ -10,7 +10,12 @@ const options = [
 const ManageQuiz = () => {
     const [name , setName] = useState("");
     const [description , setDescription] = useState("");
-    const [type , setType] = useState("");
+    const [type , setType] = useState("EASY");
+    const [image , setImage] = useState(null);
+
+    const handleChangeFile = (event) =>{
+
+    }
 
   return (
     <div className="quiz-container">
@@ -24,6 +29,8 @@ const ManageQuiz = () => {
               type="text"
               className="form-control"
               placeholder="your quiz nme"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
             />
             <label>Name</label>
           </div>
@@ -32,6 +39,8 @@ const ManageQuiz = () => {
               type="password"
               className="form-control"
               placeholder="description..."
+              value={description}
+              onChange={(event) => setDescription(event.target.value)}
             />
             <label>Description</label>
           </div>
@@ -45,7 +54,9 @@ const ManageQuiz = () => {
           </div>
           <div className="more-actions" form-group>
             <label className="mb-1"> Upload image </label>
-            <input type="file" className="form-control" />
+            <input type="file" className="form-control" 
+            onChange={(event) => handleChangeFile(event)}
+            />
           </div>
         </fieldset>
       </div>
