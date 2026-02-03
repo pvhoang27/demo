@@ -46,7 +46,7 @@ const ManageQuiz = () => {
           </div>
           <div className="my-3">
             <Select
-              //   value={selectedOption}
+                value={selectedOption}
               //     onChange={this.handleChange}
               options={options}
               placeholder={"Quiz type..."}
