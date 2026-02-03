@@ -1,4 +1,11 @@
 import "./ManageQuiz.scss";
+import Select from "react-select";
+
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" },
+];
 const ManageQuiz = () => {
   return (
     <div className="quiz-container">
@@ -13,19 +20,24 @@ const ManageQuiz = () => {
               className="form-control"
               placeholder="your quiz nme"
             />
-            <label >Name</label>
+            <label>Name</label>
           </div>
           <div className="form-floating">
             <input
               type="password"
-              className ="form-control"
+              className="form-control"
               placeholder="description..."
             />
-            <label >Description</label>
+            <label>Description</label>
           </div>
           <div className="more-actions">
-            <label > Upload image </label>
+            <label> Upload image </label>
             <input type="file" />
+            <Select
+              //   value={selectedOption}
+              //     onChange={this.handleChange}
+              options={options}
+            />
           </div>
         </fieldset>
       </div>
