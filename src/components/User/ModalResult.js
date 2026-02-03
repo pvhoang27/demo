@@ -16,8 +16,8 @@ const ModalResult = (props) => {
           <Modal.Title>Your Result ...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>Total Questions: {dataModalResult.countTotal} </div>
-          <div>Total Correct Answers: {dataModalResult.countCorrect} </div>
+          <div>Total Questions:<b> {dataModalResult.countTotal} </b></div>
+          <div>Total Correct Answers: <b>{dataModalResult.countCorrect} </b></div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
