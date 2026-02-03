@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { getDataQuiz } from "../../service/apiService";
+import { getDataQuiz, postSubmitQuiz } from "../../service/apiService";
 import _ from "lodash";
 import "./DetailQuiz.scss";
 import Question from "./Question";
@@ -79,7 +79,7 @@ const DetailQuiz = (props) => {
     }
   };
 
-  const handleFinishQuiz = () => {
+  const handleFinishQuiz = async () => {
 
     console.log(">>> check data quiz: ", dataQuiz);
     let payload = {
@@ -106,7 +106,9 @@ const DetailQuiz = (props) => {
         })
       })
       payload.answers = answers;
-      console.log(">>> check payload: ", payload);
+      //submiit api
+      let res = await postSubmitQuiz(payload);
+      console.log(">>> check res submit quiz: ", res);
     }
   }
   return (
