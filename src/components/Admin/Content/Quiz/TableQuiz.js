@@ -12,7 +12,9 @@ const TableQuiz = (props) => {
 
   const fetchQuiz = async () => {
     let res = await getAllQuizForAdmin();
-    console.log(">>> check res quiz:", res);
+    if (res && res.EC === 0) {
+      setListQuiz(res.DT);
+    }
   };
   return (
     <div>
@@ -27,23 +29,17 @@ const TableQuiz = (props) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {listQuiz &&
+            listQuiz.map((item, index) => {
+              return (
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
