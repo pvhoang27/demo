@@ -15,7 +15,6 @@ const ManageQuiz = () => {
 
   const handleChangeFile = (event) => {
     if (event.target && event.target.files && event.target.files[0]) {
-      setPreviewImage(URL.createObjectURL(event.target.files[0]));
       setImage(event.target.files[0]);
     }
   };
@@ -49,7 +48,6 @@ const ManageQuiz = () => {
           </div>
           <div className="my-3">
             <Select
-              value={type}
               defaultValue={type}
               onChange={setType}
               options={options}
@@ -65,7 +63,7 @@ const ManageQuiz = () => {
             />
           </div>
           <div className="mt-3">
-            <button className="btn btn-warining">Save</button>
+            <button className="btn btn-warning">Save</button>
           </div>
         </fieldset>
       </div>
