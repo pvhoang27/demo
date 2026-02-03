@@ -9,22 +9,30 @@ const Questions = (props) => {
     { value: "vanilla", label: "Vanilla" },
   ];
 
-  const[selectedQuiz, setSelectedQuiz] =  useState({});
+  const [selectedQuiz, setSelectedQuiz] = useState({});
   return (
     <div className="questions-container">
       <div className="title">Manage Questions</div>
       <div className="add-new-questions">
         <div className="col-6 from-group">
-        <label>Select Quiz: </label>
-
+          <label>Select Quiz: </label>
         </div>
         <Select
           defaultValue={selectedQuiz}
           onChange={setSelectedQuiz}
           options={options}
-          className="form-control"
-        
         />
+      </div>
+      <div>
+        
+        <div class="form-floating mb-3">
+          <input
+            type="type"
+            class="form-control"
+            placeholder="name@example.com"
+          />
+          <label>Description</label>
+        </div>
       </div>
     </div>
   );
