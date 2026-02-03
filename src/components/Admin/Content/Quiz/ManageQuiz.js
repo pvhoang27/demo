@@ -1,4 +1,5 @@
 import "./ManageQuiz.scss";
+import { useState } from "react";
 import Select from "react-select";
 
 const options = [
@@ -7,6 +8,10 @@ const options = [
   { value: "HARD", label: "HARD" },
 ];
 const ManageQuiz = () => {
+    const [name , setName] = useState("");
+    const [description , setDescription] = useState("");
+    const [type , setType] = useState("");
+
   return (
     <div className="quiz-container">
       <div className="title">Manage Quizzes</div>
