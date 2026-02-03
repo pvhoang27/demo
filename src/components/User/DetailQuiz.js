@@ -114,6 +114,11 @@ const DetailQuiz = (props) => {
       let res = await postSubmitQuiz(payload);
       console.log(">>> check res submit quiz: ", res);
       if(res && res.EC ===0){
+        setDataModalResult({
+          countCorrect : res.DT.countCorrect,
+          countTotal: res.DT.countTotal,
+          quizData : res.DT.quizData
+        });
         setIsShowModalResult(true);
       }else{
         alert("Something wrongs....");
@@ -155,6 +160,7 @@ const DetailQuiz = (props) => {
       <ModalResult 
         show={isShowModalResult}
         setShow={setIsShowModalResult}
+        dataModalResult={dataModalResult}
       />
     </div>
   );
