@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const TableQuiz = (props) => {
+
+    const [listQuiz, setListQuiz] = useState([]);
+
+    useState(() => {
+        //call api fetch all quiz
+    }, []);
   return (
     <div>
       <table className="table table-hover table-bordered">
