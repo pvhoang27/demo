@@ -37,7 +37,7 @@ const TableQuiz = (props) => {
                   <td>{item.name}</td>
                   <td>{item.description}</td>
                   <td>{item.difficulty}</td>
-                  <td>
+                  <td style={{ display: "flex", gap: "15px" }}>
                     <button className="btn btn-warning"> Edit</button>
                     <button className="btn btn-danger"> Delete</button>
                     </td>
