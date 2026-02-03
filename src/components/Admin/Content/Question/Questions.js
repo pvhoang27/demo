@@ -23,8 +23,8 @@ const Questions = (props) => {
           options={options}
         />
       </div>
-      <div className="mt-3 row">
-        Add questions :
+      Add questions :<div className="mt-3 ">Add questions :</div>
+      <div className="row">
         <div class="form-floating mb-3 col-6">
           <input
             type="type"
@@ -38,9 +38,7 @@ const Questions = (props) => {
           <input type="file" />
         </div>
         <div className="col-3">
-            <button>
-                Add new 
-            </button>
+          <button>Add new</button>
         </div>
       </div>
     </div>
