@@ -38,9 +38,9 @@ const ManageQuiz = () => {
               placeholder={"Quiz type..."}
             />
           </div>
-          <div className="more-actions">
-            <label> Upload image </label>
-            <input type="file" />
+          <div className="more-actions" form-group>
+            <label className="mb-1"> Upload image </label>
+            <input type="file" className="form-control" />
           </div>
         </fieldset>
       </div>
