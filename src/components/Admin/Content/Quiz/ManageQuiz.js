@@ -5,25 +5,26 @@ const ManageQuiz = () => {
       <div className="title">Manage Quizzes</div>
       <hr />
       <div className="add-new">
-        <fieldset class="border rounded-3 p-3">
-          <legend class="float-none w-auto px-3">Add new quiz:</legend>
-          <div class="form-floating mb-3">
+        <fieldset className="border rounded-3 p-3">
+          <legend className="float-none w-auto px-3">Add new quiz:</legend>
+          <div className="form-floating mb-3">
             <input
-              type="email"
-              class="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
+              type="text"
+              className="form-control"
+              placeholder="your quiz nme"
             />
-            <label for="floatingInput">Email address</label>
+            <label >Name</label>
           </div>
-          <div class="form-floating">
+          <div className="form-floating">
             <input
               type="password"
-              class="form-control"
-              id="floatingPassword"
-              placeholder="Password"
+              className ="form-control"
+              placeholder="description..."
             />
-            <label for="floatingPassword">Password</label>
+            <label >Description</label>
+          </div>
+          <div className="more-actions">
+            
           </div>
         </fieldset>
       </div>
