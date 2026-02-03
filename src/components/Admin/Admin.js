@@ -18,11 +18,13 @@ const Admin = (props) => {
         <div className="admin-header">
           <FaBars onClick={() => setCollapsed(!collapsed)} />
         </div>
-        <PerfectScrollbar>
+        
           <div className="admin-main">
+            <PerfectScrollbar>
             <Outlet />
+            </PerfectScrollbar>
           </div>
-        </PerfectScrollbar>
+        
       </div>
 
       {/* <div className="admin-content">
