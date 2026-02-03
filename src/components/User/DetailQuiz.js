@@ -6,6 +6,7 @@ import "./DetailQuiz.scss";
 import Question from "./Question";
 import { set } from "nprogress";
 import { useState } from "react";
+import ModalResult from "./ModalResult";
 const DetailQuiz = (props) => {
   const params = useParams();
   const location = useLocation();
@@ -13,6 +14,8 @@ const DetailQuiz = (props) => {
 
   const [dataQuiz, setDataQuiz] = useState([]);
   const [index, setIndex] = useState(0);
+
+  const[isShowModalResult, setIsShowModalResult] = useState(false);
 
   useEffect(() => {
     fetchQuestions();
@@ -143,13 +146,15 @@ const DetailQuiz = (props) => {
           <button 
           onClick={() => handleFinishQuiz()}
           className="btn btn-warning ">
-          
-           
             Finish
           </button>
         </div>
       </div>
       <div className="right-content">count down</div>
+      <ModalResult 
+        show={isShowModalResult}
+        setShow={setIsShowModalResult}
+      />
     </div>
   );
 };
