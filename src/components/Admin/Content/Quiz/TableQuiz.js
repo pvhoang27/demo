@@ -32,11 +32,12 @@ const TableQuiz = (props) => {
           {listQuiz &&
             listQuiz.map((item, index) => {
               return (
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                <tr key = {`table-quiz-${index}`}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.description}</td>
+                  {/* <td>{item.type}</td> */}
+                  <td>Actions</td>
                 </tr>
               );
             })}
