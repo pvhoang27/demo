@@ -1,3 +1,4 @@
+import './ManageQuiz.css';
 const ManageQuiz = () => {
   return (
     <div className="quiz-container">
