@@ -2,6 +2,7 @@ import "./ManageQuiz.scss";
 import { useState } from "react";
 import Select from "react-select";
 import { postCreateNewQuiz } from "../../../../service/apiService";
+import { toast } from "react-toastify";
 const options = [
   { value: "EASY", label: "EASY" },
   { value: "MEDIUM", label: "MEDIUM" },
@@ -21,7 +22,11 @@ const ManageQuiz = () => {
 
   const handleSubmitQuiz = async () => {
     let res = await postCreateNewQuiz(description, name, type?.value, image);
-    console.log(">>> check res create new quiz ", res);
+    if (res && res.EC === 0) {
+      toast.success(res.EM);
+    } else {
+      toast.error(res.EM);
+    }
   };
 
   return (
