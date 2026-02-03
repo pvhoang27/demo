@@ -1,7 +1,7 @@
 import "./ManageQuiz.scss";
 import { useState } from "react";
 import Select from "react-select";
-import {postCreateNewQuiz} from "../../../../service/apiService";
+import { postCreateNewQuiz } from "../../../../service/apiService";
 const options = [
   { value: "EASY", label: "EASY" },
   { value: "MEDIUM", label: "MEDIUM" },
@@ -10,7 +10,7 @@ const options = [
 const ManageQuiz = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [type, setType] = useState("EASY");
+  const [type, setType] = useState("");
   const [image, setImage] = useState(null);
 
   const handleChangeFile = (event) => {
@@ -20,7 +20,8 @@ const ManageQuiz = () => {
   };
 
   const handleSubmitQuiz = async () => {
-    let res = await postCreateNewQuiz(description , name , )
+    let res = await postCreateNewQuiz(description, name, type?.value, image);
+    console.log(">>> check res create new quiz ", res);
   };
 
   return (
