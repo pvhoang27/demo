@@ -58,6 +58,9 @@ const ManageQuiz = () => {
             onChange={(event) => handleChangeFile(event)}
             />
           </div>
+          <div className="mt-3">
+            <button className="btn btn-warining">Save</button>
+          </div>
         </fieldset>
       </div>
       <div className="list-detail">table</div>
