@@ -21,6 +21,26 @@ const ManageQuiz = () => {
           />
           <label for="floatingPassword">Password</label>
         </div>
+        <fieldset>
+          <legend>Personalia:</legend>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" />
+          <br />
+          <br />
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" />
+          <br />
+          <br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+          <br />
+          <br />
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" />
+          <br />
+          <br />
+          <input type="submit" value="Submit" />
+        </fieldset>
       </div>
       <div className="list-detail">table</div>
     </div>
