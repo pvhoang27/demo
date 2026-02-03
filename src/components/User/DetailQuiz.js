@@ -16,6 +16,7 @@ const DetailQuiz = (props) => {
   const [index, setIndex] = useState(0);
 
   const[isShowModalResult, setIsShowModalResult] = useState(false);
+  const[dataModalResult, setDataModalResult] = useState({});
 
   useEffect(() => {
     fetchQuestions();
@@ -113,7 +114,7 @@ const DetailQuiz = (props) => {
       let res = await postSubmitQuiz(payload);
       console.log(">>> check res submit quiz: ", res);
       if(res && res.EC ===0){
-        // alert(res.EM);
+        setIsShowModalResult(true);
       }else{
         alert("Something wrongs....");
       }

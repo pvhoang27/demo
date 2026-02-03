@@ -3,27 +3,26 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const ModalResult = (props) => {
-  const { show, setShow,  } = props;
+  const { show, setShow } = props;
 
   const handleClose = () => setShow(false);
-
-  
 
   return (
     <>
       <Modal show={show} onHide={handleClose} backdrop="static">
         <Modal.Header closeButton>
-          <Modal.Title>Confirm Delete the User ? </Modal.Title>
+          <Modal.Title>Your Result ...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Are you sure you to delete this user.email =
+          <div>Total Questions: 10 </div>
+          <div>Total Correct Answers: 9 </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Show answers
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Close 
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
