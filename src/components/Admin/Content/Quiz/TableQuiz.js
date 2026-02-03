@@ -1,13 +1,14 @@
 const TableQuiz = (props) => {
   return (
     <div>
-      <table className="table">
+      <table className="table table-hover table-bordered">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Type</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
