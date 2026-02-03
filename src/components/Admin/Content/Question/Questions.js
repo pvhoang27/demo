@@ -1,7 +1,12 @@
 const Questions = (props) => {
   return (
   <div className="questions-container">
-    Questions Component
+    <div className="title">
+        Manage Questions
+    </div>
+    <div className="add-new-questions">
+        
+    </div>
     </div>
     );
 }
