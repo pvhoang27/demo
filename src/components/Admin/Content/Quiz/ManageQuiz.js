@@ -19,6 +19,10 @@ const ManageQuiz = () => {
     }
   };
 
+  const handleSubmitQuiz = () => {
+    alert("me");
+  };
+
   return (
     <div className="quiz-container">
       <div className="title">Manage Quizzes</div>
@@ -63,7 +67,12 @@ const ManageQuiz = () => {
             />
           </div>
           <div className="mt-3">
-            <button className="btn btn-warning">Save</button>
+            <button
+              onClick={() => handleSubmitQuiz()}
+              className="btn btn-warning"
+            >
+              Save
+            </button>
           </div>
         </fieldset>
       </div>
