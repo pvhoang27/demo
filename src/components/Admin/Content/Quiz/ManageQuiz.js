@@ -21,8 +21,8 @@ const ManageQuiz = () => {
           />
           <label for="floatingPassword">Password</label>
         </div>
-        <fieldset>
-          <legend>Personalia:</legend>
+        <fieldset class="border rounded-3 p-3">
+          <legend class="float-none w-auto px-3">Personalia:</legend>
           <label for="fname">First name:</label>
           <input type="text" id="fname" name="fname" />
           <br />
