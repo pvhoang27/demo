@@ -90,17 +90,21 @@ const Questions = (props) => {
       }
     }
   };
-  const handleOnChangeFileQuestion = (questionId , event) => {
-      let questionsClone = _.cloneDeep(questions);
-      let index = questionsClone.findIndex((item) => item.id === questionId);
+  const handleOnChangeFileQuestion = (questionId, event) => {
+    let questionsClone = _.cloneDeep(questions);
+    let index = questionsClone.findIndex((item) => item.id === questionId);
 
-      if (index > -1 &&event.target && event.target.files && event.target.files[0]) {
-        questionsClone[index].imageFile = event.target.files[0];
-        console.log("file: ", event.target.files[0]);
-        //  questionsClone[index].imageName = value;
-        setQuestions(questionsClone);
-      }
-  }
+    if (
+      index > -1 &&
+      event.target &&
+      event.target.files &&
+      event.target.files[0]
+    ) {
+      questionsClone[index].imageFile = event.target.files[0];
+      questionsClone[index].imageName = event.target.files[0].name;
+      setQuestions(questionsClone);
+    }
+  };
   console.log("questions: ", questions);
   return (
     <div className="questions-container">
@@ -142,12 +146,14 @@ const Questions = (props) => {
                     <label htmlFor={`${question.id}`}>
                       <RiImageAddFill className="label-up" />
                     </label>
-                    <input 
-                    id ={`${question.id}`}
-                    onChange={(event) => handleOnChangeFileQuestion(
-                      question.id , event
-                    )}
-                    type={"file"} hidden />
+                    <input
+                      id={`${question.id}`}
+                      onChange={(event) =>
+                        handleOnChangeFileQuestion(question.id, event)
+                      }
+                      type={"file"}
+                      hidden
+                    />
                     <span>0 file is uploaded</span>
                   </div>
                   <div className="btn-add">
