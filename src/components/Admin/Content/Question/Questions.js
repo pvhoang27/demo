@@ -139,10 +139,11 @@ const Questions = (props) => {
                     <label>Question {index + 1} 's description</label>
                   </div>
                   <div className="group-upload">
-                    <label>
+                    <label htmlFor={`${question.id}`}>
                       <RiImageAddFill className="label-up" />
                     </label>
                     <input 
+                    id ={`${question.id}`}
                     onChange={(event) => handleOnChangeFileQuestion(
                       question.id , event
                     )}
