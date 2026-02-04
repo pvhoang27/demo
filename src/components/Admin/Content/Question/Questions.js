@@ -41,14 +41,11 @@ const Questions = (props) => {
         </div>
         <div className="btn-add">
           <span
-          ><TbHeartPlus/> 
+          ><TbHeartPlus className="icon-add" /> 
           </span>
           
         </div>
-        <div className="answers">
-          
-          <input type="text" />
-        </div>
+      
       </div>
     </div>
   );
