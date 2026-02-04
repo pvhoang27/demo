@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Select from "react-select";
 import "./Questions.scss";
+import {TbHeartPlus} from 'react-icons/tb'
 
 const Questions = (props) => {
   const options = [
@@ -25,7 +26,7 @@ const Questions = (props) => {
       </div>
       <div className="mt-3 ">Add questions :</div>
       <div className="question-content">
-        <div class="form-floating mb-3 col-6">
+        <div class="form-floating description"> 
           <input
             type="type"
             class="form-control"
@@ -33,12 +34,19 @@ const Questions = (props) => {
           />
           <label>Description</label>
         </div>
-        <div className="col-3 ">
+        <div className="group-upload">
           <label>Upload Image</label>
           <input type="file" />
         </div>
-        <div className="col-3">
-          <button>Add new</button>
+        <div className="btn-add">
+          <span
+          ><TbHeartPlus/> 
+          </span>
+          
+        </div>
+        <div className="answers">
+          
+          <input type="text" />
         </div>
       </div>
     </div>
