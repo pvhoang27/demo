@@ -105,6 +105,19 @@ const Questions = (props) => {
       setQuestions(questionsClone);
     }
   };
+
+  const handlAnswerQuestion = (type, answerId, questionId, value) => {
+     let questionsClone = _.cloneDeep(questions);
+let index = questionsClone.findIndex((item) => item.id === questionId);
+    if (index > -1) {
+      questionsClone[index].answers.map((answer) => {
+          
+      })
+    
+      setQuestions(questionsClone);
+    }
+
+  }
   console.log("questions: ", questions);
   return (
     <div className="questions-container">
@@ -154,11 +167,11 @@ const Questions = (props) => {
                       type={"file"}
                       hidden
                     />
-                    <span>{question.imageName 
-                    ?
-                     question.imageName 
-                     :
-                      "0 file is uploaded"}</span>
+                    <span>
+                      {question.imageName
+                        ? question.imageName
+                        : "0 file is uploaded"}
+                    </span>
                   </div>
                   <div className="btn-add">
                     <span onClick={() => handleAddRemoveQuestion("ADD", "")}>
@@ -185,9 +198,12 @@ const Questions = (props) => {
                           className="form-check-input iscorrect"
                           type="checkbox"
                           checked={answer.isCorrect}
-                          onChange={(event) => handlAnswerQuestion
-                            ('CHECKBOX', answer.id, question.id
-                              ,event.target.checked
+                          onChange={(event) =>
+                            handlAnswerQuestion(
+                              "CHECKBOX",
+                              answer.id,
+                              question.id,
+                              event.target.checked,
                             )
                           }
                         />
@@ -197,6 +213,14 @@ const Questions = (props) => {
                             type="type"
                             className="form-control"
                             placeholder="name@example.com"
+                            onChange={(event) =>
+                              handlAnswerQuestion(
+                                "INPUT",
+                                answer.id,
+                                question.id,
+                                event.target.value,
+                              )
+                            }
                           />
                           <label>Answers {index + 1} </label>
                         </div>
