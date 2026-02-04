@@ -3,6 +3,8 @@ import Select from "react-select";
 import "./Questions.scss";
 import { BsFillPatchPlusFill } from "react-icons/bs";
 import { BsPatchMinusFill } from "react-icons/bs";
+import { AiOutlineMinusCircle } from "react-icons/ai";
+import { AiFillPlusSquare } from "react-icons/ai";
 
 const Questions = (props) => {
   const options = [
@@ -62,10 +64,10 @@ const Questions = (props) => {
           </div>
           <div className="btn-add">
             <span>
-              <BsFillPatchPlusFill className="icon-add" />
+              <AiFillPlusSquare className="icon-add" />
             </span>
             <span>
-              <BsPatchMinusFill className="icon-remove" />
+              <AiOutlineMinusCircle className="icon-remove" />
             </span>
           </div>
         </div>
