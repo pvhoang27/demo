@@ -53,8 +53,8 @@ const Questions = (props) => {
           </div>
         </div>
         <div className="answers-content">
-          <input className="form-check-input" type="checkbox" />
-          <div class="form-floating description">
+          <input className="form-check-input iscorrect" type="checkbox" />
+          <div class="form-floating answer-name">
             <input
               type="type"
               class="form-control"
@@ -62,7 +62,7 @@ const Questions = (props) => {
             />
             <label>answer 1 </label>
           </div>
-          <div className="btn-add">
+          <div className="btn-group">
             <span>
               <AiFillPlusSquare className="icon-add" />
             </span>

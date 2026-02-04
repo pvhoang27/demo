@@ -43,4 +43,27 @@
             }
         }
     }
+    .answers-content{
+        display: flex;
+        gap : 10px;
+        .iscorrect{
+
+        }
+        .answer-name{
+            width: 60%;
+        }
+        .btn-group{
+            .icon-add{
+                font-size : 30px;
+                color: red;
+                cursor: pointer;
+            }
+            .icon-remove{
+                margin-left: 10px;
+                font-size : 30px;
+                color: green;
+                cursor: pointer;
+            }
+        }
+    }
 }
