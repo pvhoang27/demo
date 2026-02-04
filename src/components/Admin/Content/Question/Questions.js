@@ -131,7 +131,11 @@ if (index > -1) {
     }
 
   }
-  console.log("questions: ", questions);
+  const handleSubmitQuestionForQuiz = () => {
+    console.log("questions: ", questions);
+  }
+
+  
   return (
     <div className="questions-container">
       <div className="title">Manage Questions</div>
@@ -265,6 +269,17 @@ if (index > -1) {
               </div>
             );
           })}
+          {
+            questions && questions.length >0 && 
+            <div>
+              <button 
+              onClick={() => handleSubmitQuestionForQuiz() }
+              className="btn btn-warning">
+                Save questions
+              </button>
+              </div>
+
+          }
       </div>
     </div>
   );
