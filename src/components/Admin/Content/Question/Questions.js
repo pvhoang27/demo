@@ -20,13 +20,13 @@ const Questions = (props) => {
   const [questions, setQuestions] = useState([
     {
       id: uuidv4(),
-      desciption: "questions 1",
+      desciption: "",
       imageFile: "",
       imageName: "",
       answers: [
         {
           id: uuidv4(),
-          description: "answer 1",
+          description: "",
           isCorrect: false,
         },
       ],
