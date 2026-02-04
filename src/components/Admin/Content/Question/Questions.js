@@ -90,6 +90,17 @@ const Questions = (props) => {
       }
     }
   };
+  const handleOnChangeFileQuestion = (questionId , event) => {
+      let questionsClone = _.cloneDeep(questions);
+      let index = questionsClone.findIndex((item) => item.id === questionId);
+
+      if (index > -1 &&event.target && event.target.files && event.target.files[0]) {
+        questionsClone[index].imageFile = event.target.files[0];
+        console.log("file: ", event.target.files[0]);
+        //  questionsClone[index].imageName = value;
+        setQuestions(questionsClone);
+      }
+  }
   console.log("questions: ", questions);
   return (
     <div className="questions-container">
@@ -131,7 +142,11 @@ const Questions = (props) => {
                     <label>
                       <RiImageAddFill className="label-up" />
                     </label>
-                    <input type={"file"} hidden />
+                    <input 
+                    onChange={(event) => handleOnChangeFileQuestion(
+                      question.id , event
+                    )}
+                    type={"file"} hidden />
                     <span>0 file is uploaded</span>
                   </div>
                   <div className="btn-add">
