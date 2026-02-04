@@ -79,9 +79,17 @@ const Questions = (props) => {
       setQuestions(questionsClone);
     }
   };
-  const handleOnChange =(type, questionId , value) =>{
-    
-  }
+  const handleOnChange = (type, questionId, value) => {
+    if (type === "QUESTION") {
+      let questionsClone = _.cloneDeep(questions);
+      let index = questionsClone.findIndex((item) => item.id === questionId);
+
+      if (index > -1) {
+        questionsClone[index].desciption = value;
+        setQuestions(questionsClone);
+      }
+    }
+  };
   console.log("questions: ", questions);
   return (
     <div className="questions-container">
@@ -109,8 +117,13 @@ const Questions = (props) => {
                       className="form-control"
                       placeholder="name@example.com"
                       value={question.desciption}
-                      oncChange = {(event) => handleOnChange('QUESTION',
-                         question.id, event.target.value)}
+                      onChange={(event) =>
+                        handleOnChange(
+                          "QUESTION",
+                          question.id,
+                          event.target.value,
+                        )
+                      }
                     />
                     <label>Question {index + 1} 's description</label>
                   </div>
