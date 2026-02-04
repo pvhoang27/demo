@@ -37,7 +37,7 @@ const Questions = (props) => {
         <div className="group-upload">
           <label className="label-up">Upload Image</label>
           <input type="file" hidden />
-          <span>myImage.png</span>
+          <span>0 file is uploaded</span>
         </div>
         <div className="btn-add">
           <span
