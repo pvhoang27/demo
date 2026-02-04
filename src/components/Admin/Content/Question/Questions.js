@@ -110,8 +110,21 @@ const Questions = (props) => {
      let questionsClone = _.cloneDeep(questions);
 let index = questionsClone.findIndex((item) => item.id === questionId);
     if (index > -1) {
-      questionsClone[index].answers.map((answer) => {
-          
+      questionsClone[index].answers =
+       questionsClone[index].answers.map((answer) => {
+          if(answer.id === answerId){
+            if(type ==="CHECKBOX"){
+                answer.isCorrect = value;
+            }
+            if(type ==="INPUT"){
+                answer.description = value;
+            }
+            
+            
+            
+
+          }
+          return answer ; 
       })
     
       setQuestions(questionsClone);
