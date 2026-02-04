@@ -154,7 +154,11 @@ const Questions = (props) => {
                       type={"file"}
                       hidden
                     />
-                    <span>0 file is uploaded</span>
+                    <span>{question.imageName 
+                    ?
+                     question.imageName 
+                     :
+                      "0 file is uploaded"}</span>
                   </div>
                   <div className="btn-add">
                     <span onClick={() => handleAddRemoveQuestion("ADD", "")}>
