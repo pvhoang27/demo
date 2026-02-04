@@ -186,7 +186,9 @@ const Questions = (props) => {
                           type="checkbox"
                           checked={answer.isCorrect}
                           onChange={(event) => handlAnswerQuestion
-                            ('CHECKBOX', answer.id, question.id)
+                            ('CHECKBOX', answer.id, question.id
+                              ,event.target.checked
+                            )
                           }
                         />
                         <div className="form-floating anwser-name">
