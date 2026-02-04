@@ -184,6 +184,7 @@ const Questions = (props) => {
                         <input
                           className="form-check-input iscorrect"
                           type="checkbox"
+                          checked={answer.isCorrect}
                         />
                         <div className="form-floating anwser-name">
                           <input
