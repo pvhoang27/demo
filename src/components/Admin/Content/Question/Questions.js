@@ -23,7 +23,7 @@ const Questions = (props) => {
           options={options}
         />
       </div>
-      Add questions :<div className="mt-3 ">Add questions :</div>
+      <div className="mt-3 ">Add questions :</div>
       <div className="row">
         <div class="form-floating mb-3 col-6">
           <input
