@@ -52,6 +52,22 @@ const Questions = (props) => {
         </div>
         <div className="answers-content">
           <input className="form-check-input" type="checkbox" />
+          <div class="form-floating description">
+            <input
+              type="type"
+              class="form-control"
+              placeholder="name@example.com"
+            />
+            <label>answer 1 </label>
+          </div>
+          <div className="btn-add">
+            <span>
+              <BsFillPatchPlusFill className="icon-add" />
+            </span>
+            <span>
+              <BsPatchMinusFill className="icon-remove" />
+            </span>
+          </div>
         </div>
       </div>
     </div>
