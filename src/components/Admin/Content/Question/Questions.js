@@ -109,7 +109,7 @@ const Questions = (props) => {
   const handlAnswerQuestion = (type, answerId, questionId, value) => {
      let questionsClone = _.cloneDeep(questions);
 let index = questionsClone.findIndex((item) => item.id === questionId);
-    if (index > -1) {
+if (index > -1) {
       questionsClone[index].answers =
        questionsClone[index].answers.map((answer) => {
           if(answer.id === answerId){
