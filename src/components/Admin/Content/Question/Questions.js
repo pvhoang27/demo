@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Select from "react-select";
 import "./Questions.scss";
-import {TbHeartPlus} from 'react-icons/tb'
+import {BsFillPatchPlusFill} from 'react-icons/bs'
+import {BsPatchMinusFill} from 'react-icons/bs'
+
 
 const Questions = (props) => {
   const options = [
@@ -25,6 +27,7 @@ const Questions = (props) => {
         />
       </div>
       <div className="mt-3 ">Add questions :</div>
+      <div>
       <div className="question-content">
         <div class="form-floating description"> 
           <input
@@ -40,12 +43,19 @@ const Questions = (props) => {
           <span>0 file is uploaded</span>
         </div>
         <div className="btn-add">
-          <span
-          ><TbHeartPlus className="icon-add" /> 
+          <span>
+            <BsFillPatchPlusFill className="icon-add" /> 
+          </span>
+          <span>
+            <BsPatchMinusFill className="icon-remove" /> 
           </span>
           
         </div>
       
+      </div>
+      <div className="answers-content">
+        
+      </div>
       </div>
     </div>
   );
