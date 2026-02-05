@@ -270,15 +270,7 @@ const Questions = (props) => {
                     );
                   })}
 
-                {isPreviewImage === true && (
-                  <Lightbox 
-                  image={URL.createObjectURL(question.imageFile)} 
-                  title={question.imageName}
-                  onClose ={() => setIsPreviewImage(false)}
-                  >
-                    {console.log(URL.createObjectURL(question.imageFile))}
-                  </Lightbox>
-                )}
+                
               </div>
             );
           })}
@@ -292,6 +284,15 @@ const Questions = (props) => {
             </button>
           </div>
         )}
+        {isPreviewImage === true && (
+                  <Lightbox 
+                  image={URL.createObjectURL(question.imageFile)} 
+                  title={question.imageName}
+                  onClose ={() => setIsPreviewImage(false)}
+                  >
+                    {console.log(URL.createObjectURL(question.imageFile))}
+                  </Lightbox>
+                )}
       </div>
     </div>
   );
