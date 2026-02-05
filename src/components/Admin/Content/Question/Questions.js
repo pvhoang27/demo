@@ -160,17 +160,16 @@ const Questions = (props) => {
     // postCreateNewQuestionForQuiz, postCreateNewAnswerForQuestion
 
     //submit questions
-    const createdQuestions = questions.map(async (question) => {
+    await Promise.all(questions.map(async (question) => {
       const q = await postCreateNewQuestionForQuiz(
         +selectedQuiz.value,
         question.description,
         question.imageFile,
       );
-      return q;
-    });
+      console.log('q: ', q);
 
-    let a = await Promise.all(createdQuestions);
-    console.log("createdQuestions: ", a);
+    }));
+
 
     //submit answers
 
