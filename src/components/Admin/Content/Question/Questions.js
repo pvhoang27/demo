@@ -156,8 +156,7 @@ const Questions = (props) => {
     //todo
 
     //validate data
-    console.log("questions: ", questions, selectedQuiz);
-    // postCreateNewQuestionForQuiz, postCreateNewAnswerForQuestion
+
 
     //submit questions
     await Promise.all(
@@ -167,7 +166,7 @@ const Questions = (props) => {
           question.description,
           question.imageFile,
         );
-
+         //submit answers
         await Promise.all(
           question.answers.map(async (answer) => {
             await postCreateNewAnswerForQuestion(
@@ -181,7 +180,7 @@ const Questions = (props) => {
       }),
     );
 
-    //submit answers
+   
   };
 
   const handlePreviewImage = (questionId) => {
