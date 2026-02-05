@@ -19,7 +19,7 @@ const Questions = (props) => {
   const [questions, setQuestions] = useState([
     {
       id: uuidv4(),
-      desciption: "",
+      description: "",
       imageFile: "",
       imageName: "",
       answers: [
@@ -62,7 +62,7 @@ const Questions = (props) => {
     if (type === "ADD") {
       const newQuestion = {
         id: uuidv4(),
-        desciption: "",
+        description: "",
         imageFile: "",
         imageName: "",
         answers: [
@@ -110,7 +110,7 @@ const Questions = (props) => {
       let index = questionsClone.findIndex((item) => item.id === questionId);
 
       if (index > -1) {
-        questionsClone[index].desciption = value;
+        questionsClone[index].description = value;
         setQuestions(questionsClone);
       }
     }
@@ -174,7 +174,7 @@ const Questions = (props) => {
 
     //submit answers
 
-    
+
   };
 
   const handlePreviewImage = (questionId) => {
@@ -215,7 +215,7 @@ const Questions = (props) => {
                       type="type"
                       className="form-control"
                       placeholder="name@example.com"
-                      value={question.desciption}
+                      value={question.description}
                       onChange={(event) =>
                         handleOnChange(
                           "QUESTION",
