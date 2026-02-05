@@ -12,13 +12,6 @@ import Lightbox from "react-awesome-lightbox";
 import { getAllQuizForAdmin } from "../../../../service/apiService";
 
 const Questions = (props) => {
-  // const options = [
-  //   { value: "chocolate", label: "Chocolate" },
-  //   { value: "strawberry", label: "Strawberry" },
-  //   { value: "vanilla", label: "Vanilla" },
-  // ];
-  const [selectedQuiz, setSelectedQuiz] = useState({});
-
   const [questions, setQuestions] = useState([
     {
       id: uuidv4(),
@@ -41,8 +34,8 @@ const Questions = (props) => {
     title: "",
     url: "",
   });
-
   const [listQuiz, setListQuiz] = useState([]);
+  const [selectedQuiz, setSelectedQuiz] = useState({});
 
   useEffect(() => {
     fetchQuiz();
@@ -52,16 +45,14 @@ const Questions = (props) => {
     let res = await getAllQuizForAdmin();
     if (res && res.EC === 0) {
       let newQuiz = res.DT.map((item) => {
-        return { 
-          value: item.id, 
-          label: `${item.id} - ${item.description}`
-         };
+        return {
+          value: item.id,
+          label: `${item.id} - ${item.description}`,
+        };
       });
       setListQuiz(newQuiz);
     }
   };
-
-  console.log("listQuiz: ", listQuiz);
 
   const handleAddRemoveQuestion = (type, id) => {
     if (type === "ADD") {
@@ -158,7 +149,7 @@ const Questions = (props) => {
     }
   };
   const handleSubmitQuestionForQuiz = () => {
-    console.log("questions: ", questions);
+    console.log("questions: ", questions,selectedQuiz);
   };
 
   const handlePreviewImage = (questionId) => {
