@@ -10,7 +10,6 @@ import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
 
-
 const Questions = (props) => {
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -34,6 +33,8 @@ const Questions = (props) => {
       ],
     },
   ]);
+
+  const [isPreviewImage, setIsPreviewImage] = useState(false);
 
   const handleAddRemoveQuestion = (type, id) => {
     if (type === "ADD") {
@@ -109,35 +110,30 @@ const Questions = (props) => {
   };
 
   const handlAnswerQuestion = (type, answerId, questionId, value) => {
-     let questionsClone = _.cloneDeep(questions);
-let index = questionsClone.findIndex((item) => item.id === questionId);
-if (index > -1) {
-      questionsClone[index].answers =
-       questionsClone[index].answers.map((answer) => {
-          if(answer.id === answerId){
-            if(type ==="CHECKBOX"){
-                answer.isCorrect = value;
+    let questionsClone = _.cloneDeep(questions);
+    let index = questionsClone.findIndex((item) => item.id === questionId);
+    if (index > -1) {
+      questionsClone[index].answers = questionsClone[index].answers.map(
+        (answer) => {
+          if (answer.id === answerId) {
+            if (type === "CHECKBOX") {
+              answer.isCorrect = value;
             }
-            if(type ==="INPUT"){
-                answer.description = value;
+            if (type === "INPUT") {
+              answer.description = value;
             }
-            
-            
-            
-
           }
-          return answer ; 
-      })
-    
+          return answer;
+        },
+      );
+
       setQuestions(questionsClone);
     }
-
-  }
+  };
   const handleSubmitQuestionForQuiz = () => {
     console.log("questions: ", questions);
-  }
+  };
 
-  
   return (
     <div className="questions-container">
       <div className="title">Manage Questions</div>
@@ -187,9 +183,13 @@ if (index > -1) {
                       hidden
                     />
                     <span>
-                      {question.imageName
-                        ? question.imageName
-                        : "0 file is uploaded"}
+                      {question.imageName ? (
+                        <span onClick={() => setIsPreviewImage(true)}>
+                          {question.imageName}
+                        </span>
+                      ) : (
+                        "0 file is uploaded"
+                      )}
                     </span>
                   </div>
                   <div className="btn-add">
@@ -268,23 +268,26 @@ if (index > -1) {
                       </div>
                     );
                   })}
+
+                {isPreviewImage === true && (
+                  <Lightbox image="image_url" title={question.imageName}>
+                    {" "}
+                  </Lightbox>
+                )}
               </div>
             );
           })}
-          {
-            questions && questions.length >0 && 
-            <div>
-              <button 
-              onClick={() => handleSubmitQuestionForQuiz() }
-              className="btn btn-warning">
-                Save questions
-              </button>
-              </div>
-
-          }
+        {questions && questions.length > 0 && (
+          <div>
+            <button
+              onClick={() => handleSubmitQuestionForQuiz()}
+              className="btn btn-warning"
+            >
+              Save questions
+            </button>
+          </div>
+        )}
       </div>
-      <Lightbox image="image_url" title="Image Title"> </Lightbox>
-
     </div>
   );
 };
