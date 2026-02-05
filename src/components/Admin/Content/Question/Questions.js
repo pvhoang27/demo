@@ -36,6 +36,10 @@ const Questions = (props) => {
 
   const [isPreviewImage, setIsPreviewImage] = useState(false);
 
+  const [dataImagePreview, setDataImagePreview] = useState({
+    title: "",
+    url: "",
+  });
   const handleAddRemoveQuestion = (type, id) => {
     if (type === "ADD") {
       const newQuestion = {
@@ -134,6 +138,19 @@ const Questions = (props) => {
     console.log("questions: ", questions);
   };
 
+  const handlePreviewImage = (questionId) => {
+    let questionsClone = _.cloneDeep(questions);
+    let index = questionsClone.findIndex((item) => item.id === questionId);
+
+    if (index > -1) {
+      setDataImagePreview({
+        url: URL.createObjectURL(questionsClone[index].imageFile),
+        title: questionsClone[index].imageName,
+      });
+      setIsPreviewImage(true);
+    }
+  };
+
   return (
     <div className="questions-container">
       <div className="title">Manage Questions</div>
@@ -184,8 +201,10 @@ const Questions = (props) => {
                     />
                     <span>
                       {question.imageName ? (
-                        <span style={{cursor : 'pointer'}}
-                        onClick={() => setIsPreviewImage(true)}>
+                        <span
+                          style={{ cursor: "pointer" }}
+                          onClick={() => handlePreviewImage(question.id)}
+                        >
                           {question.imageName}
                         </span>
                       ) : (
@@ -269,8 +288,6 @@ const Questions = (props) => {
                       </div>
                     );
                   })}
-
-                
               </div>
             );
           })}
@@ -285,14 +302,12 @@ const Questions = (props) => {
           </div>
         )}
         {isPreviewImage === true && (
-                  <Lightbox 
-                  image={URL.createObjectURL(question.imageFile)} 
-                  title={question.imageName}
-                  onClose ={() => setIsPreviewImage(false)}
-                  >
-                    {console.log(URL.createObjectURL(question.imageFile))}
-                  </Lightbox>
-                )}
+          <Lightbox
+            image={dataImagePreview.url}
+            title={dataImagePreview.title}
+            onClose={() => setIsPreviewImage(false)}
+          ></Lightbox>
+        )}
       </div>
     </div>
   );
