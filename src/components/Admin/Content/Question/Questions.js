@@ -9,6 +9,8 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
+import { getAllQuizForAdmin } from "../../../../service/apiService";
+
 
 const Questions = (props) => {
   const options = [
@@ -44,9 +46,21 @@ const Questions = (props) => {
 
   const [listQuiz ,setListQuiz] = useState([]);
 
-  useEffect(() => {
-    //call api get quiz for select
-  }, []);
+ useEffect(() => {
+     fetchQuiz();
+   }, []);
+ 
+   const fetchQuiz = async () => {
+   
+     let res = await getAllQuizForAdmin();
+     if (res && res.EC === 0) {
+       setListQuiz(res.DT);
+     }
+   };
+
+   console.log("listQuiz: ", listQuiz);
+
+
   const handleAddRemoveQuestion = (type, id) => {
     if (type === "ADD") {
       const newQuestion = {
