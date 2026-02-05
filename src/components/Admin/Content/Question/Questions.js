@@ -160,20 +160,29 @@ const Questions = (props) => {
     // postCreateNewQuestionForQuiz, postCreateNewAnswerForQuestion
 
     //submit questions
-    await Promise.all(questions.map(async (question) => {
-      const q = await postCreateNewQuestionForQuiz(
-        +selectedQuiz.value,
-        question.description,
-        question.imageFile,
-      );
-      console.log('q: ', q);
+    await Promise.all(
+      questions.map(async (question) => {
+        const q = await postCreateNewQuestionForQuiz(
+          +selectedQuiz.value,
+          question.description,
+          question.imageFile,
+        );
 
-    }));
+        await Promise.all(
+          question.answers.map(async (answer) => {
+            await postCreateNewAnswerForQuestion(
+              answer.description,
+              answer.correct_answer,
+              q.DT.id,
+            );
+          }),
+        );
 
+        console.log("q: ", q);
+      }),
+    );
 
     //submit answers
-
-
   };
 
   const handlePreviewImage = (questionId) => {
