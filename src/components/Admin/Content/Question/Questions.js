@@ -150,6 +150,10 @@ const Questions = (props) => {
   };
   const handleSubmitQuestionForQuiz = () => {
     console.log("questions: ", questions,selectedQuiz);
+
+    //submit questions
+
+    //submit answers
   };
 
   const handlePreviewImage = (questionId) => {
