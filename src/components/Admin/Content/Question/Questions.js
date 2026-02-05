@@ -9,7 +9,9 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
-import { getAllQuizForAdmin } from "../../../../service/apiService";
+import { getAllQuizForAdmin ,postCreateNewQuestionForQuiz, 
+  postCreateNewAnswerForQuestion
+} from "../../../../service/apiService";
 
 const Questions = (props) => {
   const [questions, setQuestions] = useState([
