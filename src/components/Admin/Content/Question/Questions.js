@@ -12,11 +12,11 @@ import Lightbox from "react-awesome-lightbox";
 import { getAllQuizForAdmin } from "../../../../service/apiService";
 
 const Questions = (props) => {
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
+  // const options = [
+  //   { value: "chocolate", label: "Chocolate" },
+  //   { value: "strawberry", label: "Strawberry" },
+  //   { value: "vanilla", label: "Vanilla" },
+  // ];
   const [selectedQuiz, setSelectedQuiz] = useState({});
 
   const [questions, setQuestions] = useState([
@@ -53,9 +53,10 @@ const Questions = (props) => {
     if (res && res.EC === 0) {
       let newQuiz = res.DT.map((item) => {
         return { 
-          value: item.id, label: item.name };
+          value: item.id, 
+          label: item.description };
       });
-      setListQuiz(res.DT);
+      setListQuiz(newQuiz);
     }
   };
 
@@ -182,7 +183,7 @@ const Questions = (props) => {
           <Select
             defaultValue={selectedQuiz}
             onChange={setSelectedQuiz}
-            options={options}
+            options={listQuiz}
           />
         </div>
         <div className="mt-3 mb-2 ">Add questions:</div>
