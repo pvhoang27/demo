@@ -34,7 +34,6 @@ const Questions = (props) => {
     },
   ]);
 
-  
   const [isPreviewImage, setIsPreviewImage] = useState(false);
 
   const [dataImagePreview, setDataImagePreview] = useState({
