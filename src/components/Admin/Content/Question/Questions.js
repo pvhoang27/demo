@@ -9,8 +9,10 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
-import { getAllQuizForAdmin ,postCreateNewQuestionForQuiz, 
-  postCreateNewAnswerForQuestion
+import {
+  getAllQuizForAdmin,
+  postCreateNewQuestionForQuiz,
+  postCreateNewAnswerForQuestion,
 } from "../../../../service/apiService";
 
 const Questions = (props) => {
@@ -150,12 +152,25 @@ const Questions = (props) => {
       setQuestions(questionsClone);
     }
   };
-  const handleSubmitQuestionForQuiz = () => {
-    console.log("questions: ", questions,selectedQuiz);
+  const handleSubmitQuestionForQuiz = async () => {
+    //todo
+
+    //validate data
+    console.log("questions: ", questions, selectedQuiz);
     // postCreateNewQuestionForQuiz, postCreateNewAnswerForQuestion
 
     //submit questions
-    
+    const createdQuestions = questions.map(async (question) => {
+      const q = await postCreateNewQuestionForQuiz(
+        +selectedQuiz.value,
+        question.description,
+        question.imageFile,
+      );
+      return q;
+    });
+
+    let a = await Promise.all(createdQuestions);
+    console.log("createdQuestions: ", a);
 
     //submit answers
   };
