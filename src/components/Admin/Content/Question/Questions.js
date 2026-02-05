@@ -152,9 +152,9 @@ const Questions = (props) => {
   };
   const handleSubmitQuestionForQuiz = () => {
     console.log("questions: ", questions,selectedQuiz);
+    // postCreateNewQuestionForQuiz, postCreateNewAnswerForQuestion
 
     //submit questions
-
     //submit answers
   };
 
