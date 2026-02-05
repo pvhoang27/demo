@@ -184,7 +184,8 @@ const Questions = (props) => {
                     />
                     <span>
                       {question.imageName ? (
-                        <span onClick={() => setIsPreviewImage(true)}>
+                        <span style={{cursor : 'pointer'}}
+                        onClick={() => setIsPreviewImage(true)}>
                           {question.imageName}
                         </span>
                       ) : (
