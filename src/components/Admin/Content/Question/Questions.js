@@ -11,7 +11,6 @@ import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
 import { getAllQuizForAdmin } from "../../../../service/apiService";
 
-
 const Questions = (props) => {
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -43,23 +42,20 @@ const Questions = (props) => {
     url: "",
   });
 
+  const [listQuiz, setListQuiz] = useState([]);
 
-  const [listQuiz ,setListQuiz] = useState([]);
+  useEffect(() => {
+    fetchQuiz();
+  }, []);
 
- useEffect(() => {
-     fetchQuiz();
-   }, []);
- 
-   const fetchQuiz = async () => {
-   
-     let res = await getAllQuizForAdmin();
-     if (res && res.EC === 0) {
-       setListQuiz(res.DT);
-     }
-   };
+  const fetchQuiz = async () => {
+    let res = await getAllQuizForAdmin();
+    if (res && res.EC === 0) {
+      setListQuiz(res.DT);
+    }
+  };
 
-   console.log("listQuiz: ", listQuiz);
-
+  console.log("listQuiz: ", listQuiz);
 
   const handleAddRemoveQuestion = (type, id) => {
     if (type === "ADD") {
