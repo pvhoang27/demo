@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 import "./Questions.scss";
 import { BsFillPatchPlusFill } from "react-icons/bs";
@@ -40,6 +40,13 @@ const Questions = (props) => {
     title: "",
     url: "",
   });
+
+
+  const [listQuiz ,setListQuiz] = useState([]);
+
+  useEffect(() => {
+    //call api get quiz for select
+  }, []);
   const handleAddRemoveQuestion = (type, id) => {
     if (type === "ADD") {
       const newQuestion = {
