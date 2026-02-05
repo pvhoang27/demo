@@ -173,6 +173,8 @@ const Questions = (props) => {
     console.log("createdQuestions: ", a);
 
     //submit answers
+
+    
   };
 
   const handlePreviewImage = (questionId) => {
