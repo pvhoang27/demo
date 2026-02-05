@@ -10,7 +10,6 @@ import Layout from "./components/Layout";
 import "nprogress/nprogress.css";
 import { PersistGate } from "redux-persist/integration/react";
 import "react-awesome-lightbox/build/style.index.css";
-import Lightbox from "react-awesome-lightbox";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

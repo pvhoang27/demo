@@ -8,6 +8,8 @@ import { AiFillPlusSquare } from "react-icons/ai";
 import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
+import Lightbox from "react-awesome-lightbox";
+
 
 const Questions = (props) => {
   const options = [
@@ -281,6 +283,8 @@ if (index > -1) {
 
           }
       </div>
+      <Lightbox image="image_url" title="Image Title"> </Lightbox>
+
     </div>
   );
 };
