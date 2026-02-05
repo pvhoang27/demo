@@ -270,7 +270,11 @@ const Questions = (props) => {
                   })}
 
                 {isPreviewImage === true && (
-                  <Lightbox image="image_url" title={question.imageName}>
+                  <Lightbox 
+                  image={URL.createObjectURL(question.imageFile)} 
+                  title={question.imageName}
+                  onClose ={() => setIsPreviewImage(false)}
+                  >
                     {" "}
                   </Lightbox>
                 )}
