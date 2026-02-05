@@ -276,7 +276,7 @@ const Questions = (props) => {
                   title={question.imageName}
                   onClose ={() => setIsPreviewImage(false)}
                   >
-                    {" "}
+                    {console.log(URL.createObjectURL(question.imageFile))}
                   </Lightbox>
                 )}
               </div>
