@@ -54,7 +54,8 @@ const Questions = (props) => {
       let newQuiz = res.DT.map((item) => {
         return { 
           value: item.id, 
-          label: item.description };
+          label: `${item.id} - ${item.description}`
+         };
       });
       setListQuiz(newQuiz);
     }
