@@ -178,7 +178,6 @@ const Questions = (props) => {
           }),
         );
 
-        console.log("q: ", q);
       }),
     );
 
