@@ -50,11 +50,12 @@ const QuizQA = (props) => {
   }, []);
 
   useEffect(() => {
-    fetchQuizWithQA;
+    fetchQuizWithQA();
   }, [selectedQuiz]);
 
   const fetchQuizWithQA = async () => {
     let rs = await getQuizWithQA(selectedQuiz.value);
+    console.log(">>> check rs:", rs);
   };
   const fetchQuiz = async () => {
     let res = await getAllQuizForAdmin();
