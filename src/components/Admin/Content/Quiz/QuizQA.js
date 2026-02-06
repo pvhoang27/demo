@@ -15,6 +15,7 @@ import {
   postCreateNewQuestionForQuiz,
   postCreateNewAnswerForQuestion,
   getQuizWithQA,
+  postUpsertQA
 } from "../../../../service/apiService";
 
 const QuizQA = (props) => {
@@ -243,25 +244,13 @@ const QuizQA = (props) => {
       return;
     }
 
-    for (const question of questions) {
-      const q = await postCreateNewQuestionForQuiz(
-        +selectedQuiz.value,
-        question.description,
-        question.imageFile,
-      );
+    let questionClone = _.cloneDeep(questions);
+    // for()
+    console.log(">>> check questionClone:", questionClone);
+    // let res = await postUpsertQA();
 
-      //submit answer
-      for (const answer of question.answers) {
-        await postCreateNewAnswerForQuestion(
-          answer.description,
-          answer.isCorrect,
-          q.DT.id,
-        );
-      }
-    }
-
-    toast.success("Create question and answers successully");
-    setQuestions(initQuestions);
+    // toast.success("Create question and answers successully");
+    // setQuestions(initQuestions);
   };
 
   const handlePreviewImage = (questionId) => {
