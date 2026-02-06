@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
-import{ getAllQuizForAdmin } from "../../../../service/apiService";
+import{ getAllQuizForAdmin,getAllUsers } from "../../../../service/apiService";
 const AssignQuiz = (props) => {
   const [listQuiz, setListQuiz] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState({});
@@ -26,7 +26,7 @@ const AssignQuiz = (props) => {
     }
   };
   const fetchUser = async () => {
-    let res = await getAllQuizForAdmin();
+    let res = await getAllUsers();
     if (res && res.EC === 0) {
       let newQuiz = res.DT.map((item) => {
         return {
