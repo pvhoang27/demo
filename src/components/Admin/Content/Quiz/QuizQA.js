@@ -15,7 +15,7 @@ import {
   postCreateNewQuestionForQuiz,
   postCreateNewAnswerForQuestion,
   getQuizWithQA,
-  postUpsertQA
+  postUpsertQA,
 } from "../../../../service/apiService";
 
 const QuizQA = (props) => {
@@ -245,29 +245,30 @@ const QuizQA = (props) => {
     }
 
     let questionClone = _.cloneDeep(questions);
-    for(let i = 0 ; i < questionClone.length; i++) {
-      if(questionClone[i].imageFile) {
-        questionClone[i].imageFile = 
-          await toBase64(questionClone[i].imageFile);
-     }
+    for (let i = 0; i < questionClone.length; i++) {
+      if (questionClone[i].imageFile) {
+        questionClone[i].imageFile = await toBase64(questionClone[i].imageFile);
+      }
     }
     let res = await postUpsertQA({
-      quizId : selectedQuiz.value,
-      questions : questionClone
+      quizId: selectedQuiz.value,
+      questions: questionClone,
     });
 
+    if (res && res.EC === 0) {
+      toast.success(res.EM);
+      fetchQuizWithQA();
+    }
     console.log(">>> check res upsert:", res);
-
-    // toast.success("Create question and answers successully");
-    // setQuestions(initQuestions);
   };
 
-  const toBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-});
+  const toBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
 
   const handlePreviewImage = (questionId) => {
     let questionsClone = _.cloneDeep(questions);
