@@ -6,6 +6,15 @@ const RightContent = (props) => {
         <div className="question">1</div>
         <div className="question">2</div>
         <div className="question">3</div>
+        <div className="question">1</div>
+        <div className="question">2</div>
+        <div className="question">3</div>
+        <div className="question">1</div>
+        <div className="question">2</div>
+        <div className="question">3</div>
+        <div className="question">1</div>
+        <div className="question">2</div>
+        <div className="question">3</div>
       </div>
     </>
   );
