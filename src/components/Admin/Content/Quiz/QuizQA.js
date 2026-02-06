@@ -14,7 +14,7 @@ import {
   getAllQuizForAdmin,
   postCreateNewQuestionForQuiz,
   postCreateNewAnswerForQuestion,
-  getQuizWithQA
+  getQuizWithQA,
 } from "../../../../service/apiService";
 
 const QuizQA = (props) => {
@@ -50,12 +50,12 @@ const QuizQA = (props) => {
   }, []);
 
   useEffect(() => {
-
+    fetchQuizWithQA;
   }, [selectedQuiz]);
 
   const fetchQuizWithQA = async () => {
-    let rs  = await getQuizWithQA(selectedQuiz.value);
-  }
+    let rs = await getQuizWithQA(selectedQuiz.value);
+  };
   const fetchQuiz = async () => {
     let res = await getAllQuizForAdmin();
     if (res && res.EC === 0) {
