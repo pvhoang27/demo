@@ -5,6 +5,9 @@ const AssignQuiz = (props) => {
   const [listQuiz, setListQuiz] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState({});
 
+  const [listUser, setListUser] = useState([]);
+  const [selectedUser, setSelectedUser] = useState({});
+
   useEffect(() => {
     fetchQuiz();
   }, []);
