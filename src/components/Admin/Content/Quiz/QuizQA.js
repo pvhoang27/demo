@@ -238,8 +238,6 @@ const QuizQA = (props) => {
 
   return (
     <div className="questions-container">
-      <div className="title">Manage Questions</div>
-      <hr />
       <div className="add-new-question">
         <div className="col-6 form-group">
           <label className="mb-2">Select Quiz:</label>
