@@ -7,6 +7,7 @@ import { set } from "nprogress";
 import TableQuiz from "./TableQuiz";
 import Accordion from "react-bootstrap/Accordion";
 import QuizQA from "./QuizQA";
+import AssignQuiz from "./AssignQuiz";
 // ...rest of code...
 
 const options = [
@@ -113,7 +114,7 @@ const ManageQuiz = (props) => {
         <Accordion.Item eventKey="2">
           <Accordion.Header>Assign to User</Accordion.Header>
           <Accordion.Body>
-           2222
+           <AssignQuiz />
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
