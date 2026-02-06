@@ -1,20 +1,21 @@
 const RightContent = (props) => {
+    const{dataQuiz} = props;
+    console.log(">>> check dataQuiz right content: ", dataQuiz);
   return (
     <>
       <div className="main-timer">10:10</div>
       <div className="main-question">
-        <div className="question">1</div>
-        <div className="question">2</div>
-        <div className="question">3</div>
-        <div className="question">1</div>
-        <div className="question">2</div>
-        <div className="question">3</div>
-        <div className="question">1</div>
-        <div className="question">2</div>
-        <div className="question">3</div>
-        <div className="question">1</div>
-        <div className="question">2</div>
-        <div className="question">3</div>
+        {dataQuiz && dataQuiz.length > 0
+        
+        && dataQuiz.map((item,index) => {
+            return(
+                        <div className="question">1</div>
+
+            )
+        })    
+        }
+        
+
       </div>
     </>
   );
