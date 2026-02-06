@@ -252,7 +252,8 @@ const QuizQA = (props) => {
      }
     }
     let res = await postUpsertQA({
-      
+      quizId : selectedQuiz.value,
+      questions : questionClone
     });
 
     // toast.success("Create question and answers successully");
