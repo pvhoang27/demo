@@ -7,6 +7,7 @@ import Question from "./Question";
 import { set } from "nprogress";
 import { useState } from "react";
 import ModalResult from "./ModalResult";
+import RightContent from "./Content/RightContent";
 const DetailQuiz = (props) => {
   const params = useParams();
   const location = useLocation();
@@ -156,7 +157,9 @@ const DetailQuiz = (props) => {
           </button>
         </div>
       </div>
-      <div className="right-content">count down</div>
+      <div className="right-content">
+        <RightContent />
+        </div>
       <ModalResult 
         show={isShowModalResult}
         setShow={setIsShowModalResult}
