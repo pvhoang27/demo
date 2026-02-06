@@ -173,6 +173,7 @@ const Questions = (props) => {
           break;
         }
       }
+      if(isValid === false) break;
     }
 
 
