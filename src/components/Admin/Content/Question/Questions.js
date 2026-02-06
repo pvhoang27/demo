@@ -179,6 +179,8 @@ const Questions = (props) => {
       indexQ = i ; 
       if(isValid === false) break;
     }
+    console.log('>>check', isValid, indexQ, indexA);
+    return;
 
 
     //validate questions
