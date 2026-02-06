@@ -17,7 +17,7 @@ import {
 } from "../../../../service/apiService";
 
 const Questions = (props) => {
-  const [questions, setQuestions] = useState([
+  const initQuestions =[
     {
       id: uuidv4(),
       description: "",
@@ -31,7 +31,10 @@ const Questions = (props) => {
         },
       ],
     },
-  ]);
+  ]
+  
+
+  const [questions, setQuestions] = useState(initQuestions);
 
   const [isPreviewImage, setIsPreviewImage] = useState(false);
 
@@ -185,17 +188,17 @@ const Questions = (props) => {
     }
 
     //validate questions
-     let isValidQ = true;
+    let isValidQ = true;
     let indexQ1 = 0;
 
     for (let i = 0; i < questions.length; i++) {
-      if(!questions[i].description) {
+      if (!questions[i].description) {
         isValidQ = false;
         indexQ1 = i;
         break;
       }
     }
-    if(isValidQ === false) {
+    if (isValidQ === false) {
       toast.error(`Not empty description of question ${indexQ1 + 1}`);
       return;
     }
@@ -216,6 +219,8 @@ const Questions = (props) => {
         );
       }
     }
+
+    toast.success("Create question and answers successully");
   };
 
   const handlePreviewImage = (questionId) => {
