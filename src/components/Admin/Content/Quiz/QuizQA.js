@@ -81,6 +81,7 @@ function urltoFile(url, filename, mimeType){
         newQA.push(q);
       }
       setQuestions(newQA);
+      console.log(">>> check newQA:", newQA);
       console.log(">>> check rs:", rs);
     }
   };
