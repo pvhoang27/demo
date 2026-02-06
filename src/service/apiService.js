@@ -117,6 +117,13 @@ const postAssignQuiz = (quizId, userId) => {
     userId,
   });
 };
+
+const getQuizWithQA = (quizId) => {
+    return axios.get    ("api/v1/quiz-assign-to-user", {
+    quizId,
+    userId,
+  });
+}
 export {
   postCreateNewUser,
   getAllUsers,
