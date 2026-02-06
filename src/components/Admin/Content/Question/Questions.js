@@ -163,18 +163,15 @@ const Questions = (props) => {
     }
 
     //validate answers
-    questions.map(questions => {
-      questions.answers.map(a => {
+  
 
-      })
-    })
-
-    for (const question of questions) {
-      let isValid = true; 
-      for (const answer of question.answers) {
-        await postCreateNewAnswerForQuestion(
-          if(!answer.description)
-        );
+    for(let i = 0 ; i < questions.length; i++) {
+      let isValid = true;
+      for(let j = 0 ; j < questions[i].answers.length; j++) {
+        if(!questions[i].answers[j].description){
+          isValid = false;
+          break;
+        }
       }
     }
 
