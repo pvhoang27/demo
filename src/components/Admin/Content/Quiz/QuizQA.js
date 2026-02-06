@@ -259,7 +259,6 @@ const QuizQA = (props) => {
       toast.success(res.EM);
       fetchQuizWithQA();
     }
-    // console.log(">>> check res upsert:", res);
   };
 
   const toBase64 = (file) =>
