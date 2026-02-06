@@ -15,6 +15,7 @@ const Question = (props) => {
       {data.image ? (
         <div className="q-image">
           <img 
+          style={{cursor : 'pointer'}}
           onClick={() => setIsPreviewImage(true)}
           src={`data:image/jpeg;base64,${data.image}`} />
           {isPreviewImage === true && (
