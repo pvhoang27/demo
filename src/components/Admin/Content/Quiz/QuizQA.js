@@ -256,6 +256,8 @@ const QuizQA = (props) => {
       questions : questionClone
     });
 
+    console.log(">>> check res upsert:", res);
+
     // toast.success("Create question and answers successully");
     // setQuestions(initQuestions);
   };
