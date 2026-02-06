@@ -9,6 +9,7 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
+import {toast} from "react-toastify";
 import {
   getAllQuizForAdmin,
   postCreateNewQuestionForQuiz,
