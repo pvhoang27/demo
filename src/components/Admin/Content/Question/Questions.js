@@ -163,7 +163,7 @@ const Questions = (props) => {
     }
 
     //validate answers
-  let isValid = true;
+  let isValidAnswer = true;
   let indexQ = 0 , indexA = 0 ;
 
 
@@ -171,16 +171,20 @@ const Questions = (props) => {
       
       for(let j = 0 ; j < questions[i].answers.length; j++) {
         if(!questions[i].answers[j].description){
-          isValid = false;
+          isValidAnswer = false;
           indexA = j ;
           break;
         }
       }
       indexQ = i ; 
-      if(isValid === false) break;
+      if(isValidAnswer === false) break;
     }
-    console.log('>>check', isValid, indexQ, indexA);
-    return;
+
+    if(isValidAnswer === false) {
+      toast.error(`Not empty answer ${indexA + 1} of question ${indexQ + 1}`);
+      return;
+    }
+
 
 
     //validate questions
