@@ -163,16 +163,20 @@ const Questions = (props) => {
     }
 
     //validate answers
-  
+  let isValid = true;
+  let indexQ = 0 , indexA = 0 ;
+
 
     for(let i = 0 ; i < questions.length; i++) {
-      let isValid = true;
+      
       for(let j = 0 ; j < questions[i].answers.length; j++) {
         if(!questions[i].answers[j].description){
           isValid = false;
+          indexA = j ;
           break;
         }
       }
+      indexQ = i ; 
       if(isValid === false) break;
     }
 
