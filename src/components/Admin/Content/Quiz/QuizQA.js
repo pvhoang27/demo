@@ -14,6 +14,7 @@ import {
   getAllQuizForAdmin,
   postCreateNewQuestionForQuiz,
   postCreateNewAnswerForQuestion,
+  getQuizWithQA
 } from "../../../../service/apiService";
 
 const QuizQA = (props) => {
