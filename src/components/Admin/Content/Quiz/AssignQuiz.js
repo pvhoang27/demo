@@ -38,7 +38,8 @@ const AssignQuiz = (props) => {
     }
   };
   const handleAssgin = async() => {
-    postAssignQuiz(selectedQuiz.value, selectedUser.value);
+    let rs = await postAssignQuiz(selectedQuiz.value, selectedUser.value);
+    console.log("check res assign", rs);
   }
   return (
     <div className="assign-quiz-container row">
@@ -62,7 +63,7 @@ const AssignQuiz = (props) => {
       <div>
         <button
          className="btn btn-warning mt-3"
-         onClick={() = handleAssgin()}>Assign</button>
+         onClick={() => handleAssgin()}>Assign</button>
       </div>
     </div>
   );
