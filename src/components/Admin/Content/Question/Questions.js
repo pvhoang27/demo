@@ -158,27 +158,27 @@ const Questions = (props) => {
     //validate data
 
 
-    //submit questions
-    await Promise.all(
-      questions.map(async (question) => {
-        const q = await postCreateNewQuestionForQuiz(
-          +selectedQuiz.value,
-          question.description,
-          question.imageFile,
-        );
-         //submit answers
-        await Promise.all(
-          question.answers.map(async (answer) => {
-            await postCreateNewAnswerForQuestion(
-              answer.description,
-              answer.correct_answer,
-              q.DT.id,
-            );
-          }),
-        );
+    // //submit questions
+    // await Promise.all(
+    //   questions.map(async (question) => {
+    //     const q = await postCreateNewQuestionForQuiz(
+    //       +selectedQuiz.value,
+    //       question.description,
+    //       question.imageFile,
+    //     );
+    //      //submit answers
+    //     await Promise.all(
+    //       question.answers.map(async (answer) => {
+    //         await postCreateNewAnswerForQuestion(
+    //           answer.description,
+    //           answer.correct_answer,
+    //           q.DT.id,
+    //         );
+    //       }),
+    //     );
 
-      }),
-    );
+    //   }),
+    // );
 
    
   };
