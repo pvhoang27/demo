@@ -47,6 +47,15 @@ const AssignQuiz = (props) => {
           options={listQuiz}
         />
       </div>
+
+      <div className="col-6 form-group">
+        <label className="mb-2">Select User:</label>
+        <Select
+          defaultValue={selectedUser}
+          onChange={setSelectedUser}
+          options={listUser}
+        />
+      </div>
     </div>
   );
 };
