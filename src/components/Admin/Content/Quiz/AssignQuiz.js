@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
-import{ getAllQuizForAdmin,getAllUsers } from "../../../../service/apiService";
+import{ getAllQuizForAdmin,getAllUsers , postAssignQuiz} from "../../../../service/apiService";
 const AssignQuiz = (props) => {
   const [listQuiz, setListQuiz] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState({});
@@ -37,6 +37,9 @@ const AssignQuiz = (props) => {
       setListUser(users);
     }
   };
+  const handleAssgin = async() => {
+    postAssignQuiz(selectedQuiz.value, selectedUser.value);
+  }
   return (
     <div className="assign-quiz-container row">
       <div className="col-6 form-group">
@@ -57,7 +60,9 @@ const AssignQuiz = (props) => {
         />
       </div>
       <div>
-        <button className="btn btn-warning mt-3">Assign</button>
+        <button
+         className="btn btn-warning mt-3"
+         onClick={() = handleAssgin()}>Assign</button>
       </div>
     </div>
   );
