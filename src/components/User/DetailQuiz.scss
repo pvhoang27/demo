@@ -58,6 +58,8 @@
     .main-question {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
+      padding: 15px;
 
       .question {
         border: 1px solid #878787;
