@@ -157,28 +157,31 @@ const Questions = (props) => {
     //todo
 
     //validate data
+    if (_.isEmpty(selectedQuiz)) {
+      toast.error("Please choose a quiz");
+      return;
+    }
 
-    // //submit questions
-    // await Promise.all(
-    //   questions.map(async (question) => {
-    //     const q = await postCreateNewQuestionForQuiz(
-    //       +selectedQuiz.value,
-    //       question.description,
-    //       question.imageFile,
-    //     );
-    //      //submit answers
-    //     await Promise.all(
-    //       question.answers.map(async (answer) => {
-    //         await postCreateNewAnswerForQuestion(
-    //           answer.description,
-    //           answer.correct_answer,
-    //           q.DT.id,
-    //         );
-    //       }),
-    //     );
+    //validate answers
+    questions.map(questions => {
+      questions.answers.map(a => {
 
-    //   }),
-    // );
+      })
+    })
+
+    for (const question of questions) {
+      let isValid = true; 
+      for (const answer of question.answers) {
+        await postCreateNewAnswerForQuestion(
+          if(!answer.description)
+        );
+      }
+    }
+
+
+    //validate questions
+
+
     for (const question of questions) {
       const q = await postCreateNewQuestionForQuiz(
         +selectedQuiz.value,
