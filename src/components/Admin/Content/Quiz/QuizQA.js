@@ -56,27 +56,30 @@ const QuizQA = (props) => {
   }, [selectedQuiz]);
 
   //return a promise that resolves with a File instance
-function urltoFile(url, filename, mimeType){
-    return (fetch(url)
-        .then(function(res){return res.arrayBuffer();})
-        .then(function(buf){return new File([buf], filename,{type:mimeType});})
-    );
-}
-
-
+  function urltoFile(url, filename, mimeType) {
+    return fetch(url)
+      .then(function (res) {
+        return res.arrayBuffer();
+      })
+      .then(function (buf) {
+        return new File([buf], filename, { type: mimeType });
+      });
+  }
 
   const fetchQuizWithQA = async () => {
     let rs = await getQuizWithQA(selectedQuiz.value);
     if (rs && rs.EC === 0) {
       //convert base64 to file
-      let newQA =[];
+      let newQA = [];
 
-      for(let i = 0 ; i < rs.DT.qa.length ; i++){
+      for (let i = 0; i < rs.DT.qa.length; i++) {
         let q = rs.DT.qa[i];
-        if(q.imageFile){
-            q.imageFile = urltoFile(
-              `data:image/png;base64,${q.imageFile}`, `Question-${q.id}.png`,'image/png'
-            )
+        if (q.imageFile) {
+          q.imageFile = await urltoFile(
+            `data:image/png;base64,${q.imageFile}`,
+            `Question-${q.id}.png`,
+            "image/png",
+          );
         }
         newQA.push(q);
       }
