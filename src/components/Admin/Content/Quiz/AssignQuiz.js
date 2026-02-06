@@ -47,8 +47,7 @@ const AssignQuiz = (props) => {
     let rs = await postAssignQuiz(selectedQuiz.value, selectedUser.value);
     if (rs && rs.EC === 0) {
       toast.success(rs.EM);
-      setSelectedQuiz({});
-      setSelectedUser({});
+
     } else {
       toast.error(rs.EM);
     }
