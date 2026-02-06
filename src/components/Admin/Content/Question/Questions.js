@@ -9,7 +9,7 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import Lightbox from "react-awesome-lightbox";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import {
   getAllQuizForAdmin,
   postCreateNewQuestionForQuiz,
@@ -163,32 +163,38 @@ const Questions = (props) => {
     }
 
     //validate answers
-  let isValidAnswer = true;
-  let indexQ = 0 , indexA = 0 ;
+    let isValidAnswer = true;
+    let indexQ = 0,
+      indexA = 0;
 
-
-    for(let i = 0 ; i < questions.length; i++) {
-      
-      for(let j = 0 ; j < questions[i].answers.length; j++) {
-        if(!questions[i].answers[j].description){
+    for (let i = 0; i < questions.length; i++) {
+      for (let j = 0; j < questions[i].answers.length; j++) {
+        if (!questions[i].answers[j].description) {
           isValidAnswer = false;
-          indexA = j ;
+          indexA = j;
           break;
         }
       }
-      indexQ = i ; 
-      if(isValidAnswer === false) break;
+      indexQ = i;
+      if (isValidAnswer === false) break;
     }
 
-    if(isValidAnswer === false) {
+    if (isValidAnswer === false) {
       toast.error(`Not empty answer ${indexA + 1} of question ${indexQ + 1}`);
       return;
     }
 
-
-
     //validate questions
+     let isValidQ = true;
+    let indexQ1 = 0;
 
+    for (let i = 0; i < questions.length; i++) {
+      if(!questions[i].description) {
+        isValidQ = false;
+        indexQ1 = i;
+        break;
+      }
+    }
 
     for (const question of questions) {
       const q = await postCreateNewQuestionForQuiz(
