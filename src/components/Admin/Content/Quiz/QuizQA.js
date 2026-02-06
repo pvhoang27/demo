@@ -55,7 +55,10 @@ const QuizQA = (props) => {
 
   const fetchQuizWithQA = async () => {
     let rs = await getQuizWithQA(selectedQuiz.value);
-    console.log(">>> check rs:", rs);
+    if (rs && rs.EC === 0) {
+      setQuestions(rs.DT.qa);
+      console.log(">>> check rs:", rs);
+    }
   };
   const fetchQuiz = async () => {
     let res = await getAllQuizForAdmin();
