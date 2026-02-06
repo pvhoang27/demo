@@ -31,7 +31,7 @@ const AssignQuiz = (props) => {
       let users = res.DT.map((item) => {
         return {
           value: item.id,
-          label: `${item.id} - ${item.name} - ${item.email}`,
+          label: `${item.id} - ${item.username} - ${item.email}`,
         };
       });
       setListUser(users);
