@@ -78,8 +78,9 @@ function urltoFile(url, filename, mimeType){
               `data:image/png;base64,${q.imageFile}`, `Question-${q.id}.png`,'image/png'
             )
         }
+        newQA.push(q);
       }
-      setQuestions(rs.DT.qa);
+      setQuestions(newQA);
       console.log(">>> check rs:", rs);
     }
   };
