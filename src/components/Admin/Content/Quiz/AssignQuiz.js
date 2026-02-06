@@ -38,7 +38,7 @@ const AssignQuiz = (props) => {
     }
   };
   return (
-    <div className="assign-quiz-container">
+    <div className="assign-quiz-container row">
       <div className="col-6 form-group">
         <label className="mb-2">Select Quiz:</label>
         <Select
@@ -55,6 +55,9 @@ const AssignQuiz = (props) => {
           onChange={setSelectedUser}
           options={listUser}
         />
+      </div>
+      <div>
+        <button className="btn btn-warning mt-3">Assign</button>
       </div>
     </div>
   );
