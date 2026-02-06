@@ -75,6 +75,7 @@ const QuizQA = (props) => {
       for (let i = 0; i < rs.DT.qa.length; i++) {
         let q = rs.DT.qa[i];
         if (q.imageFile) {
+          q.imageName = `Question-${q.id}.png`;
           q.imageFile = await urltoFile(
             `data:image/png;base64,${q.imageFile}`,
             `Question-${q.id}.png`,
