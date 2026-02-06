@@ -195,6 +195,10 @@ const Questions = (props) => {
         break;
       }
     }
+    if(isValidQ === false) {
+      toast.error(`Not empty description of question ${indexQ1 + 1}`);
+      return;
+    }
 
     for (const question of questions) {
       const q = await postCreateNewQuestionForQuiz(
