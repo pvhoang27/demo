@@ -221,6 +221,7 @@ const Questions = (props) => {
     }
 
     toast.success("Create question and answers successully");
+    setQuestions(initQuestions);
   };
 
   const handlePreviewImage = (questionId) => {
