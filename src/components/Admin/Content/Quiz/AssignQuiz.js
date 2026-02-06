@@ -10,9 +10,22 @@ const AssignQuiz = (props) => {
 
   useEffect(() => {
     fetchQuiz();
+    fetchUser();
   }, []);
 
   const fetchQuiz = async () => {
+    let res = await getAllQuizForAdmin();
+    if (res && res.EC === 0) {
+      let newQuiz = res.DT.map((item) => {
+        return {
+          value: item.id,
+          label: `${item.id} - ${item.description}`,
+        };
+      });
+      setListQuiz(newQuiz);
+    }
+  };
+  const fetchUser = async () => {
     let res = await getAllQuizForAdmin();
     if (res && res.EC === 0) {
       let newQuiz = res.DT.map((item) => {
