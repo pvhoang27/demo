@@ -157,7 +157,6 @@ const Questions = (props) => {
 
     //validate data
 
-
     // //submit questions
     // await Promise.all(
     //   questions.map(async (question) => {
@@ -179,8 +178,22 @@ const Questions = (props) => {
 
     //   }),
     // );
+    for (const question of questions) {
+      const q = await postCreateNewQuestionForQuiz(
+        +selectedQuiz.value,
+        question.description,
+        question.imageFile,
+      );
 
-   
+      //submit answer
+      for (const answer of question.answers) {
+        await postCreateNewAnswerForQuestion(
+          answer.description,
+          answer.isCorrect,
+          q.DT.id,
+        );
+      }
+    }
   };
 
   const handlePreviewImage = (questionId) => {
