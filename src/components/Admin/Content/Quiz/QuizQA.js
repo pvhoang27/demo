@@ -247,11 +247,13 @@ const QuizQA = (props) => {
     let questionClone = _.cloneDeep(questions);
     for(let i = 0 ; i < questionClone.length; i++) {
       if(questionClone[i].imageFile) {
-        questionClone[i].imageFile = await toBase64(questionClone[i].imageFile);
+        questionClone[i].imageFile = 
+          await toBase64(questionClone[i].imageFile);
      }
     }
-    console.log(">>> check questionClone:", questionClone);
-    // let res = await postUpsertQA();
+    let res = await postUpsertQA({
+      
+    });
 
     // toast.success("Create question and answers successully");
     // setQuestions(initQuestions);
