@@ -1,8 +1,10 @@
 const RightContent = (props) => {
     return(
-        <div>
-            dfdsfd
-        </div>
+        <>
+            <div className="main-timer">
+                10:10
+            </div>
+        </>
     )
 }
 
