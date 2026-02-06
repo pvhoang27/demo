@@ -49,6 +49,10 @@ const QuizQA = (props) => {
     fetchQuiz();
   }, []);
 
+  useEffect(() => {
+    
+  }, [selectedQuiz]);
+
   const fetchQuiz = async () => {
     let res = await getAllQuizForAdmin();
     if (res && res.EC === 0) {
