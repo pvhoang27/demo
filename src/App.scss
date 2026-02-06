@@ -72,14 +72,14 @@ body {
         background: #303030;
         color: white;
         height: 40px;
-        border:none;
+        border: none;
         &:hover {
           background: black;
         }
       }
     }
   }
-  .app-container{
+  .app-content {
     height: calc(100vh - 60px);
   }
 }
