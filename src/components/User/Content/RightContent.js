@@ -10,7 +10,6 @@ const RightContent = (props) => {
   console.log(">>> check dataQuiz right content: ", dataQuiz);
 
   const getClassQustion = (index, question) => {
-    console.log(index, question);
     //check answered
     if (question && question.answers.length > 0) {
       let isAnswered = question.answers.find(
@@ -18,8 +17,6 @@ const RightContent = (props) => {
       if (isAnswered) {
         return "question selected";
       }
-
-        
     }
 
     return "question abc";
