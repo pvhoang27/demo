@@ -18,8 +18,8 @@ const Header = () => {
   const handleRegister = () => {
     navigate("/register");
   };
-  const handleLogOut = () => {
-
+  const handleLogOut = async() => {
+    let rs = await logout();
   }
   return (
     <Navbar bg="light" expand="lg">
