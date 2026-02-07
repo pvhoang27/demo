@@ -38,10 +38,14 @@ const Layout = (props) => {
           />
         </Route>
         <Route path="/quiz/:id" element={<DetailQuiz />} />
-        <Route path="/admins" element={
-          
-          
-          <PrivateRoute><Admin /></PrivateRoute>}>
+        <Route
+          path="/admins"
+          element={
+            <PrivateRoute>
+              <Admin />
+            </PrivateRoute>
+          }
+        >
           <Route index element={<Dashboard />} />
           <Route path="manage-users" element={<ManagerUser />} />
           <Route path="manage-quizzes" element={<ManageQuiz />} />
