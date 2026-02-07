@@ -14,8 +14,8 @@ const HomePage = (props) => {
       </video>
       <div className="homepage-content">
         <div className="title-1">
-          There's a better way to ask
-          {t("description.part2")}
+          
+          {t("homepage.title1")}
         </div>
         <div className="title-2">
           You don't want to make a boring form. And your audience won't answer
