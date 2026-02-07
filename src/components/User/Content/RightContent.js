@@ -3,7 +3,7 @@ import CountDown from "./CountDown";
 import { useRef } from "react";
 const RightContent = (props) => {
   const refDiv = useRef([]);
- 
+
   const { dataQuiz } = props;
   const onTimeUp = () => {
     props.handleFinishQuiz();
@@ -23,23 +23,22 @@ const RightContent = (props) => {
   };
 
   const handleClickQuestion = (question, index) => {
-    if(refDiv.current){
+    if (refDiv.current) {
       console.log(">>> check refDiv: ", refDiv.current);
-      refDiv.current.forEach(item => {
-        if(item && item.className === "question clicked"){
+      refDiv.current.forEach((item) => {
+        if (item && item.className === "question clicked") {
           item.className = "question";
         }
-      })
+      });
     }
 
     if (question && question.answers.length > 0) {
       let isAnswered = question.answers.find((a) => a.isSelected === true);
       if (isAnswered) {
-        return ;
+        return;
       }
-      
     }
- 
+
     refDiv.current[index].className = "question clicked";
   };
   return (
@@ -56,7 +55,7 @@ const RightContent = (props) => {
                 key={`question-abc-${index}`}
                 className={getClassQustion(index, item)}
                 onClick={() => handleClickQuestion(item, index)}
-                ref={element => refDiv.current[index] = element}
+                ref={(element) => (refDiv.current[index] = element)}
               >
                 {index + 1}
               </div>
