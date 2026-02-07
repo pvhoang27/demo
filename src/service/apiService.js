@@ -126,12 +126,23 @@ const postUpsertQA = (data) => {
   return axios.post(`api/v1/quiz-upsert-qa`, { ...data });
 };
 
-const logout = (email, refresh_token) => {
-  return axios.post("api/v1/logout", {
-    email,
-    refresh_token,
+// const logout = (email, refresh_token) => {
+//   return axios.post("api/v1/logout", {
+//     email,
+//     refresh_token,
+//   });
+// };
+
+  const logout = (email, refresh_token) => {
+  const data = new URLSearchParams();
+  data.append("email", email);
+  data.append("refresh_token", refresh_token);
+
+  return axios.post("/api/v1/logout", data, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
   });
 };
+  
 export {
   postCreateNewUser,
   getAllUsers,
