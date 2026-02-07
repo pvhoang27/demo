@@ -11,6 +11,7 @@ import { logout } from "../../service/apiService";
 const Header = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const account = useSelector((state) => state.user.account);
+  console.log(account)
   const navigate = useNavigate();
   const handleLogin = () => {
     navigate("/login");
