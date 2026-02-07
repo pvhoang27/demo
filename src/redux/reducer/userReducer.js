@@ -1,4 +1,3 @@
-import { INCREMENT, DECREMENT } from "../action/counterAction";
 import {
   FETCH_USER_LOGIN_SUCCESS,
   USER_LOGOUT_SUCCESS,
