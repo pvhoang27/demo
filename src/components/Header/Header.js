@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { logout } from "../../service/apiService";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
@@ -21,7 +22,14 @@ const Header = () => {
   };
   const handleLogOut = async() => {
     let rs = await logout(account.email, account.refresh_token);
-    console.log(rs)
+    if(rs && rs.EC === 0){
+
+      //clear data redux
+
+      navigate("/login");
+    }else{
+      toast.error(rs.EM);
+    }
   }
   
   return (
