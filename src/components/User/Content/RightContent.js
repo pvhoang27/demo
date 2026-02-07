@@ -1,11 +1,13 @@
 import { initial } from "lodash";
 import CountDown from "./CountDown";
-import {useRef} from "react";
+import { useRef } from "react";
 const RightContent = (props) => {
-  const refDiv =  useRef([]);
-  const setRef = (ref) =>{
-    refDiv.push(ref);
-  }
+  const refDiv = useRef([]);
+  const setRef = (ref) => {
+    if (refDiv) {
+      refDiv.push(ref);
+    }
+  };
   const { dataQuiz } = props;
   const onTimeUp = () => {
     props.handleFinishQuiz();
@@ -15,8 +17,7 @@ const RightContent = (props) => {
   const getClassQustion = (index, question) => {
     //check answered
     if (question && question.answers.length > 0) {
-      let isAnswered = question.answers.find(
-        (a) => a.isSelected === true);
+      let isAnswered = question.answers.find((a) => a.isSelected === true);
       if (isAnswered) {
         return "question selected";
       }
@@ -28,8 +29,8 @@ const RightContent = (props) => {
   const handleClickQuestion = (question, index) => {
     props.setIndex(index);
     console.log(refDiv.current);
-    refDiv.current[index].className="question clicked";
-  }
+    refDiv.current[index].className = "question clicked";
+  };
   return (
     <>
       <div className="main-timer">
@@ -44,7 +45,7 @@ const RightContent = (props) => {
                 key={`question-abc-${index}`}
                 className={getClassQustion(index, item)}
                 onClick={() => handleClickQuestion(item, index)}
-                ref={refDiv.current[index] }
+                ref={setRef}
               >
                 {index + 1}
               </div>
