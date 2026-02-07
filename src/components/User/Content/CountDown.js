@@ -12,6 +12,7 @@ const CountDown = (props) => {
     setTimeout(() => {
       clearInterval(timer);
     }, 5000);
+    
   }, []);
   return <div className="countdown-container">{count}</div>;
 };
