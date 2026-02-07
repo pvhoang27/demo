@@ -3,7 +3,7 @@ import CountDown from "./CountDown";
 const RightContent = (props) => {
   const { dataQuiz } = props;
   const onTimeUp = () => {
-    alert("Time is up!");
+    props.handleFinishQuiz();
   }
   console.log(">>> check dataQuiz right content: ", dataQuiz);
   return (
