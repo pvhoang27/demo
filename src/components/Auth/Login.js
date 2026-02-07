@@ -67,6 +67,7 @@ const Login = (props) => {
             className="form-control"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
+            
           />
         </div>
         <div className="form-group">
