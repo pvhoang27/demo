@@ -5,12 +5,12 @@ const Language = (props) =>{
       const { t, i18n } = useTranslation();
       const handleChangeLanguage = (languague) => {
         i18n.changeLanguage(languague);
-        console.log(i18n.languague);
       }
 
     return (
         <>
-            <NavDropdown title="Việt Nam" id="basic-nav-dropdown2"
+            <NavDropdown title={i18n.language === 'vi' 
+            ? "Việt Nam" : "English"} id="basic-nav-dropdown2"
             className="languages">
               <NavDropdown.Item
               onClick={() =>
