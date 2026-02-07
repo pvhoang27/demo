@@ -4,6 +4,10 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 
 i18n
+  // i18next-http-backend
+  // loads translations from your server
+  // https://github.com/i18next/i18next-http-backend
+  .use(Backend)
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
   .use(LanguageDetector)
@@ -25,9 +29,9 @@ i18n
             title1: "There's a better way to ask  ",
             title2: `You don't want to make a boring form. And your audience won't answer
           one. Create a typeform instead—and make everyone happy.`,
-          title3:{
-            login: "Get's started. It's free",
-          }
+            title3: {
+              login: "Get's started. It's free",
+            },
           },
         },
       },
@@ -36,10 +40,10 @@ i18n
           // here we will place our translations...
           homepage: {
             title1: "Có rất nhiều để hỏi ",
-             title2: `Không biết thì goole.`,
-          title3:{
-            login: "Get's started. It's free",
-          }
+            title2: `Không biết thì goole.`,
+            title3: {
+              login: "Get's started. It's free",
+            },
           },
         },
       },
