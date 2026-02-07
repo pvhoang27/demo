@@ -22,19 +22,7 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      en: {
-        translation: {
-          // here we will place our translations...
-          homepage: {
-            title1: "There's a better way to ask  ",
-            title2: `You don't want to make a boring form. And your audience won't answer
-          one. Create a typeform instead—and make everyone happy.`,
-            title3: {
-              login: "Get's started. It's free",
-            },
-          },
-        },
-      },
+      
       vi: {
         translation: {
           // here we will place our translations...
