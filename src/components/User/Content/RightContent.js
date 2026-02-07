@@ -22,6 +22,10 @@ const RightContent = (props) => {
 
     return "question abc";
   };
+
+  const handleClickQuestion = (question, index) => {
+    props.setIndex(index)
+  }
   return (
     <>
       <div className="main-timer">
@@ -35,7 +39,7 @@ const RightContent = (props) => {
               <div
                 key={`question-abc-${index}`}
                 className={getClassQustion(index, item)}
-                onClick={() => props.setIndex(index)}
+                onClick={() => handleClickQuestion(item, index)}
               >
                 {index + 1}
               </div>
