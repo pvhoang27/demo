@@ -35,7 +35,7 @@ const RightContent = (props) => {
               <div
                 key={`question-abc-${index}`}
                 className={getClassQustion(index, item)}
-                onClick={() => props.setIndex()}
+                onClick={() => props.setIndex(index)}
               >
                 {index + 1}
               </div>
