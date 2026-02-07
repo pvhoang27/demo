@@ -6,6 +6,10 @@ const RightContent = (props) => {
     props.handleFinishQuiz();
   }
   console.log(">>> check dataQuiz right content: ", dataQuiz);
+
+  const getClassQustion = (question) =>{
+    return "question";
+  }
   return (
     <>
       <div className="main-timer">
@@ -17,7 +21,11 @@ const RightContent = (props) => {
           dataQuiz.map((item, index) => {
             return <div 
             key ={`question-abc-${index}`} 
-            className="question">{index + 1}</div>;
+            className={getClassQustion(item)}
+
+            >
+              {index + 1}
+              </div>;
           })}
       </div>
     </>
