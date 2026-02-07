@@ -3,8 +3,8 @@ import { useTranslation, Trans } from "react-i18next";
 
 const Language = (props) =>{
       const { t, i18n } = useTranslation();
-      const handleChangeLanguage = (languague) =< {
-        
+      const handleChangeLanguage = (languague) => {
+        i18n.changeLanguage(languague);
       }
 
     return (
