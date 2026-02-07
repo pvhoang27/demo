@@ -1,8 +1,10 @@
+import { useState, useEffect } from "react";
+
 const CountDown = (props) =>{
     const[count,setCount] = useState(10);
     return(
         <div className="countdown-container">
-            10:11
+            {count}
         </div>
     )
 }
