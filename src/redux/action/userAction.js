@@ -1,5 +1,5 @@
 export const FETCH_USER_LOGIN_SUCCESS = "FETCH_USER_LOGIN_SUCCESS";
-export const FETCH_USER_LOGOUT_SUCCESS = "FETCH_USER_LOGOUT_SUCCESS";
+export const USER_LOGOUT_SUCCESS = "USER_LOGOUT_SUCCESS";
 
 export const doLogin = (data) => {
   return {
@@ -10,8 +10,7 @@ export const doLogin = (data) => {
 
 export const doLogout = () => {
   return {
-    type: FETCH_USER_LOGIN_SUCCESS,
-    payload: data,
+    type: USER_LOGOUT_SUCCESS,
   };
 };
 

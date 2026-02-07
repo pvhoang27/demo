@@ -11,7 +11,7 @@ const INITIAL_STATE = {
     roles: "",
     email: "",
   },
-  isAuthenticated: false,
+  isAuthenticated: false
 };
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -29,10 +29,18 @@ const userReducer = (state = INITIAL_STATE, action) => {
         isAuthenticated: true
       };
 
-    case DECREMENT:
+    case USER_LOGOUT_SUCCESS:
       return {
         ...state,
-        count: state.count - 1,
+        account: {
+    access_token: "",
+    refresh_token: "",
+    username: "",
+    image: "",
+    roles: "",
+    email: "",
+  },
+  isAuthenticated: false
       };
     default:
       return state;
