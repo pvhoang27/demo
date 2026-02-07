@@ -21,10 +21,19 @@ i18n
         translation: {
           // here we will place our translations...
           homepage : {
-            title1 : "There's a better way to ask pvh "
+            title1 : "There's a better way to ask  "
           }
         }
-      }
+      },
+       vi: {
+        translation: {
+          // here we will place our translations...
+          homepage : {
+            title1 : "Có rất nhiều để hỏi "
+          }
+        }
+      },
+
     }
   });
 
