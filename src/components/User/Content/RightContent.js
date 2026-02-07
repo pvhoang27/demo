@@ -3,11 +3,7 @@ import CountDown from "./CountDown";
 import { useRef } from "react";
 const RightContent = (props) => {
   const refDiv = useRef([]);
-  const setRef = (ref) => {
-    if (refDiv) {
-      refDiv.push(ref);
-    }
-  };
+ 
   const { dataQuiz } = props;
   const onTimeUp = () => {
     props.handleFinishQuiz();
@@ -45,7 +41,7 @@ const RightContent = (props) => {
                 key={`question-abc-${index}`}
                 className={getClassQustion(index, item)}
                 onClick={() => handleClickQuestion(item, index)}
-                ref={setRef}
+                ref={element => refDiv.current[index] = element}
               >
                 {index + 1}
               </div>
