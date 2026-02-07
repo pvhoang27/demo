@@ -12,7 +12,7 @@ const RightContent = (props) => {
         {dataQuiz &&
           dataQuiz.length > 0 &&
           dataQuiz.map((item, index) => {
-            return <div className="question">{index + 1}</div>;
+            return <div key ={`question-abc-${index}`} className="question">{index + 1}</div>;
           })}
       </div>
     </>
