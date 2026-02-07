@@ -1,6 +1,8 @@
+import { initial } from "lodash";
 import CountDown from "./CountDown";
-
+import {useRef} from "react";
 const RightContent = (props) => {
+  const refDiv =  useRef(null);
   const { dataQuiz } = props;
   const onTimeUp = () => {
     props.handleFinishQuiz();
@@ -25,6 +27,7 @@ const RightContent = (props) => {
 
   const handleClickQuestion = (question, index) => {
     props.setIndex(index);
+    console.log(refDiv.current);
   }
   return (
     <>
@@ -40,6 +43,7 @@ const RightContent = (props) => {
                 key={`question-abc-${index}`}
                 className={getClassQustion(index, item)}
                 onClick={() => handleClickQuestion(item, index)}
+                ref={refDiv}
               >
                 {index + 1}
               </div>
