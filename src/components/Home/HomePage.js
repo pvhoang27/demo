@@ -5,6 +5,8 @@ import { useTranslation, Trans } from "react-i18next";
 const HomePage = (props) => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const navigate = useNavigate();
+    const { t } = useTranslation();
+
   return (
     <div className="homepage-container">
       <video autoPlay muted loop>
