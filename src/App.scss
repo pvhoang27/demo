@@ -17,8 +17,10 @@ body {
     }
   }
 }
-.dropdown-toggle::after {
-    display:none !important;
+.languages {
+  .dropdown-toggle::after {
+    display: none !important;
+  }
 }
 
 .app-container {
