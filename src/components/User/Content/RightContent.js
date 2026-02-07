@@ -13,6 +13,7 @@ const RightContent = (props) => {
     if (question && question.answers.length > 0) {
       let isUnAnswered = question.answers.some(
         (a) => a.isSelected === false);
+      console.log(">>> check isUnAnswered: ", isUnAnswered, index);
       if (isUnAnswered === false) {
         return "question selected";
       }
