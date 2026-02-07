@@ -14,7 +14,7 @@ import DetailQuiz from "./User/DetailQuiz";
 import ManageQuiz from "./Admin/Content/Quiz/ManageQuiz";
 import Questions from "./Admin/Content/Question/Questions";
 import PrivateRoute from "../routes/PrivateRoute";
-import React , {Suspense} from "react";
+import  {Suspense} from "react";
 
 const NotFound = () => {
   return (
