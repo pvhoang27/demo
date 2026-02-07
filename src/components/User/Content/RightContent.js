@@ -7,8 +7,9 @@ const RightContent = (props) => {
   }
   console.log(">>> check dataQuiz right content: ", dataQuiz);
 
-  const getClassQustion = (question) =>{
-    return "question";
+  const getClassQustion = (index, question) =>{
+    console.log(index, question)
+    return "question abc";
   }
   return (
     <>
@@ -21,7 +22,7 @@ const RightContent = (props) => {
           dataQuiz.map((item, index) => {
             return <div 
             key ={`question-abc-${index}`} 
-            className={getClassQustion(item)}
+            className={getClassQustion(index, item)}
 
             >
               {index + 1}
