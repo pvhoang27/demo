@@ -3,6 +3,9 @@ import CountDown from "./CountDown";
 import {useRef} from "react";
 const RightContent = (props) => {
   const refDiv =  useRef([]);
+  const setRef = (ref) =>{
+    refDiv.push(ref);
+  }
   const { dataQuiz } = props;
   const onTimeUp = () => {
     props.handleFinishQuiz();
