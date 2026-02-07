@@ -25,7 +25,7 @@ const NotFound = () => {
 };
 const Layout = (props) => {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
@@ -68,7 +68,7 @@ const Layout = (props) => {
         draggable
         pauseOnHover
       />
-    </>
+    </Suspense>
   );
 };
 
