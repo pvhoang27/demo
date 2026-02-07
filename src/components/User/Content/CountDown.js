@@ -4,6 +4,7 @@ const CountDown = (props) => {
   const [count, setCount] = useState(10);
 
   useEffect(() => {
+    if (count === 0) return;
     setCount(count - 1);
     const timer = setInterval(() => {
       console.log("run bts");
