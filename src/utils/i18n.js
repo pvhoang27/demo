@@ -21,7 +21,7 @@ i18n
         translation: {
           // here we will place our translations...
           homepage : {
-            title1 : "There's a better way to ask"
+            title1 : "There's a better way to ask pvh "
           }
         }
       }
