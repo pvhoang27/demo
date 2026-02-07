@@ -13,4 +13,3 @@ export const doLogout = () => {
     type: USER_LOGOUT_SUCCESS,
   };
 };
-
