@@ -1,4 +1,6 @@
-const Language = () =>{
+import NavDropdown from "react-bootstrap/NavDropdown";
+
+const Language = (props) =>{
     return (
         <>
             <NavDropdown title="Việt Nam" id="basic-nav-dropdown2"
