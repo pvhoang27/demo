@@ -18,7 +18,7 @@ const HomePage = (props) => {
           {t("homepage.title1")}
         </div>
         <div className="title-2">
-          
+           {t("homepage.title2")}
         </div>
         <div className="title-3">
           {isAuthenticated === false ? (
