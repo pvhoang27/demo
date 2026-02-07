@@ -8,7 +8,7 @@ const PrivateRoute = (props) => {
     console.log(">>> check isAuthenticated: ", isAuthenticated);
   if (!isAuthenticated) {
     navigate("/login");
-    return <></>;
+    // return <></>;
   }
   return <>{props.children}</>;
 };
