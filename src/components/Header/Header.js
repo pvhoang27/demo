@@ -20,7 +20,7 @@ const Header = () => {
     navigate("/register");
   };
   const handleLogOut = async() => {
-    let rs = await logout();
+    let rs = await logout(account.email, account.refresh_token);
   }
   return (
     <Navbar bg="light" expand="lg">
