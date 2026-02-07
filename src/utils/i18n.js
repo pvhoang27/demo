@@ -20,22 +20,7 @@ i18n
     fallbackLng: "en",
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
-    },
-    resources: {
-      
-      vi: {
-        translation: {
-          // here we will place our translations...
-          homepage: {
-            title1: "Có rất nhiều để hỏi ",
-            title2: `Không biết thì goole.`,
-            title3: {
-              login: "Get's started. It's free",
-            },
-          },
-        },
-      },
-    },
+    }
   });
 
 export default i18n;

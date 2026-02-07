@@ -1,0 +1,12 @@
+ vi: {
+        translation: {
+          // here we will place our translations...
+          homepage: {
+            title1: "Có rất nhiều để hỏi ",
+            title2: `Không biết thì goole.`,
+            title3: {
+              login: "Get's started. It's free",
+            },
+          },
+        },
+      },
