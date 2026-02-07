@@ -1,14 +1,10 @@
-import Test1 from "./Test1";
-import Test2 from "./Test2";
+import { useSelector } from "react-redux";
 
 const PrivateRoute = (props) => {
-    console.log('>>> check props in private route: ', props);
-  return (
-  <>
+  console.log(">>> check props in private route: ", props);
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
-  {props.children }
-  </>
-  );
-}
+  return <>{props.children}</>;
+};
 
 export default PrivateRoute;
