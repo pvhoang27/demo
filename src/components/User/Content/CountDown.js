@@ -32,7 +32,8 @@ const CountDown = (props) => {
       clearInterval(timer);
     };
   }, [count]);
-  return <div className="countdown-container">
+  return 
+  <div className="countdown-container">
     {toHHMMSS(count)}
     </div>;
 };
