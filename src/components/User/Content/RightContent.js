@@ -35,9 +35,9 @@ const RightContent = (props) => {
     if (question && question.answers.length > 0) {
       let isAnswered = question.answers.find((a) => a.isSelected === true);
       if (isAnswered) {
-        return "question selected";
+        return ;
       }
-      return ; 
+      
     }
  
     refDiv.current[index].className = "question clicked";
