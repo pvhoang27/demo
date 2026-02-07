@@ -50,6 +50,10 @@ const Login = (props) => {
       setIsLoading(false);
     }
   };
+
+  const handleKeyDown =( event) => {
+    console.log(">> check key down: ", event.key);
+  }
   return (
     <div className="login-container">
       <div className="header">
@@ -67,7 +71,7 @@ const Login = (props) => {
             className="form-control"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            
+            onKeyDown={(event) =>handleKeyDown(event)}
           />
         </div>
         <div className="form-group">
