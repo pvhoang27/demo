@@ -9,11 +9,11 @@ const CountDown = (props) => {
       console.log("run bts");
     }, 1000);
 
-    setTimeout(() => {
-      clearInterval(timer);
-    }, 5000);
-    
-  }, []);
+    // setTimeout(() => {
+    //   clearInterval(timer);
+    // }, 5000);
+
+  }, [count]);
   return <div className="countdown-container">{count}</div>;
 };
 
