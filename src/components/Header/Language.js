@@ -1,6 +1,9 @@
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useTranslation, Trans } from "react-i18next";
 
 const Language = (props) =>{
+      const { t, i18n } = useTranslation();
+
     return (
         <>
             <NavDropdown title="Việt Nam" id="basic-nav-dropdown2"
