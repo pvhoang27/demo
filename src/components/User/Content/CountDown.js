@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 const CountDown = (props) => {
   const [count, setCount] = useState(10);
 
+  const a = new Date(SECONDS * 1000).toISOString().substring(11, 16)
+
   useEffect(() => {
+
     if (count === 0) return;
     setCount(count - 1);
     const timer = setInterval(() => {
