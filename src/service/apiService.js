@@ -127,7 +127,7 @@ const postUpsertQA = (data) => {
 };
 
 const logout = (email, refresh_token) => {
-  return axios.put("api/v1/logout", {
+  return axios.post("api/v1/logout", {
     email,
     refresh_token,
   });
