@@ -17,6 +17,9 @@ const Header = () => {
   const handleRegister = () => {
     navigate("/register");
   };
+  const handleLogOut = () => {
+    
+  }
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -50,7 +53,8 @@ const Header = () => {
             ) : (
               <NavDropdown title="Setting" id="basic-nav-dropdown">
                 <NavDropdown.Item>Profile</NavDropdown.Item>
-                <NavDropdown.Item>Log out</NavDropdown.Item>
+                <NavDropdown.Item
+                onClick={() => handleLogOut()}>Log out</NavDropdown.Item>
               </NavDropdown>
             )}
           </Nav>
