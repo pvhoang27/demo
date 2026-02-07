@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector , useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../service/apiService";
 import { toast } from "react-toastify";
 import { doLogout } from "../../redux/action/userAction";
@@ -21,17 +21,16 @@ const Header = () => {
   const handleRegister = () => {
     navigate("/register");
   };
-  const handleLogOut = async() => {
+  const handleLogOut = async () => {
     let rs = await logout(account.email, account.refresh_token);
-    if(rs && rs.EC === 0){
-
+    if (rs && rs.EC === 0) {
       //clear data redux
       dispatch(doLogout());
       navigate("/login");
-    }else{
+    } else {
       toast.error(rs.EM);
     }
-  }
+  };
 
   return (
     <Navbar bg="light" expand="lg">
@@ -66,17 +65,15 @@ const Header = () => {
             ) : (
               <NavDropdown title="Setting" id="basic-nav-dropdown">
                 <NavDropdown.Item>Profile</NavDropdown.Item>
-                <NavDropdown.Item
-                onClick={() => handleLogOut()}>Log out</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleLogOut()}>
+                  Log out
+                </NavDropdown.Item>
               </NavDropdown>
-
-              
             )}
-             <NavDropdown title="Setting" id="basic-nav-dropdown">
-                <NavDropdown.Item>Profile</NavDropdown.Item>
-                <NavDropdown.Item
-                onClick={() => handleLogOut()}>Log out</NavDropdown.Item>
-              </NavDropdown>
+            <NavDropdown title="Việt Nam" id="basic-nav-dropdown2">
+              <NavDropdown.Item>English</NavDropdown.Item>
+              <NavDropdown.Item>Việt Nam</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
