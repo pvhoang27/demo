@@ -24,7 +24,7 @@ const RightContent = (props) => {
   };
 
   const handleClickQuestion = (question, index) => {
-    props.setIndex(index)
+    props.setIndex(index);
   }
   return (
     <>
