@@ -13,6 +13,7 @@ import ListQuiz from "./User/ListQuiz";
 import DetailQuiz from "./User/DetailQuiz";
 import ManageQuiz from "./Admin/Content/Quiz/ManageQuiz";
 import Questions from "./Admin/Content/Question/Questions";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const NotFound = () => {
   return (
@@ -38,6 +39,7 @@ const Layout = (props) => {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+         <Route path="/test" element={<PrivateRoute />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
