@@ -152,4 +152,5 @@ export {
   postAssignQuiz,
   getQuizWithQA,
   postUpsertQA,
+  logout,
 };

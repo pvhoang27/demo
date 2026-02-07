@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { logout } from "../../service/apiService";
 
 const Header = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
@@ -18,7 +19,7 @@ const Header = () => {
     navigate("/register");
   };
   const handleLogOut = () => {
-    
+
   }
   return (
     <Navbar bg="light" expand="lg">
