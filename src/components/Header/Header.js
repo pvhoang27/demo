@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../service/apiService";
 import { toast } from "react-toastify";
 import { doLogout } from "../../redux/action/userAction";
+import Language from "./Language";
 
 const Header = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
@@ -70,11 +71,7 @@ const Header = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             )}
-            <NavDropdown title="Việt Nam" id="basic-nav-dropdown2"
-            className="languages">
-              <NavDropdown.Item>English</NavDropdown.Item>
-              <NavDropdown.Item>Việt Nam</NavDropdown.Item>
-            </NavDropdown>
+            <Language />
           </Nav>
         </Navbar.Collapse>
       </Container>
