@@ -1,7 +1,18 @@
 import { useState, useEffect } from "react";
 
 const CountDown = (props) => {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(5);
+  useEffect(() => {
+    if (count === 0) return;
+
+    const timer = setInterval(() => {
+      setCount(count - 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [count]);
 
   const toHHMMSS = (secs) => {
     const sec_num = parseInt(secs, 10);
@@ -14,28 +25,7 @@ const CountDown = (props) => {
       .filter((v, i) => v !== "00" || i > 0)
       .join(":");
   };
-
-  //   console.log(toHHMMSS(500));
-
-  useEffect(() => {
-    if (count === 0) return;
-    setCount(count - 1);
-    const timer = setInterval(() => {
-      console.log("run bts");
-    }, 1000);
-
-    // setTimeout(() => {
-    //   clearInterval(timer);
-    // }, 5000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [count]);
-  return 
-  <div className="countdown-container">
-    {toHHMMSS(count)}
-    </div>;
+  return <div className="countdown-container">{toHHMMSS(count)}</div>;
 };
 
 export default CountDown;
