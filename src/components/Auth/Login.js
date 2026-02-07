@@ -53,6 +53,9 @@ const Login = (props) => {
 
   const handleKeyDown =( event) => {
     console.log(">> check key down: ", event.key);
+    if(event && event.key === 'Enter'){
+      handleLogin();
+    }
   }
   return (
     <div className="login-container">
