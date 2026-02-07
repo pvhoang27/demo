@@ -23,8 +23,10 @@ const RightContent = (props) => {
   };
 
   const handleClickQuestion = (question, index) => {
-    props.setIndex(index);
-    console.log(refDiv.current);
+    if(refDiv.current){
+      console.log(">>> check refDiv: ", refDiv.current);
+    }
+ 
     refDiv.current[index].className = "question clicked";
   };
   return (
