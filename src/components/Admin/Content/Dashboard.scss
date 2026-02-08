@@ -1,24 +1,21 @@
-.dashboard-container{
-    padding: 15px;;
-    .title{
-        font-size: 20px;
-        font-weight: 600;
+.dashboard-container {
+  padding: 15px;
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+  }
 
-        
+  .content {
+    display: flex;
+
+    .c-left {
+      width: 50%;
+      border: 1px solid green;
     }
-
-    .content{
-        display: flex;
-
-        .c-left{
-            width: 50%;
-            border: 1px solid green;
-        }
-        .c-right{
-            width: 50%;
-            border: 1px solid red;
-            height: 300px;
-        }
-
+    .c-right {
+      width: 50%;
+      border: 1px solid red;
+      height: 300px;
     }
+  }
 }
