@@ -18,22 +18,21 @@ const Admin = (props) => {
       </div>
       <div className="admin-content">
         <div className="admin-header">
-          <FaBars onClick={() => setCollapsed(!collapsed)} />
+          <span onClick={() => setCollapsed(!collapsed)}>
+            <FaBars />
+          </span>
         </div>
-          <NavDropdown title="Setting" id="basic-nav-dropdown">
-                <NavDropdown.Item>Profile</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleLogOut()}>
-                  Log out
-                </NavDropdown.Item>
-              </NavDropdown>
-            
-            <Language />
-          <div className="admin-main">
-            <PerfectScrollbar>
+        <NavDropdown title="Setting" id="basic-nav-dropdown">
+          <NavDropdown.Item>Profile</NavDropdown.Item>
+          <NavDropdown.Item>Log out</NavDropdown.Item>
+        </NavDropdown>
+
+        <Language />
+        <div className="admin-main">
+          <PerfectScrollbar>
             <Outlet />
-            </PerfectScrollbar>
-          </div>
-        
+          </PerfectScrollbar>
+        </div>
       </div>
 
       {/* <div className="admin-content">
