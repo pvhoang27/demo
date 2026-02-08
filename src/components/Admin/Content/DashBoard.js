@@ -1,5 +1,6 @@
 import "./DashBoard.scss";
-import { LineChart, Line } from "recharts";
+import { BarChart, Line } from "recharts";
+import { Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 const Dashboard = (props) => {
   const data = [
     {
