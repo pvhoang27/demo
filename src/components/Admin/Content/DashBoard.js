@@ -1,12 +1,10 @@
-import './DashBoard.css';
-const Dashboard = (props) =>{
-    return(
-        <div className="dashboard-container"> 
-        <div className='title'>
-
-        </div>
-            Dashboard
-        </div>
-    )
-}
+import "./DashBoard.scss";
+const Dashboard = (props) => {
+  return (
+    <div className="dashboard-container">
+      <div className="title">Dashboard</div>
+      <div className="content"></div>
+    </div>
+  );
+};
 export default Dashboard;
