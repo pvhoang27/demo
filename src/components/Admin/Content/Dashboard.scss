@@ -10,12 +10,17 @@
 
     .c-left {
       width: 50%;
+      flex-wrap: wrap;
       border: 1px solid green;
-
+      display: flex;
 
       .child{
         width: 50%;
         height: 150px;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
     .c-right {
