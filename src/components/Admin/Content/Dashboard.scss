@@ -11,6 +11,12 @@
     .c-left {
       width: 50%;
       border: 1px solid green;
+
+
+      .child{
+        width: 50%;
+        height: 150px;
+      }
     }
     .c-right {
       width: 50%;
