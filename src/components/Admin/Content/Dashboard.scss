@@ -8,6 +8,17 @@
     }
 
     .content{
-        
+        display: flex;
+
+        .c-left{
+            width: 50%;
+            border: 1px solid green;
+        }
+        .c-right{
+            width: 50%;
+            border: 1px solid red;
+            height: 300px;
+        }
+
     }
 }
