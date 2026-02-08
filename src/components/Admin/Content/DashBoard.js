@@ -1,3 +1,4 @@
+import './DashBoard.css';
 const Dashboard = (props) =>{
     return(
         <div className="dashboard-container"> 
