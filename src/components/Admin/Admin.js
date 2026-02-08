@@ -22,12 +22,13 @@ const Admin = (props) => {
             <FaBars className="leftside" />
           </span>
           <div className="rightside"> 
+             <Language />
             <NavDropdown title="Setting" id="basic-nav-dropdown">
               <NavDropdown.Item>Profile</NavDropdown.Item>
               <NavDropdown.Item>Log out</NavDropdown.Item>
             </NavDropdown>
 
-            <Language />
+           
           </div>
         </div>
 
