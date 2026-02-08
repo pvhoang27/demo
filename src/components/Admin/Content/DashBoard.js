@@ -50,7 +50,16 @@ const Dashboard = (props) => {
         <div className="c-left">
           <div className="child">
             <span className="text-1">Total users</span>
-            <span className="text-2">100</span>
+            <span className="text-2">
+                {dataOverview && dataOverview.users
+                
+                &&dataOverview.users.total  ? 
+
+                <>{dataOverview.users.total}</> 
+                :
+                 <>0</>
+                }
+            </span>
           </div>
           <div className="child">
             <span className="text-1">Total quizzes</span>
