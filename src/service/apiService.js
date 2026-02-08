@@ -142,6 +142,10 @@ const postUpsertQA = (data) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
   });
 };
+
+const getOverview = () => {
+  return axios.get(`/api/v1/overview`);
+}
   
 export {
   postCreateNewUser,
@@ -164,4 +168,5 @@ export {
   getQuizWithQA,
   postUpsertQA,
   logout,
+  getOverview
 };
