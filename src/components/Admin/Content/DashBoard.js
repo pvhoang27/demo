@@ -12,8 +12,17 @@ import {
 import { useState, useEffect } from "react";
 import { getOverview } from "../../../service/apiService";
 const Dashboard = (props) => {
-    const [dataOverview, setDataOverview] = useState({});
+    const [dataOverview, setDataOverview] = useState([]);
     const [dataChart, setDataChart] = useState([]);
+
+    useEffect(() => {
+       
+    }, []);
+
+    const fetchDataOverview = async () => {
+        let res = await getOverview();
+        console.log(">>> check res overview: ", res);
+    }
   const data = [
     {
       name: "Quizzes",
