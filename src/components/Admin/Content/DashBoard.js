@@ -5,10 +5,10 @@ const Dashboard = (props) => {
       <div className="title">Dashboard</div>
       <div className="content">
         <div className="c-left">
-            <div>Total users</div>
-            <div>Total quizess</div>
-            <div>Total questions</div>
-            <div>Total answers</div>
+            <div className="child">Total users</div>
+            <div className="child">Total quizess</div>
+            <div className="child">Total questions</div>
+            <div className="child">Total answers</div>
         </div>
         <div className="c-right">
 
