@@ -145,7 +145,7 @@ const postUpsertQA = (data) => {
 
 const getOverview = () => {
   return axios.get(`/api/v1/overview`);
-}
+};
   
 export {
   postCreateNewUser,
