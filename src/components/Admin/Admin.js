@@ -19,9 +19,9 @@ const Admin = (props) => {
       <div className="admin-content">
         <div className="admin-header">
           <span onClick={() => setCollapsed(!collapsed)}>
-            <FaBars />
+            <FaBars className="leftside" />
           </span>
-          <div>
+          <div className="rightside"> 
             <NavDropdown title="Setting" id="basic-nav-dropdown">
               <NavDropdown.Item>Profile</NavDropdown.Item>
               <NavDropdown.Item>Log out</NavDropdown.Item>
