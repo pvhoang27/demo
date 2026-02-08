@@ -1,6 +1,6 @@
 const Dashboard = (props) =>{
     return(
-        <div>
+        <div className="dashboard-container"> 
             Dashboard
         </div>
     )
