@@ -20,6 +20,11 @@
         font-size: 20px;
         color: #666666;
       }
+
+      .rightside{
+        display: flex;
+        gap: 15px;
+      }
     }
     .admin-main {
       height: calc(100vh - 40px);
