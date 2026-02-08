@@ -50,14 +50,14 @@ const Dashboard = (props) => {
         <div className="c-right">
           <ResponsiveContainer width="95%" height="100%">
             <BarChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
+              {/* <CartesianGrid strokeDasharray="3 3" /> */}
               <XAxis dataKey="name" />
-              <YAxis />
+              {/* <YAxis /> */}
               <Tooltip />
               <Legend />
               <Bar dataKey="Qz" fill="#8884d8" />
               <Bar dataKey="Qs" fill="#82ca9d" />
-              <Bar dataKey="As" fill="#82ca9d" />
+              <Bar dataKey="As" fill="#ccc" />
             </BarChart>
           </ResponsiveContainer>
         </div>
