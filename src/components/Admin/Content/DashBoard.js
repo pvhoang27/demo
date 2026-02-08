@@ -3,7 +3,14 @@ const Dashboard = (props) => {
   return (
     <div className="dashboard-container">
       <div className="title">Dashboard</div>
-      <div className="content"></div>
+      <div className="content">
+        <div className="c-left">
+
+        </div>
+        <div className="c-right">
+
+        </div>
+      </div>
     </div>
   );
 };
