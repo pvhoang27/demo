@@ -21,13 +21,16 @@ const Admin = (props) => {
           <span onClick={() => setCollapsed(!collapsed)}>
             <FaBars />
           </span>
-        </div>
-        <NavDropdown title="Setting" id="basic-nav-dropdown">
-          <NavDropdown.Item>Profile</NavDropdown.Item>
-          <NavDropdown.Item>Log out</NavDropdown.Item>
-        </NavDropdown>
+          <div>
+            <NavDropdown title="Setting" id="basic-nav-dropdown">
+              <NavDropdown.Item>Profile</NavDropdown.Item>
+              <NavDropdown.Item>Log out</NavDropdown.Item>
+            </NavDropdown>
 
-        <Language />
+            <Language />
+          </div>
+        </div>
+
         <div className="admin-main">
           <PerfectScrollbar>
             <Outlet />
