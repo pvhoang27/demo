@@ -63,15 +63,42 @@ const Dashboard = (props) => {
           </div>
           <div className="child">
             <span className="text-1">Total quizzes</span>
-            <span className="text-2">50</span>
+            <span className="text-2">
+                   {dataOverview && dataOverview.others
+                
+                &&dataOverview.others.total  ? 
+
+                <>{dataOverview.others.total}</> 
+                :
+                 <>0</>
+                }
+            </span>
           </div>
           <div className="child">
             <span className="text-1">Total questions</span>
-            <span className="text-2">200</span>
+            <span className="text-2">
+                   {dataOverview && dataOverview.others
+                
+                &&dataOverview.others.total  ? 
+
+                <>{dataOverview.others.total}</> 
+                :
+                 <>0</>
+                }
+            </span>
           </div>
           <div className="child">
             <span className="text-1">Total answers</span>
-            <span className="text-2">400</span>
+            <span className="text-2">
+                   {dataOverview && dataOverview.others
+                
+                &&dataOverview.others.countAnswers  ? 
+
+                <>{dataOverview.others.countAnswers}</> 
+                :
+                 <>0</>
+                }
+            </span>
           </div>
         </div>
         <div className="c-right">
