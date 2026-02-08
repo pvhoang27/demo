@@ -12,20 +12,20 @@ import {
 import { useState, useEffect } from "react";
 import { getOverview } from "../../../service/apiService";
 const Dashboard = (props) => {
-    const [dataOverview, setDataOverview] = useState([]);
-    const [dataChart, setDataChart] = useState([]);
+  const [dataOverview, setDataOverview] = useState([]);
+  const [dataChart, setDataChart] = useState([]);
 
-    useEffect(() => {
-       fetchDataOverview();
-    }, []);
+  useEffect(() => {
+    fetchDataOverview();
+  }, []);
 
-    const fetchDataOverview = async () => {
-        let res = await getOverview();
-        if(res && res.EC ===0){
-            setDataOverview(res.DT);
-        }
-        console.log(">>> check res overview: ", res);
+  const fetchDataOverview = async () => {
+    let res = await getOverview();
+    if (res && res.EC === 0) {
+      setDataOverview(res.DT);
     }
+    console.log(">>> check res overview: ", res);
+  };
   const data = [
     {
       name: "Quizzes",
@@ -51,53 +51,49 @@ const Dashboard = (props) => {
           <div className="child">
             <span className="text-1">Total users</span>
             <span className="text-2">
-                {dataOverview && dataOverview.users
-                
-                &&dataOverview.users.total  ? 
-
-                <>{dataOverview.users.total}</> 
-                :
-                 <>0</>
-                }
+              {dataOverview &&
+              dataOverview.users &&
+              dataOverview.users.total ? (
+                <>{dataOverview.users.total}</>
+              ) : (
+                <>0</>
+              )}
             </span>
           </div>
           <div className="child">
             <span className="text-1">Total quizzes</span>
             <span className="text-2">
-                   {dataOverview && dataOverview.others
-                
-                &&dataOverview.others.countQuiz  ? 
-
-                <>{dataOverview.others.countQuiz}</> 
-                :
-                 <>0</>
-                }
+              {dataOverview &&
+              dataOverview.others &&
+              dataOverview.others.countQuiz ? (
+                <>{dataOverview.others.countQuiz}</>
+              ) : (
+                <>0</>
+              )}
             </span>
           </div>
           <div className="child">
             <span className="text-1">Total questions</span>
             <span className="text-2">
-                   {dataOverview && dataOverview.others
-                
-                &&dataOverview.others.countQuestions  ? 
-
-                <>{dataOverview.others.countQuestions}</> 
-                :
-                 <>0</>
-                }
+              {dataOverview &&
+              dataOverview.others &&
+              dataOverview.others.countQuestions ? (
+                <>{dataOverview.others.countQuestions}</>
+              ) : (
+                <>0</>
+              )}
             </span>
           </div>
           <div className="child">
             <span className="text-1">Total answers</span>
             <span className="text-2">
-                   {dataOverview && dataOverview.others
-                
-                &&dataOverview.others.countAnswers  ? 
-
-                <>{dataOverview.others.countAnswers}</> 
-                :
-                 <>0</>
-                }
+              {dataOverview &&
+              dataOverview.others &&
+              dataOverview.others.countAnswers ? (
+                <>{dataOverview.others.countAnswers}</>
+              ) : (
+                <>0</>
+              )}
             </span>
           </div>
         </div>
