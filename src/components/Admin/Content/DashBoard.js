@@ -25,28 +25,30 @@ const Dashboard = (props) => {
       setDataOverview(res.DT);
 
       //procedd data for chart
-      let Qz = 0, Qs = 0,As  = 0 ;
-      Qz = res?.DT?.others?.countQuiz??0;
-      Qs = res?.DT?.others?.countQuestions??0;
-      As = res?.DT?.others?.countAnswers??0;
+      let Qz = 0,
+        Qs = 0,
+        As = 0;
+      Qz = res?.DT?.others?.countQuiz ?? 0;
+      Qs = res?.DT?.others?.countQuestions ?? 0;
+      As = res?.DT?.others?.countAnswers ?? 0;
       const data = [
-    {
-      name: "Quizzes",
-      Qz: Qz,
-    },
-    {
-      name: "Questions",
-      Qs: Qs,
-    },
+        {
+          name: "Quizzes",
+          Qz: Qz,
+        },
+        {
+          name: "Questions",
+          Qs: Qs,
+        },
 
-    {
-      name: "Answers",
-      As: As,
-    },
-  ];
+        {
+          name: "Answers",
+          As: As,
+        },
+      ];
       setDataChart(data);
+    }
   };
-  
 
   console.log(">>> check data overview: ", dataOverview);
   return (
