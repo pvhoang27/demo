@@ -16,11 +16,14 @@ const Dashboard = (props) => {
     const [dataChart, setDataChart] = useState([]);
 
     useEffect(() => {
-       
+       fetchDataOverview();
     }, []);
 
     const fetchDataOverview = async () => {
         let res = await getOverview();
+        if(res && res.EC ===0){
+            setDataOverview(res.DT);
+        }
         console.log(">>> check res overview: ", res);
     }
   const data = [
