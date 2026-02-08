@@ -57,7 +57,7 @@ const Dashboard = (props) => {
               <Legend />
               <Bar dataKey="Qz" fill="#8884d8" />
               <Bar dataKey="Qs" fill="#82ca9d" />
-              <Bar dataKey="As" fill="#ccc" />
+              <Bar dataKey="As" fill="#fcb12a" />
             </BarChart>
           </ResponsiveContainer>
         </div>
