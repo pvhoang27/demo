@@ -1,4 +1,5 @@
 import "./DashBoard.scss";
+import { LineChart, Line } from "recharts";
 const Dashboard = (props) => {
   const data = [
     {
