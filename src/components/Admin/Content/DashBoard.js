@@ -12,20 +12,17 @@ import {
 const Dashboard = (props) => {
   const data = [
     {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
+      name: "Quizzes",
+      Qz: 4000,
     },
     {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
+      name: "Questions",
+      Qz: 3000,
     },
 
     {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
+      name: "Answers",
+      As: 2780,
     },
   ];
   return (
