@@ -41,6 +41,8 @@ const Dashboard = (props) => {
       As: 2780,
     },
   ];
+
+  console.log(">>> check data overview: ", dataOverview);
   return (
     <div className="dashboard-container">
       <div className="title">Dashboard</div>
