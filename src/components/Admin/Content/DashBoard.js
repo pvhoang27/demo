@@ -12,6 +12,8 @@ import {
 import { useState, useEffect } from "react";
 import { getOverview } from "../../../service/apiService";
 const Dashboard = (props) => {
+    const [dataOverview, setDataOverview] = useState({});
+    const [dataChart, setDataChart] = useState([]);
   const data = [
     {
       name: "Quizzes",
