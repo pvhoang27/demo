@@ -50,7 +50,7 @@ const Dashboard = (props) => {
           <div className="child">Total answers</div>
         </div>
         <div className="c-right">
-          <BarChart width={"100%"} height={"300px"} data={data}>
+          <BarChart width={400} height={300} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
