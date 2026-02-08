@@ -66,9 +66,9 @@ const Dashboard = (props) => {
             <span className="text-2">
                    {dataOverview && dataOverview.others
                 
-                &&dataOverview.others.total  ? 
+                &&dataOverview.others.countQuiz  ? 
 
-                <>{dataOverview.others.total}</> 
+                <>{dataOverview.others.countQuiz}</> 
                 :
                  <>0</>
                 }
@@ -79,9 +79,9 @@ const Dashboard = (props) => {
             <span className="text-2">
                    {dataOverview && dataOverview.others
                 
-                &&dataOverview.others.total  ? 
+                &&dataOverview.others.countQuestions  ? 
 
-                <>{dataOverview.others.total}</> 
+                <>{dataOverview.others.countQuestions}</> 
                 :
                  <>0</>
                 }
