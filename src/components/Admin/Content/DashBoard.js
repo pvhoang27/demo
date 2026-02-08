@@ -1,6 +1,14 @@
 import "./DashBoard.scss";
 import { BarChart, Line } from "recharts";
-import { Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import {
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 const Dashboard = (props) => {
   const data = [
     {
@@ -23,31 +31,28 @@ const Dashboard = (props) => {
       uv: 2780,
       pv: 3908,
     },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-    },
   ];
   return (
     <div className="dashboard-container">
       <div className="title">Dashboard</div>
       <div className="content">
         <div className="c-left">
-          <div className="child">Total users</div>
-          <div className="child">Total quizess</div>
-          <div className="child">Total questions</div>
-          <div className="child">Total answers</div>
+          <div className="child">
+            <span className="text-1">Total users</span>
+            <span className="text-2">100</span>
+          </div>
+          <div className="child">
+            <span className="text-1">Total quizzes</span>
+            <span className="text-2">50</span>
+          </div>
+          <div className="child">
+            <span className="text-1">Total questions</span>
+            <span className="text-2">200</span>
+          </div>
+          <div className="child">
+            <span className="text-1">Total answers</span>
+            <span className="text-2">400</span>
+          </div>
         </div>
         <div className="c-right">
           <BarChart width={400} height={300} data={data}>
